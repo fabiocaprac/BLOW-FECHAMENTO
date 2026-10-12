@@ -13,14 +13,14 @@
     "orig": "CABELIM",
     "dest": "THALISSON",
     "desc": "PG ACERTO THALISSON",
-    "val": null
+    "val": 0
   },
   {
     "f": "1",
     "data": "9-set.",
     "orig": "CABELIM",
     "dest": "DESPESA",
-    "desc": "PG DESPESA PORTAO",
+    "desc": "PG DESPESA  PORTAO",
     "val": 80
   },
   {
@@ -30,6 +30,14 @@
     "dest": "CLUBE",
     "desc": "PG VALE - FERNANDES",
     "val": -1000
+  },
+  {
+    "f": "2",
+    "data": "15-set.",
+    "orig": "IGOR",
+    "dest": "DIVIDA",
+    "desc": "PG RONALDO",
+    "val": -2333.33
   },
   {
     "f": "2",
@@ -44,7 +52,7 @@
     "data": "15-set.",
     "orig": "FELIPE MARDEY",
     "dest": "CABELIM - APORTE",
-    "desc": "TRANSFERENCIA SALDO",
+    "desc": "TRASNFERENCIA SALDO",
     "val": 300
   },
   {
@@ -100,7 +108,7 @@
     "data": "29-set.",
     "orig": "MARDEY",
     "dest": "CABELIM",
-    "desc": "TRANSFERENCIA SALDO - CX TORNEIO",
+    "desc": "TRASNFERENCIA SALDO - CX TORNEIO",
     "val": 100
   },
   {
@@ -132,7 +140,7 @@
     "data": "1-out.",
     "orig": "MARDEY",
     "dest": "CABELIM - APORTE",
-    "desc": "TRANSFERENCIA SALDO",
+    "desc": "TRASNFERENCIA SALDO",
     "val": 100
   },
   {
@@ -140,7 +148,7 @@
     "data": "1-out.",
     "orig": "LEONARDO BRUNO",
     "dest": "CABELIM - APORTE",
-    "desc": "TRANSFERENCIA SALDO",
+    "desc": "TRASNFERENCIA SALDO",
     "val": 100
   },
   {
@@ -156,7 +164,7 @@
     "data": "5-out.",
     "orig": "LEONARDO BRUNO",
     "dest": "CABELIM - APORTE",
-    "desc": "TRANSFERENCIA SALDO",
+    "desc": "TRASNFERENCIA SALDO",
     "val": 100
   },
   {
@@ -164,7 +172,7 @@
     "data": "5-out.",
     "orig": "CABELIM",
     "dest": "PV",
-    "desc": "TRANSFERENCIA DE SALDO - CREDITO",
+    "desc": "TRANFERENCIA DE SALDO - CREDITO",
     "val": -500
   },
   {
@@ -172,7 +180,7 @@
     "data": "5-out.",
     "orig": "MARDEY",
     "dest": "CABELIM",
-    "desc": "TRANSFERENCIA DE SALDO",
+    "desc": "TRANFERENCIA DE SALDO",
     "val": 100
   },
   {
@@ -180,7 +188,7 @@
     "data": "7-out.",
     "orig": "RAY",
     "dest": "CABELIM",
-    "desc": "TRANSFERENCIA SALDO",
+    "desc": "TRASNFERENCIA SALDO",
     "val": 150
   },
   {
@@ -188,7 +196,7 @@
     "data": "8-out.",
     "orig": "RAY",
     "dest": "CABELIM",
-    "desc": "TRANSFERENCIA SALDO",
+    "desc": "TRASNFERENCIA SALDO",
     "val": 150
   },
   {

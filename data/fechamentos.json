@@ -18,8 +18,7 @@
     "res_natan": -19800,
     "atu_cab": 9877.19,
     "atu_igor": -2492.81,
-    "atu_natan": 151.94,
-    "pending": false
+    "atu_natan": 151.94
   },
   {
     "id": "2",
@@ -40,8 +39,7 @@
     "res_natan": 2400,
     "atu_cab": 11658.62,
     "atu_igor": -6600.38,
-    "atu_natan": 1554.37,
-    "pending": false
+    "atu_natan": 1554.37
   },
   {
     "id": "3",
@@ -62,8 +60,7 @@
     "res_natan": -5000,
     "atu_cab": 12990.28,
     "atu_igor": -1968.72,
-    "atu_natan": 196.03,
-    "pending": false
+    "atu_natan": 196.03
   },
   {
     "id": "4",
@@ -84,8 +81,7 @@
     "res_natan": -5435,
     "atu_cab": 10695.73,
     "atu_igor": 1731.73,
-    "atu_natan": -5658.52,
-    "pending": false
+    "atu_natan": -5658.52
   },
   {
     "id": "5",
@@ -106,8 +102,7 @@
     "res_natan": 0,
     "atu_cab": 10015.73,
     "atu_igor": 1051.73,
-    "atu_natan": -6338.52,
-    "pending": false
+    "atu_natan": -6338.52
   },
   {
     "id": "6",
@@ -128,8 +123,7 @@
     "res_natan": -3045,
     "atu_cab": 10656.06,
     "atu_igor": 1692.06,
-    "atu_natan": -8743.19,
-    "pending": false
+    "atu_natan": -8743.19
   },
   {
     "id": "7",
@@ -150,8 +144,7 @@
     "res_natan": -1000,
     "atu_cab": 11290.77,
     "atu_igor": 2326.77,
-    "atu_natan": 891.52,
-    "pending": false
+    "atu_natan": 891.52
   },
   {
     "id": "8",
@@ -172,8 +165,7 @@
     "res_natan": 1205,
     "atu_cab": -4345.13,
     "atu_igor": -904.13,
-    "atu_natan": -339.38,
-    "pending": false
+    "atu_natan": -339.38
   },
   {
     "id": "9",
@@ -194,8 +186,7 @@
     "res_natan": 1520,
     "atu_cab": 4191.56,
     "atu_igor": 3447.56,
-    "atu_natan": 3952.31,
-    "pending": false
+    "atu_natan": 3952.31
   },
   {
     "id": "10",
@@ -216,8 +207,7 @@
     "res_natan": 2205,
     "atu_cab": 8086.59,
     "atu_igor": 5349.07,
-    "atu_natan": 8603.82,
-    "pending": false
+    "atu_natan": 8603.82
   },
   {
     "id": "11",
@@ -238,8 +228,7 @@
     "res_natan": 0,
     "atu_cab": 7568.84,
     "atu_igor": 3206.32,
-    "atu_natan": 6161.07,
-    "pending": false
+    "atu_natan": 6161.07
   },
   {
     "id": "12",
@@ -260,8 +249,7 @@
     "res_natan": 0,
     "atu_cab": 540.72,
     "atu_igor": 5878.2,
-    "atu_natan": 7612.95,
-    "pending": false
+    "atu_natan": 7612.95
   },
   {
     "id": "13",
@@ -282,8 +270,7 @@
     "res_natan": -3630,
     "atu_cab": 4475.19,
     "atu_igor": 13957.67,
-    "atu_natan": 6562.42,
-    "pending": false
+    "atu_natan": 6562.42
   },
   {
     "id": "14",
@@ -304,8 +291,7 @@
     "res_natan": -3700,
     "atu_cab": -1230.49,
     "atu_igor": 18551.99,
-    "atu_natan": -4718.21,
-    "pending": false
+    "atu_natan": -4718.21
   },
   {
     "id": "15",
@@ -326,8 +312,7 @@
     "res_natan": 175,
     "atu_cab": -5429.63,
     "atu_igor": 21397.85,
-    "atu_natan": -3637.35,
-    "pending": false
+    "atu_natan": -3637.35
   },
   {
     "id": "16",
@@ -348,8 +333,7 @@
     "res_natan": 2165,
     "atu_cab": -4163.41,
     "atu_igor": 20374.07,
-    "atu_natan": 523.87,
-    "pending": false
+    "atu_natan": 523.87
   },
   {
     "id": "17",
@@ -370,8 +354,7 @@
     "res_natan": 1517,
     "atu_cab": -4878.89,
     "atu_igor": 19576.59,
-    "atu_natan": 2280.39,
-    "pending": false
+    "atu_natan": 2280.39
   },
   {
     "id": "18",
@@ -392,8 +375,7 @@
     "res_natan": -1600,
     "atu_cab": -2777.69,
     "atu_igor": 27027.79,
-    "atu_natan": -7218.41,
-    "pending": false
+    "atu_natan": -7218.41
   },
   {
     "id": "19",
@@ -405,16 +387,15 @@
     "jp_resultado": 226,
     "receitas": 0,
     "despesas": -1806.41,
-    "liquido": null,
-    "ap_cab": null,
-    "ap_igor": null,
-    "ap_natan": null,
-    "res_cab": null,
-    "res_igor": null,
-    "res_natan": null,
-    "atu_cab": null,
-    "atu_igor": null,
-    "atu_natan": null,
-    "pending": true
+    "liquido": 1193.59,
+    "ap_cab": 0,
+    "ap_igor": 0,
+    "ap_natan": 0,
+    "res_cab": 0,
+    "res_igor": 0,
+    "res_natan": -1363,
+    "atu_cab": -2379.82,
+    "atu_igor": 27425.66,
+    "atu_natan": -8183.54
   }
 ]
