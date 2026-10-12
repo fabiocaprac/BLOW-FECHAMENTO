@@ -1,0 +1,407 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blow Poker Clube – Fechamento</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0f14;
+  --surface: #161922;
+  --surface2: #1e2330;
+  --border: #2a3045;
+  --text: #e2e8f0;
+  --muted: #8892a4;
+  --cab: #60a5fa;
+  --igor: #a78bfa;
+  --natan: #34d399;
+  --pos: #4ade80;
+  --neg: #f87171;
+  --rake: #fbbf24;
+  --jp: #fb923c;
+  --accent: #3b82f6;
+  --radius: 8px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.mono{font-family:'IBM Plex Mono',monospace}
+header{padding:20px 24px 0;border-bottom:1px solid var(--border)}
+header h1{font-size:1.3rem;font-weight:700;letter-spacing:.02em;color:#fff}
+header p{font-size:.8rem;color:var(--muted);margin-top:2px;padding-bottom:16px}
+.tabs{display:flex;gap:2px;padding:0 24px;background:var(--surface);border-bottom:1px solid var(--border)}
+.tab{padding:10px 18px;font-size:.85rem;font-weight:500;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s}
+.tab:hover{color:var(--text)}
+.tab.active{color:#fff;border-bottom-color:var(--accent)}
+.panel{display:none;padding:20px 24px}
+.panel.active{display:block}
+.kpi-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;min-width:140px;flex:1}
+.kpi label{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:4px}
+.kpi .val{font-family:'IBM Plex Mono',monospace;font-size:1.15rem;font-weight:500}
+.pos{color:var(--pos)}
+.neg{color:var(--neg)}
+.neu{color:var(--text)}
+.rake-c{color:var(--rake)}
+.jp-c{color:var(--jp)}
+.cab-c{color:var(--cab)}
+.igor-c{color:var(--igor)}
+.natan-c{color:var(--natan)}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+thead th{text-align:right;padding:8px 10px;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--border);font-weight:500}
+thead th:first-child{text-align:left}
+tbody tr:hover{background:var(--surface2)}
+tbody td{padding:8px 10px;border-bottom:1px solid #1e2330;vertical-align:middle}
+tbody td:not(:first-child){text-align:right;font-family:'IBM Plex Mono',monospace}
+.section-title{font-size:.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:20px 0 10px}
+.filter-row{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.filter-btn{padding:5px 14px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:.8rem;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:all .15s}
+.filter-btn:hover{border-color:var(--accent);color:var(--text)}
+.filter-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.expand-btn{background:none;border:none;cursor:pointer;color:var(--muted);font-size:.85rem;padding:2px 6px;border-radius:4px;transition:all .15s}
+.expand-btn:hover{color:var(--text);background:var(--border)}
+tr.detail-row{display:none}
+tr.detail-row.open{display:table-row}
+.detail-cell{padding:0!important;border-bottom:1px solid var(--border)!important}
+.detail-inner{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--surface);border-top:1px solid var(--border)}
+.det-section{padding:14px 16px}
+.det-section.full-span{grid-column:1/-1;border-top:1px solid var(--border)}
+.det-section-title{font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.det-section:first-child{border-right:1px solid var(--border)}
+.det-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;font-size:.82rem;gap:8px}
+.det-row .det-label{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.det-row .det-val{font-family:'IBM Plex Mono',monospace;white-space:nowrap;font-size:.82rem}
+.socio-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;flex-shrink:0}
+.cat-chip{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.72rem;margin:2px;background:var(--surface2);border:1px solid var(--border);color:var(--muted)}
+.link-icon{color:var(--accent);font-size:.8rem;text-decoration:none}
+.link-icon:hover{text-decoration:underline}
+body.sem-desp .desp{display:none!important}
+</style>
+</head>
+<body>
+<header>
+  <h1>🃏 Blow Poker Clube</h1>
+  <p>Fechamento Geral – Cash Game</p>
+  <div class="filter-row" style="margin:0 0 14px"><button id="btn-sem" class="filter-btn" onclick="setModo(true)">Carregar sem despesas</button><button id="btn-com" class="filter-btn active" onclick="setModo(false)">Carregar com despesas</button></div>
+</header>
+<div class="tabs">
+  <div class="tab active" onclick="showTab('geral')">Geral Cash</div>
+  <div class="tab" onclick="showTab('socio')">Por Sócio</div>
+  <div class="tab" onclick="showTab('aportes')">Aportes</div>
+  <div class="tab desp" onclick="showTab('despesas')">Despesas</div>
+  <div class="tab" onclick="showTab('fechamentos')">Fechamentos</div>
+</div>
+
+<div id="tab-geral" class="panel active"></div>
+<div id="tab-socio" class="panel"></div>
+<div id="tab-aportes" class="panel"></div>
+<div id="tab-despesas" class="panel"></div>
+<div id="tab-fechamentos" class="panel"></div>
+
+<script>
+const FECHAMENTOS = [{"id": "1", "ini": "9-set.", "fim": "14-set.", "rake": 48377, "jp25": 3983, "jp_saida": -2400, "jp_resultado": 1583, "receitas": 0, "despesas": -12528.42, "liquido": 37431.58, "ap_cab": -5920, "ap_igor": 12700, "ap_natan": 7754.75, "res_cab": 3500, "res_igor": -27670, "res_natan": -19800, "atu_cab": 9877.19, "atu_igor": -2492.81, "atu_natan": 151.94}, {"id": "2", "ini": "15-set.", "fim": "18-set.", "rake": 4320, "jp25": 356, "jp_saida": 0, "jp_resultado": 356, "receitas": 0, "despesas": -2933.74, "liquido": 1742.26, "ap_cab": 1375.67, "ap_igor": -2333.33, "ap_natan": -1578.33, "res_cab": -175, "res_igor": -2355, "res_natan": 2400, "atu_cab": 11658.62, "atu_igor": -6600.38, "atu_natan": 1554.37}, {"id": "3", "ini": "22-set.", "fim": "22-set.", "rake": 10900, "jp25": 550, "jp_saida": 0, "jp_resultado": 550, "receitas": 0, "despesas": -1455, "liquido": 9995, "ap_cab": -3000, "ap_igor": 0, "ap_natan": 310, "res_cab": 1000, "res_igor": 1300, "res_natan": -5000, "atu_cab": 12990.28, "atu_igor": -1968.72, "atu_natan": 196.03}, {"id": "4", "ini": "23-set.", "fim": "23-set.", "rake": 10525, "jp25": 493, "jp_saida": -1200, "jp_resultado": -707, "receitas": 0, "despesas": -13326.66, "liquido": -3508.66, "ap_cab": 0, "ap_igor": 0, "ap_natan": 0, "res_cab": -955, "res_igor": 4940, "res_natan": -5435, "atu_cab": 10695.73, "atu_igor": 1731.73, "atu_natan": -5658.52}, {"id": "5", "ini": "24-set.", "fim": "24-set.", "rake": 0, "jp25": 0, "jp_saida": 0, "jp_resultado": 0, "receitas": 0, "despesas": -2040, "liquido": -2040, "ap_cab": 0, "ap_igor": 0, "ap_natan": 0, "res_cab": 0, "res_igor": 0, "res_natan": 0, "atu_cab": 10015.73, "atu_igor": 1051.73, "atu_natan": -6338.52}, {"id": "6", "ini": "25-set.", "fim": "25-set.", "rake": 2492, "jp25": 272, "jp_saida": 0, "jp_resultado": 272, "receitas": 0, "despesas": -843, "liquido": 1921, "ap_cab": 0, "ap_igor": 0, "ap_natan": 0, "res_cab": 0, "res_igor": 0, "res_natan": -3045, "atu_cab": 10656.06, "atu_igor": 1692.06, "atu_natan": -8743.19}, {"id": "7", "ini": "27-set.", "fim": "27-set.", "rake": 17925, "jp25": 875, "jp_saida": -15127, "jp_resultado": -14252, "receitas": 0, "despesas": -1768.89, "liquido": 1904.11, "ap_cab": 0, "ap_igor": 0, "ap_natan": 10000, "res_cab": 0, "res_igor": 0, "res_natan": -1000, "atu_cab": 11290.77, "atu_igor": 2326.77, "atu_natan": 891.52}, {"id": "8", "ini": "28-set.", "fim": "28-set.", "rake": 4444, "jp25": 265, "jp_saida": 0, "jp_resultado": 265, "receitas": 0, "despesas": -2451.69, "liquido": 2257.31, "ap_cab": -16223.33, "ap_igor": -3083.33, "ap_natan": -3083.33, "res_cab": 0, "res_igor": -900, "res_natan": 1205, "atu_cab": -4345.13, "atu_igor": -904.13, "atu_natan": -339.38}, {"id": "9", "ini": "29-set.", "fim": "29-set.", "rake": 10814, "jp25": 438, "jp_saida": -500, "jp_resultado": -62, "receitas": 0, "despesas": -2196.94, "liquido": 8555.06, "ap_cab": 100, "ap_igor": 0, "ap_natan": 0, "res_cab": 5665, "res_igor": 1500, "res_natan": 1520, "atu_cab": 4191.56, "atu_igor": 3447.56, "atu_natan": 3952.31}, {"id": "10", "ini": "30-set.", "fim": "30-set.", "rake": 10275, "jp25": 500, "jp_saida": 0, "jp_resultado": 500, "receitas": 0, "despesas": -3570.48, "liquido": 7204.52, "ap_cab": 763.52, "ap_igor": 0, "ap_natan": 150, "res_cab": 835, "res_igor": -500, "res_natan": 2205, "atu_cab": 8086.59, "atu_igor": 5349.07, "atu_natan": 8603.82}, {"id": "11", "ini": "1-out.", "fim": "1-out.", "rake": 2809, "jp25": 207, "jp_saida": 0, "jp_resultado": 207, "receitas": 0, "despesas": -10344.23, "liquido": -7328.23, "ap_cab": 200, "ap_igor": 0, "ap_natan": 0, "res_cab": 1725, "res_igor": 600, "res_natan": 0, "atu_cab": 7568.84, "atu_igor": 3206.32, "atu_natan": 6161.07}, {"id": "12", "ini": "2-out.", "fim": "2-out.", "rake": 6012, "jp25": 303, "jp_saida": 0, "jp_resultado": 303, "receitas": 0, "despesas": -1959.38, "liquido": 4355.62, "ap_cab": -80, "ap_igor": 0, "ap_natan": 0, "res_cab": -8400, "res_igor": 1300, "res_natan": 0, "atu_cab": 540.72, "atu_igor": 5878.2, "atu_natan": 7612.95}, {"id": "13", "ini": "4-out.", "fim": "4-out.", "rake": 17755, "jp25": 825, "jp_saida": -5165, "jp_resultado": -4340, "receitas": 3114, "despesas": -8790.58, "liquido": 7738.42, "ap_cab": 0, "ap_igor": 0, "ap_natan": 0, "res_cab": 1355, "res_igor": 5500, "res_natan": -3630, "atu_cab": 4475.19, "atu_igor": 13957.67, "atu_natan": 6562.42}, {"id": "14", "ini": "5-out.", "fim": "5-out.", "rake": 10157, "jp25": 671, "jp_saida": -2575, "jp_resultado": -1904, "receitas": 721, "despesas": -2691.05, "liquido": 6282.95, "ap_cab": -300, "ap_igor": 0, "ap_natan": -9529.95, "res_cab": -7500, "res_igor": 2500, "res_natan": -3700, "atu_cab": -1230.49, "atu_igor": 18551.99, "atu_natan": -4718.21}, {"id": "15", "ini": "6-out.", "fim": "6-out.", "rake": 6068, "jp25": 350, "jp_saida": 0, "jp_resultado": 350, "receitas": 105, "despesas": -2935.41, "liquido": 3587.59, "ap_cab": 0, "ap_igor": 0, "ap_natan": 0, "res_cab": -5395, "res_igor": 1650, "res_natan": 175, "atu_cab": -5429.63, "atu_igor": 21397.85, "atu_natan": -3637.35}, {"id": "16", "ini": "7-out.", "fim": "7-out.", "rake": 13775, "jp25": 775, "jp_saida": -500, "jp_resultado": 275, "receitas": 302, "despesas": -7163.33, "liquido": 7188.67, "ap_cab": 150, "ap_igor": 0, "ap_natan": 0, "res_cab": -1280, "res_igor": -3420, "res_natan": 2165, "atu_cab": -4163.41, "atu_igor": 20374.07, "atu_natan": 523.87}, {"id": "17", "ini": "8-out.", "fim": "8-out.", "rake": 4062, "jp25": 234, "jp_saida": -400, "jp_resultado": -166, "receitas": 470, "despesas": -3272.44, "liquido": 1093.56, "ap_cab": 600, "ap_igor": 0, "ap_natan": 0, "res_cab": -1680, "res_igor": -1162, "res_natan": 1517, "atu_cab": -4878.89, "atu_igor": 19576.59, "atu_natan": 2280.39}, {"id": "18", "ini": "9-out.", "fim": "9-out.", "rake": 8617, "jp25": 355, "jp_saida": 0, "jp_resultado": 355, "receitas": 22, "despesas": -2690.4, "liquido": 6303.6, "ap_cab": 0, "ap_igor": 0, "ap_natan": -10000, "res_cab": 0, "res_igor": 5350, "res_natan": -1600, "atu_cab": -2777.69, "atu_igor": 27027.79, "atu_natan": -7218.41}, {"id": "19", "ini": "11-out.", "fim": "11-out.", "rake": 2774, "jp25": 226, "jp_saida": 0, "jp_resultado": 226, "receitas": 0, "despesas": -1806.41, "liquido": 0, "ap_cab": 0, "ap_igor": 0, "ap_natan": 0, "res_cab": 0, "res_igor": 0, "res_natan": 0, "atu_cab": 0, "atu_igor": 0, "atu_natan": 0}];
+const APORTES_CAB = [{"f": "1", "data": "9-set.", "orig": "SALDO", "dest": "VALE", "desc": "PG VALE - SERJAO", "val": -5000.0}, {"f": "1", "data": "9-set.", "orig": "CABELIM", "dest": "DESPESA", "desc": "PG DESPESA  PORTAO", "val": 80.0}, {"f": "1", "data": "9-set.", "orig": "RAKE", "dest": "CLUBE", "desc": "PG VALE - FERNANDES", "val": -1000.0}, {"f": "2", "data": "15-set.", "orig": "CABELIM", "dest": "CLUBE", "desc": "APORTE - OVER 50K", "val": 3409.0}, {"f": "2", "data": "15-set.", "orig": "FELIPE MARDEY", "dest": "CABELIM - APORTE", "desc": "TRASNFERENCIA SALDO", "val": 300.0}, {"f": "3", "data": "22-set.", "orig": "CABELIM", "dest": "VALE", "desc": "PG VALE SERJÃO", "val": -3000.0}, {"f": "8", "data": "28-set.", "orig": "CABELIM", "dest": "VALE", "desc": "PG VALE SERJÃO", "val": -5000.0}, {"f": "8", "data": "28-set.", "orig": "CABELIM", "dest": "VALE", "desc": "PG VALE SERJÃO", "val": -5880.0}, {"f": "8", "data": "28-set.", "orig": "CABELIM", "dest": "VALE", "desc": "PG VALE TETEU", "val": -5000.0}, {"f": "8", "data": "28-set.", "orig": "CABELIM", "dest": "SALDO", "desc": "PG SALDO PEDRO IGOR", "val": 2740.0}, {"f": "8", "data": "28-set.", "orig": "DESPESA", "dest": "VALE", "desc": "PG VALE GUGU", "val": -3083.33}, {"f": "9", "data": "29-set.", "orig": "MARDEY", "dest": "CABELIM", "desc": "TRASNFERENCIA SALDO - CX TORNEIO", "val": 100.0}, {"f": "10", "data": "30-set.", "orig": "CABELIM", "dest": "DESPESAS", "desc": "COMPRAS", "val": 400.0}, {"f": "10", "data": "30-set.", "orig": "CABELIM", "dest": "DESPESAS", "desc": "COMPRAS", "val": 100.0}, {"f": "10", "data": "30-set.", "orig": "CABELIM", "dest": "DESPESAS", "desc": "CERVEJAS", "val": 263.52}, {"f": "11", "data": "1-out.", "orig": "MARDEY", "dest": "CABELIM - APORTE", "desc": "TRASNFERENCIA SALDO", "val": 100.0}, {"f": "11", "data": "1-out.", "orig": "LEONARDO BRUNO", "dest": "CABELIM - APORTE", "desc": "TRASNFERENCIA SALDO", "val": 100.0}, {"f": "12", "data": "2-out.", "orig": "CABELIM", "dest": "VIVI TORNEIO", "desc": "TRANSFERENCIA DE SALDO", "val": -80.0}, {"f": "14", "data": "5-out.", "orig": "LEONARDO BRUNO", "dest": "CABELIM - APORTE", "desc": "TRASNFERENCIA SALDO", "val": 100.0}, {"f": "14", "data": "5-out.", "orig": "CABELIM", "dest": "PV", "desc": "TRANFERENCIA DE SALDO - CREDITO", "val": -500.0}, {"f": "14", "data": "5-out.", "orig": "MARDEY", "dest": "CABELIM", "desc": "TRANFERENCIA DE SALDO", "val": 100.0}, {"f": "16", "data": "7-out.", "orig": "RAY", "dest": "CABELIM", "desc": "TRASNFERENCIA SALDO", "val": 150.0}, {"f": "17", "data": "8-out.", "orig": "RAY", "dest": "CABELIM", "desc": "TRASNFERENCIA SALDO", "val": 150.0}, {"f": "17", "data": "8-out.", "orig": "LEONARDO BRUNO", "dest": "CABELIM", "desc": "TRANSFERENCIA DE SALDO", "val": 300.0}, {"f": "17", "data": "8-out.", "orig": "MARDEY", "dest": "CABELIM", "desc": "TRANSFERENCIA DE SALDO", "val": 100.0}, {"f": "17", "data": "8-out.", "orig": "CABELIM", "dest": "MARCUS AURELIO - ARU", "desc": "TRANSFERENCIA DE SALDO", "val": -50.0}];
+const APORTES_IGOR = [{"f": "2", "data": "15-set.", "orig": "IGOR", "dest": "DIVIDA", "desc": "PG RONALDO", "val": -2333.33}];
+const APORTES_NATAN = [];
+const APORTES_SOC = [{"f": "1", "data": "9-set.", "orig": "SALDO", "dest": "VALE", "desc": "PG VALE - SERJAO", "val": -5000.0}, {"f": "1", "data": "9-set.", "orig": "CABELIM", "dest": "DESPESA", "desc": "PG DESPESA  PORTAO", "val": 80.0}, {"f": "1", "data": "9-set.", "orig": "RAKE", "dest": "CLUBE", "desc": "PG VALE - FERNANDES", "val": -1000.0}, {"f": "2", "data": "15-set.", "orig": "IGOR", "dest": "DIVIDA", "desc": "PG RONALDO", "val": -2333.33}, {"f": "2", "data": "15-set.", "orig": "CABELIM", "dest": "CLUBE", "desc": "APORTE - OVER 50K", "val": 3409.0}, {"f": "2", "data": "15-set.", "orig": "FELIPE MARDEY", "dest": "CABELIM - APORTE", "desc": "TRASNFERENCIA SALDO", "val": 300.0}, {"f": "3", "data": "22-set.", "orig": "CABELIM", "dest": "VALE", "desc": "PG VALE SERJÃO", "val": -3000.0}, {"f": "8", "data": "28-set.", "orig": "CABELIM", "dest": "VALE", "desc": "PG VALE SERJÃO", "val": -5000.0}, {"f": "8", "data": "28-set.", "orig": "CABELIM", "dest": "VALE", "desc": "PG VALE SERJÃO", "val": -5880.0}, {"f": "8", "data": "28-set.", "orig": "CABELIM", "dest": "VALE", "desc": "PG VALE TETEU", "val": -5000.0}, {"f": "8", "data": "28-set.", "orig": "CABELIM", "dest": "SALDO", "desc": "PG SALDO PEDRO IGOR", "val": 2740.0}, {"f": "8", "data": "28-set.", "orig": "DESPESA", "dest": "VALE", "desc": "PG VALE GUGU", "val": -3083.33}, {"f": "9", "data": "29-set.", "orig": "MARDEY", "dest": "CABELIM", "desc": "TRASNFERENCIA SALDO - CX TORNEIO", "val": 100.0}, {"f": "10", "data": "30-set.", "orig": "CABELIM", "dest": "DESPESAS", "desc": "COMPRAS", "val": 400.0}, {"f": "10", "data": "30-set.", "orig": "CABELIM", "dest": "DESPESAS", "desc": "COMPRAS", "val": 100.0}, {"f": "10", "data": "30-set.", "orig": "CABELIM", "dest": "DESPESAS", "desc": "CERVEJAS", "val": 263.52}, {"f": "11", "data": "1-out.", "orig": "MARDEY", "dest": "CABELIM - APORTE", "desc": "TRASNFERENCIA SALDO", "val": 100.0}, {"f": "11", "data": "1-out.", "orig": "LEONARDO BRUNO", "dest": "CABELIM - APORTE", "desc": "TRASNFERENCIA SALDO", "val": 100.0}, {"f": "12", "data": "2-out.", "orig": "CABELIM", "dest": "VIVI TORNEIO", "desc": "TRANSFERENCIA DE SALDO", "val": -80.0}, {"f": "14", "data": "5-out.", "orig": "LEONARDO BRUNO", "dest": "CABELIM - APORTE", "desc": "TRASNFERENCIA SALDO", "val": 100.0}, {"f": "14", "data": "5-out.", "orig": "CABELIM", "dest": "PV", "desc": "TRANFERENCIA DE SALDO - CREDITO", "val": -500.0}, {"f": "14", "data": "5-out.", "orig": "MARDEY", "dest": "CABELIM", "desc": "TRANFERENCIA DE SALDO", "val": 100.0}, {"f": "16", "data": "7-out.", "orig": "RAY", "dest": "CABELIM", "desc": "TRASNFERENCIA SALDO", "val": 150.0}, {"f": "17", "data": "8-out.", "orig": "RAY", "dest": "CABELIM", "desc": "TRASNFERENCIA SALDO", "val": 150.0}, {"f": "17", "data": "8-out.", "orig": "LEONARDO BRUNO", "dest": "CABELIM", "desc": "TRANSFERENCIA DE SALDO", "val": 300.0}, {"f": "17", "data": "8-out.", "orig": "MARDEY", "dest": "CABELIM", "desc": "TRANSFERENCIA DE SALDO", "val": 100.0}, {"f": "17", "data": "8-out.", "orig": "CABELIM", "dest": "MARCUS AURELIO - ARU", "desc": "TRANSFERENCIA DE SALDO", "val": -50.0}];
+const DESPESAS = [{"f": "1", "cc": "DESPESA CASH", "val": -300.0}, {"f": "1", "cc": "DESPESA CASH", "val": -80.0}, {"f": "1", "cc": "Bonus / Promoções / Cortesias", "val": -100.0}, {"f": "1", "cc": "CMV - BAR / COZINHA / ESTOQUE", "val": -258.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -640.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -300.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -1220.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -1013.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -1006.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -819.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -476.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -468.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -454.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -350.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -280.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -248.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -167.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -97.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -80.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -71.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -70.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -50.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -50.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -860.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -696.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -1256.89}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -349.67}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -191.86}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -80.0}, {"f": "1", "cc": "DESPESAS DE CASH GAME", "val": -50.0}, {"f": "1", "cc": "DESPESAS OPERACIONAIS", "val": -195.0}, {"f": "1", "cc": "Farmácia", "val": -57.0}, {"f": "1", "cc": "RECEITA", "val": 95.0}, {"f": "1", "cc": "RECEITAS OPERACIONAIS", "val": -100.0}, {"f": "1", "cc": "Segurança e Limpeza", "val": -40.0}, {"f": "1", "cc": "STAFF - Limpeza", "val": -150.0}, {"f": "2", "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -63.0}, {"f": "2", "cc": "STAFF - Limpeza", "val": -150.0}, {"f": "2", "cc": "STAFF - Cozinheiro", "val": -160.0}, {"f": "2", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 120.0}, {"f": "2", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 20.0}, {"f": "2", "cc": "STAFF - Caixa (CASH)", "val": -150.0}, {"f": "2", "cc": "STAFF - Dealers (CASH)", "val": -240.0}, {"f": "2", "cc": "STAFF - Garcon / Garçonete", "val": -80.0}, {"f": "2", "cc": "DESPESAS DE CASH GAME", "val": -100.0}, {"f": "2", "cc": "DESPESAS DE CASH GAME", "val": -640.0}, {"f": "2", "cc": "Segurança e Limpeza", "val": -40.0}, {"f": "2", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 220.0}, {"f": "2", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": -10.0}, {"f": "2", "cc": "DESPESAS DE CASH GAME", "val": -75.0}, {"f": "2", "cc": "STAFF - Limpeza", "val": -150.0}, {"f": "2", "cc": "STAFF - Cozinheiro", "val": -160.0}, {"f": "2", "cc": "STAFF - Caixa (CASH)", "val": -150.0}, {"f": "2", "cc": "STAFF - Garcon / Garçonete", "val": -80.0}, {"f": "2", "cc": "STAFF - Dealers (CASH)", "val": -50.0}, {"f": "2", "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -148.0}, {"f": "2", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 30.0}, {"f": "2", "cc": "STAFF - Caixa (CASH)", "val": -75.0}, {"f": "2", "cc": "DESPESAS DE CASH GAME", "val": -80.0}, {"f": "2", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 10.0}, {"f": "2", "cc": "DESPESAS DE CASH GAME", "val": -540.0}, {"f": "2", "cc": "DESPESAS DE CASH GAME", "val": -152.74}, {"f": "2", "cc": "DESPESAS DE CASH GAME", "val": -40.0}, {"f": "3", "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -20.0}, {"f": "3", "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -310.0}, {"f": "3", "cc": "Serviço de Limpeza", "val": -150.0}, {"f": "3", "cc": "STAFF - Cozinheiro", "val": -160.0}, {"f": "3", "cc": "DESPESAS DE CASH GAME", "val": -300.0}, {"f": "3", "cc": "STAFF - Garcon / Garçonete", "val": -80.0}, {"f": "3", "cc": "STAFF - Caixa (CASH)", "val": -150.0}, {"f": "3", "cc": "STAFF - Dealers (CASH)", "val": -160.0}, {"f": "3", "cc": "STAFF - Dealers (CASH)", "val": -125.0}, {"f": "4", "cc": "DESPESAS DE CASH GAME", "val": -496.88}, {"f": "4", "cc": "DESPESAS DE CASH GAME", "val": -1200.0}, {"f": "4", "cc": "DESPESAS DE CASH GAME", "val": -300.0}, {"f": "4", "cc": "Aluguel, Água, Luz e Internet do Clube", "val": -9250.0}, {"f": "4", "cc": "DESPESAS DE CASH GAME", "val": -260.59}, {"f": "4", "cc": "DESPESAS DE CASH GAME", "val": -391.2}, {"f": "4", "cc": "RECEITAS DE CASH GAME", "val": -252.78}, {"f": "4", "cc": "DESPESAS DE CASH GAME", "val": -210.27}, {"f": "4", "cc": "Segurança e Limpeza", "val": -40.0}, {"f": "4", "cc": "DESPESAS DE CASH GAME", "val": -19.94}, {"f": "4", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 90.0}, {"f": "4", "cc": "DESPESAS DE CASH GAME", "val": -895.0}, {"f": "4", "cc": "DESPESAS DE CASH GAME", "val": -100.0}, {"f": "5", "cc": "STAFF - Caixa (CASH)", "val": -150.0}, {"f": "5", "cc": "STAFF - Limpeza", "val": -150.0}, {"f": "5", "cc": "STAFF - Cozinheiro", "val": -160.0}, {"f": "5", "cc": "STAFF - Dealers (CASH)", "val": -100.0}, {"f": "5", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 100.0}, {"f": "5", "cc": "RECEITAS DE CASH GAME", "val": -80.0}, {"f": "5", "cc": "RECEITAS OPERACIONAIS", "val": -1500.0}, {"f": "6", "cc": "DESPESAS DE CASH GAME", "val": -63.0}, {"f": "6", "cc": "DESPESAS DE CASH GAME", "val": -780.0}, {"f": "7", "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -90.0}, {"f": "7", "cc": "STAFF - Limpeza", "val": -150.0}, {"f": "7", "cc": "STAFF - Cozinheiro", "val": -150.0}, {"f": "7", "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -520.0}, {"f": "7", "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -123.89}, {"f": "7", "cc": "STAFF - Dealers (CASH)", "val": -160.0}, {"f": "7", "cc": "STAFF - Churrasqueiro", "val": -150.0}, {"f": "7", "cc": "STAFF - Caixa (CASH)", "val": -150.0}, {"f": "7", "cc": "STAFF - Dealers (CASH)", "val": -80.0}, {"f": "7", "cc": "STAFF - Caixa (CASH)", "val": -75.0}, {"f": "7", "cc": "DESPESAS DE CASH GAME", "val": -120.0}, {"f": "8", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 550.0}, {"f": "8", "cc": "Serviço de Limpeza", "val": -10.0}, {"f": "8", "cc": "DESPESAS DE CASH GAME", "val": -183.65}, {"f": "8", "cc": "DESPESAS DE CASH GAME", "val": -14.95}, {"f": "8", "cc": "DESPESAS DE CASH GAME", "val": -100.0}, {"f": "8", "cc": "DESPESAS DE CASH GAME", "val": -700.0}, {"f": "8", "cc": "DESPESAS DE TORNEIO", "val": -1400.0}, {"f": "8", "cc": "DESPESAS DE CASH GAME", "val": -252.78}, {"f": "8", "cc": "DESPESAS DE CASH GAME", "val": -350.31}, {"f": "8", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 5.0}, {"f": "8", "cc": "Segurança e Limpeza", "val": -20.0}, {"f": "8", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 25.0}, {"f": "9", "cc": "DESPESAS DE CASH GAME", "val": -28.0}, {"f": "9", "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -309.7}, {"f": "9", "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -89.06}, {"f": "9", "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -230.85}, {"f": "9", "cc": "DESPESAS DE CASH GAME", "val": -230.0}, {"f": "9", "cc": "STAFF - Limpeza", "val": -150.0}, {"f": "9", "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -68.0}, {"f": "9", "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -541.33}, {"f": "9", "cc": "STAFF - Cozinheiro", "val": -160.0}, {"f": "9", "cc": "STAFF - Dealers (CASH)", "val": -160.0}, {"f": "9", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 80.0}, {"f": "9", "cc": "STAFF - Garcon / Garçonete", "val": -80.0}, {"f": "9", "cc": "STAFF - Caixa (CASH)", "val": -150.0}, {"f": "9", "cc": "DESPESAS DE CASH GAME", "val": -80.0}, {"f": "10", "cc": "DESPESAS DE CASH GAME", "val": -600.0}, {"f": "10", "cc": "Segurança e Limpeza", "val": -1200.0}, {"f": "10", "cc": "DESPESAS DE CASH GAME", "val": -125.0}, {"f": "10", "cc": "DESPESAS DE CASH GAME", "val": -389.0}, {"f": "10", "cc": "DESPESAS DE CASH GAME", "val": -137.75}, {"f": "10", "cc": "Segurança e Limpeza", "val": -10.0}, {"f": "10", "cc": "DESPESAS DE CASH GAME", "val": -45.0}, {"f": "10", "cc": "DESPESAS DE CASH GAME", "val": -780.0}, {"f": "10", "cc": "DESPESAS DE CASH GAME", "val": -27.98}, {"f": "10", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 190.0}, {"f": "10", "cc": "DESPESAS DE CASH GAME", "val": -35.75}, {"f": "10", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 1.73}, {"f": "10", "cc": "DESPESAS DE CASH GAME", "val": -100.0}, {"f": "10", "cc": "RECEITAS DE CASH GAME", "val": -120.0}, {"f": "11", "cc": "DESPESAS E ACERTOS POR FORA", "val": -6250.0}, {"f": "11", "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -70.0}, {"f": "11", "cc": "DESPESAS DE CASH GAME", "val": -434.84}, {"f": "11", "cc": "DESPESAS DE CASH GAME", "val": -18.0}, {"f": "11", "cc": "DESPESAS DE CASH GAME", "val": -33.65}, {"f": "11", "cc": "DESPESAS DE CASH GAME", "val": -432.96}, {"f": "11", "cc": "DESPESAS DE CASH GAME", "val": -278.64}, {"f": "11", "cc": "DESPESAS DE CASH GAME", "val": -552.33}, {"f": "11", "cc": "RECEITAS OPERACIONAIS", "val": -100.0}, {"f": "11", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 100.0}, {"f": "11", "cc": "DESPESAS DE CASH GAME", "val": -60.29}, {"f": "11", "cc": "DESPESAS DE CASH GAME", "val": -263.52}, {"f": "11", "cc": "DESPESAS DE CASH GAME", "val": -150.0}, {"f": "11", "cc": "STAFF - Cozinheiro", "val": -160.0}, {"f": "11", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 40.0}, {"f": "11", "cc": "DESPESAS DE CASH GAME", "val": -1420.0}, {"f": "11", "cc": "STAFF - Dealers (CASH)", "val": -160.0}, {"f": "11", "cc": "STAFF - Garcon / Garçonete", "val": -80.0}, {"f": "11", "cc": "RECEITAS OPERACIONAIS", "val": -150.0}, {"f": "11", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 200.0}, {"f": "11", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 10.0}, {"f": "11", "cc": "RECEITAS DE CASH GAME", "val": -80.0}, {"f": "12", "cc": "DESPESAS DE CASH GAME", "val": -538.0}, {"f": "12", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 10.0}, {"f": "12", "cc": "RECEITAS OPERACIONAIS", "val": -312.66}, {"f": "12", "cc": "DESPESAS DE CASH GAME", "val": -74.52}, {"f": "12", "cc": "DESPESAS DE CASH GAME", "val": -454.86}, {"f": "12", "cc": "Segurança e Limpeza", "val": -10.0}, {"f": "12", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 200.0}, {"f": "12", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 0.66}, {"f": "12", "cc": "DESPESAS DE CASH GAME", "val": -700.0}, {"f": "12", "cc": "DESPESAS DE CASH GAME", "val": -80.0}, {"f": "13", "cc": "DESPESAS DE CASH GAME", "val": -1500.0}, {"f": "13", "cc": "DESPESAS DE CASH GAME", "val": -353.0}, {"f": "13", "cc": "DESPESAS DE CASH GAME", "val": -500.0}, {"f": "13", "cc": "DESPESAS DE CASH GAME", "val": -367.85}, {"f": "13", "cc": "DESPESAS DE CASH GAME", "val": -155.57}, {"f": "13", "cc": "RECEITAS OPERACIONAIS", "val": -321.58}, {"f": "13", "cc": "DESPESAS DE CASH GAME", "val": -18.32}, {"f": "13", "cc": "DESPESAS DE CASH GAME", "val": -150.0}, {"f": "13", "cc": "DESPESAS DE CASH GAME", "val": -170.0}, {"f": "13", "cc": "RECEITAS OPERACIONAIS", "val": -1185.0}, {"f": "13", "cc": "RECEITAS OPERACIONAIS", "val": -400.0}, {"f": "13", "cc": "DESPESAS DE CASH GAME", "val": -250.0}, {"f": "13", "cc": "DESPESAS DE CASH GAME", "val": -240.0}, {"f": "13", "cc": "DESPESAS DE CASH GAME", "val": -225.0}, {"f": "13", "cc": "DESPESAS DE CASH GAME", "val": -120.0}, {"f": "13", "cc": "RECEITAS DE CASH GAME", "val": 714.0}, {"f": "13", "cc": "STACKING", "val": 2400.0}, {"f": "13", "cc": "DESPESAS DE TORNEIO", "val": -500.0}, {"f": "13", "cc": "DESPESAS DE CASH GAME", "val": -1080.0}, {"f": "13", "cc": "DESPESAS DE CASH GAME", "val": -286.96}, {"f": "13", "cc": "DESPESAS DE CASH GAME", "val": -429.2}, {"f": "13", "cc": "RECEITAS OPERACIONAIS", "val": -488.1}, {"f": "13", "cc": "DESPESAS DE CASH GAME", "val": -50.0}, {"f": "14", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 470.05}, {"f": "14", "cc": "DESPESAS DE CASH GAME", "val": -231.0}, {"f": "14", "cc": "DESPESAS DE CASH GAME", "val": -50.0}, {"f": "14", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 25.0}, {"f": "14", "cc": "DESPESAS DE CASH GAME", "val": -10.0}, {"f": "14", "cc": "DESPESAS DE CASH GAME", "val": 50.0}, {"f": "14", "cc": "STACKING", "val": -1000.0}, {"f": "14", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 502.0}, {"f": "14", "cc": "DESPESAS DE CASH GAME", "val": -930.0}, {"f": "15", "cc": "DESPESAS DE CASH GAME", "val": -63.0}, {"f": "14", "cc": "RECEITAS DE CASH GAME", "val": 144.0}, {"f": "15", "cc": "DESPESAS DE CASH GAME", "val": -100.0}, {"f": "15", "cc": "DESPESAS DE CASH GAME", "val": -850.0}, {"f": "15", "cc": "DESPESAS DE CASH GAME", "val": -369.19}, {"f": "15", "cc": "DESPESAS DE CASH GAME", "val": -107.91}, {"f": "15", "cc": "DESPESAS DE CASH GAME", "val": -400.31}, {"f": "15", "cc": "DESPESAS DE CASH GAME", "val": -5.0}, {"f": "15", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 5.0}, {"f": "15", "cc": "DESPESAS DE CASH GAME", "val": -125.0}, {"f": "15", "cc": "DESPESAS DE CASH GAME", "val": -700.0}, {"f": "15", "cc": "DESPESAS DE CASH GAME", "val": -115.0}, {"f": "15", "cc": "RECEITAS DE CASH GAME", "val": 100.0}, {"f": "15", "cc": "DESPESAS DE CASH GAME", "val": -100.0}, {"f": "16", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 300.0}, {"f": "16", "cc": "DESPESAS DE CASH GAME", "val": -108.0}, {"f": "16", "cc": "DESPESAS DE CASH GAME", "val": -200.0}, {"f": "16", "cc": "DESPESAS DE CASH GAME", "val": -132.0}, {"f": "16", "cc": "DESPESAS DE CASH GAME", "val": -700.0}, {"f": "16", "cc": "Segurança e Limpeza", "val": -1440.0}, {"f": "16", "cc": "DESPESAS DE CASH GAME", "val": -423.85}, {"f": "16", "cc": "DESPESAS DE CASH GAME", "val": 196.98}, {"f": "16", "cc": "DESPESAS DE CASH GAME", "val": -1000.0}, {"f": "16", "cc": "DESPESAS DE CASH GAME", "val": -5.0}, {"f": "16", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 2.0}, {"f": "16", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": -1670.0}, {"f": "16", "cc": "STACKING", "val": -992.5}, {"f": "16", "cc": "DESPESAS DE CASH GAME", "val": -195.0}, {"f": "16", "cc": "DESPESAS DE CASH GAME", "val": -100.0}, {"f": "17", "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -754.27}, {"f": "17", "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -502.55}, {"f": "17", "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -91.42}, {"f": "17", "cc": "DESPESAS DE CASH GAME", "val": -50.0}, {"f": "17", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 100.0}, {"f": "17", "cc": "RECEITAS OPERACIONAIS", "val": -80.0}, {"f": "17", "cc": "RECEITAS OPERACIONAIS", "val": -47.2}, {"f": "17", "cc": "RECEITAS OPERACIONAIS", "val": -50.0}, {"f": "17", "cc": "RECEITAS OPERACIONAIS", "val": -50.0}, {"f": "17", "cc": "RECEITAS OPERACIONAIS", "val": -50.0}, {"f": "17", "cc": "STAFF - Limpeza", "val": -150.0}, {"f": "17", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 200.0}, {"f": "17", "cc": "STAFF - Cozinheiro", "val": -160.0}, {"f": "17", "cc": "STAFF - Dealers (CASH)", "val": -240.0}, {"f": "17", "cc": "RECEITAS OPERACIONAIS", "val": -40.0}, {"f": "17", "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -627.0}, {"f": "17", "cc": "RECEITAS OPERACIONAIS", "val": -70.0}, {"f": "17", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 20.0}, {"f": "17", "cc": "STAFF - Garcon / Garçonete", "val": -160.0}, {"f": "17", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 50.0}, {"f": "17", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 35.0}, {"f": "17", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 50.0}, {"f": "17", "cc": "STAFF - Caixa (CASH)", "val": -150.0}, {"f": "17", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 15.0}, {"f": "18", "cc": "DESPESAS DE CASH GAME", "val": -15.0}, {"f": "18", "cc": "Fundo de Caixa / Aportes / Sangrias", "val": 22.0}, {"f": "18", "cc": "STAFF - Limpeza", "val": -150.0}, {"f": "18", "cc": "RECEITAS OPERACIONAIS", "val": -500.0}, {"f": "18", "cc": "RECEITAS OPERACIONAIS", "val": -25.0}, {"f": "18", "cc": "RECEITAS OPERACIONAIS", "val": -156.68}, {"f": "18", "cc": "RECEITAS OPERACIONAIS", "val": -52.72}, {"f": "18", "cc": "STAFF - Cozinheiro", "val": -160.0}, {"f": "18", "cc": "STAFF - Dealers (CASH)", "val": -160.0}, {"f": "18", "cc": "RECEITAS OPERACIONAIS", "val": -696.0}, {"f": "18", "cc": "STAFF - Garcon / Garçonete", "val": -160.0}, {"f": "18", "cc": "STAFF - Caixa (CASH)", "val": -225.0}, {"f": "18", "cc": "RECEITAS OPERACIONAIS", "val": -40.0}, {"f": "18", "cc": "DESPESAS DE CASH GAME", "val": -350.0}];
+const ABF = {"1": [{"orig": "SALDO", "dest": "VALE", "desc": "PG VALE - SERJAO", "val": -5000.0}, {"orig": "CABELIM", "dest": "DESPESA", "desc": "PG DESPESA  PORTAO", "val": 80.0}, {"orig": "RAKE", "dest": "CLUBE", "desc": "PG VALE - FERNANDES", "val": -1000.0}], "2": [{"orig": "IGOR", "dest": "DIVIDA", "desc": "PG RONALDO", "val": -2333.33}, {"orig": "CABELIM", "dest": "CLUBE", "desc": "APORTE - OVER 50K", "val": 3409.0}, {"orig": "FELIPE MARDEY", "dest": "CABELIM - APORTE", "desc": "TRASNFERENCIA SALDO", "val": 300.0}], "3": [{"orig": "CABELIM", "dest": "VALE", "desc": "PG VALE SERJÃO", "val": -3000.0}], "8": [{"orig": "CABELIM", "dest": "VALE", "desc": "PG VALE SERJÃO", "val": -5000.0}, {"orig": "CABELIM", "dest": "VALE", "desc": "PG VALE SERJÃO", "val": -5880.0}, {"orig": "CABELIM", "dest": "VALE", "desc": "PG VALE TETEU", "val": -5000.0}, {"orig": "CABELIM", "dest": "SALDO", "desc": "PG SALDO PEDRO IGOR", "val": 2740.0}, {"orig": "DESPESA", "dest": "VALE", "desc": "PG VALE GUGU", "val": -3083.33}], "9": [{"orig": "MARDEY", "dest": "CABELIM", "desc": "TRASNFERENCIA SALDO - CX TORNEIO", "val": 100.0}], "10": [{"orig": "CABELIM", "dest": "DESPESAS", "desc": "COMPRAS", "val": 400.0}, {"orig": "CABELIM", "dest": "DESPESAS", "desc": "COMPRAS", "val": 100.0}, {"orig": "CABELIM", "dest": "DESPESAS", "desc": "CERVEJAS", "val": 263.52}], "11": [{"orig": "MARDEY", "dest": "CABELIM - APORTE", "desc": "TRASNFERENCIA SALDO", "val": 100.0}, {"orig": "LEONARDO BRUNO", "dest": "CABELIM - APORTE", "desc": "TRASNFERENCIA SALDO", "val": 100.0}], "12": [{"orig": "CABELIM", "dest": "VIVI TORNEIO", "desc": "TRANSFERENCIA DE SALDO", "val": -80.0}], "14": [{"orig": "LEONARDO BRUNO", "dest": "CABELIM - APORTE", "desc": "TRASNFERENCIA SALDO", "val": 100.0}, {"orig": "CABELIM", "dest": "PV", "desc": "TRANFERENCIA DE SALDO - CREDITO", "val": -500.0}, {"orig": "MARDEY", "dest": "CABELIM", "desc": "TRANFERENCIA DE SALDO", "val": 100.0}], "16": [{"orig": "RAY", "dest": "CABELIM", "desc": "TRASNFERENCIA SALDO", "val": 150.0}], "17": [{"orig": "RAY", "dest": "CABELIM", "desc": "TRASNFERENCIA SALDO", "val": 150.0}, {"orig": "LEONARDO BRUNO", "dest": "CABELIM", "desc": "TRANSFERENCIA DE SALDO", "val": 300.0}, {"orig": "MARDEY", "dest": "CABELIM", "desc": "TRANSFERENCIA DE SALDO", "val": 100.0}, {"orig": "CABELIM", "dest": "MARCUS AURELIO - ARU", "desc": "TRANSFERENCIA DE SALDO", "val": -50.0}]};
+const DBF = {"1": [{"cc": "DESPESA CASH", "val": -300.0}, {"cc": "DESPESA CASH", "val": -80.0}, {"cc": "Bonus / Promoções / Cortesias", "val": -100.0}, {"cc": "CMV - BAR / COZINHA / ESTOQUE", "val": -258.0}, {"cc": "DESPESAS DE CASH GAME", "val": -640.0}, {"cc": "DESPESAS DE CASH GAME", "val": -300.0}, {"cc": "DESPESAS DE CASH GAME", "val": -1220.0}, {"cc": "DESPESAS DE CASH GAME", "val": -1013.0}, {"cc": "DESPESAS DE CASH GAME", "val": -1006.0}, {"cc": "DESPESAS DE CASH GAME", "val": -819.0}, {"cc": "DESPESAS DE CASH GAME", "val": -476.0}, {"cc": "DESPESAS DE CASH GAME", "val": -468.0}, {"cc": "DESPESAS DE CASH GAME", "val": -454.0}, {"cc": "DESPESAS DE CASH GAME", "val": -350.0}, {"cc": "DESPESAS DE CASH GAME", "val": -280.0}, {"cc": "DESPESAS DE CASH GAME", "val": -248.0}, {"cc": "DESPESAS DE CASH GAME", "val": -167.0}, {"cc": "DESPESAS DE CASH GAME", "val": -97.0}, {"cc": "DESPESAS DE CASH GAME", "val": -80.0}, {"cc": "DESPESAS DE CASH GAME", "val": -71.0}, {"cc": "DESPESAS DE CASH GAME", "val": -70.0}, {"cc": "DESPESAS DE CASH GAME", "val": -50.0}, {"cc": "DESPESAS DE CASH GAME", "val": -50.0}, {"cc": "DESPESAS DE CASH GAME", "val": -860.0}, {"cc": "DESPESAS DE CASH GAME", "val": -696.0}, {"cc": "DESPESAS DE CASH GAME", "val": -1256.89}, {"cc": "DESPESAS DE CASH GAME", "val": -349.67}, {"cc": "DESPESAS DE CASH GAME", "val": -191.86}, {"cc": "DESPESAS DE CASH GAME", "val": -80.0}, {"cc": "DESPESAS DE CASH GAME", "val": -50.0}, {"cc": "DESPESAS OPERACIONAIS", "val": -195.0}, {"cc": "Farmácia", "val": -57.0}, {"cc": "RECEITA", "val": 95.0}, {"cc": "RECEITAS OPERACIONAIS", "val": -100.0}, {"cc": "Segurança e Limpeza", "val": -40.0}, {"cc": "STAFF - Limpeza", "val": -150.0}], "2": [{"cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -63.0}, {"cc": "STAFF - Limpeza", "val": -150.0}, {"cc": "STAFF - Cozinheiro", "val": -160.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 120.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 20.0}, {"cc": "STAFF - Caixa (CASH)", "val": -150.0}, {"cc": "STAFF - Dealers (CASH)", "val": -240.0}, {"cc": "STAFF - Garcon / Garçonete", "val": -80.0}, {"cc": "DESPESAS DE CASH GAME", "val": -100.0}, {"cc": "DESPESAS DE CASH GAME", "val": -640.0}, {"cc": "Segurança e Limpeza", "val": -40.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 220.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": -10.0}, {"cc": "DESPESAS DE CASH GAME", "val": -75.0}, {"cc": "STAFF - Limpeza", "val": -150.0}, {"cc": "STAFF - Cozinheiro", "val": -160.0}, {"cc": "STAFF - Caixa (CASH)", "val": -150.0}, {"cc": "STAFF - Garcon / Garçonete", "val": -80.0}, {"cc": "STAFF - Dealers (CASH)", "val": -50.0}, {"cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -148.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 30.0}, {"cc": "STAFF - Caixa (CASH)", "val": -75.0}, {"cc": "DESPESAS DE CASH GAME", "val": -80.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 10.0}, {"cc": "DESPESAS DE CASH GAME", "val": -540.0}, {"cc": "DESPESAS DE CASH GAME", "val": -152.74}, {"cc": "DESPESAS DE CASH GAME", "val": -40.0}], "3": [{"cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -20.0}, {"cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -310.0}, {"cc": "Serviço de Limpeza", "val": -150.0}, {"cc": "STAFF - Cozinheiro", "val": -160.0}, {"cc": "DESPESAS DE CASH GAME", "val": -300.0}, {"cc": "STAFF - Garcon / Garçonete", "val": -80.0}, {"cc": "STAFF - Caixa (CASH)", "val": -150.0}, {"cc": "STAFF - Dealers (CASH)", "val": -160.0}, {"cc": "STAFF - Dealers (CASH)", "val": -125.0}], "4": [{"cc": "DESPESAS DE CASH GAME", "val": -496.88}, {"cc": "DESPESAS DE CASH GAME", "val": -1200.0}, {"cc": "DESPESAS DE CASH GAME", "val": -300.0}, {"cc": "Aluguel, Água, Luz e Internet do Clube", "val": -9250.0}, {"cc": "DESPESAS DE CASH GAME", "val": -260.59}, {"cc": "DESPESAS DE CASH GAME", "val": -391.2}, {"cc": "RECEITAS DE CASH GAME", "val": -252.78}, {"cc": "DESPESAS DE CASH GAME", "val": -210.27}, {"cc": "Segurança e Limpeza", "val": -40.0}, {"cc": "DESPESAS DE CASH GAME", "val": -19.94}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 90.0}, {"cc": "DESPESAS DE CASH GAME", "val": -895.0}, {"cc": "DESPESAS DE CASH GAME", "val": -100.0}], "5": [{"cc": "STAFF - Caixa (CASH)", "val": -150.0}, {"cc": "STAFF - Limpeza", "val": -150.0}, {"cc": "STAFF - Cozinheiro", "val": -160.0}, {"cc": "STAFF - Dealers (CASH)", "val": -100.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 100.0}, {"cc": "RECEITAS DE CASH GAME", "val": -80.0}, {"cc": "RECEITAS OPERACIONAIS", "val": -1500.0}], "6": [{"cc": "DESPESAS DE CASH GAME", "val": -63.0}, {"cc": "DESPESAS DE CASH GAME", "val": -780.0}], "7": [{"cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -90.0}, {"cc": "STAFF - Limpeza", "val": -150.0}, {"cc": "STAFF - Cozinheiro", "val": -150.0}, {"cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -520.0}, {"cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -123.89}, {"cc": "STAFF - Dealers (CASH)", "val": -160.0}, {"cc": "STAFF - Churrasqueiro", "val": -150.0}, {"cc": "STAFF - Caixa (CASH)", "val": -150.0}, {"cc": "STAFF - Dealers (CASH)", "val": -80.0}, {"cc": "STAFF - Caixa (CASH)", "val": -75.0}, {"cc": "DESPESAS DE CASH GAME", "val": -120.0}], "8": [{"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 550.0}, {"cc": "Serviço de Limpeza", "val": -10.0}, {"cc": "DESPESAS DE CASH GAME", "val": -183.65}, {"cc": "DESPESAS DE CASH GAME", "val": -14.95}, {"cc": "DESPESAS DE CASH GAME", "val": -100.0}, {"cc": "DESPESAS DE CASH GAME", "val": -700.0}, {"cc": "DESPESAS DE TORNEIO", "val": -1400.0}, {"cc": "DESPESAS DE CASH GAME", "val": -252.78}, {"cc": "DESPESAS DE CASH GAME", "val": -350.31}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 5.0}, {"cc": "Segurança e Limpeza", "val": -20.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 25.0}], "9": [{"cc": "DESPESAS DE CASH GAME", "val": -28.0}, {"cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -309.7}, {"cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -89.06}, {"cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -230.85}, {"cc": "DESPESAS DE CASH GAME", "val": -230.0}, {"cc": "STAFF - Limpeza", "val": -150.0}, {"cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -68.0}, {"cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -541.33}, {"cc": "STAFF - Cozinheiro", "val": -160.0}, {"cc": "STAFF - Dealers (CASH)", "val": -160.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 80.0}, {"cc": "STAFF - Garcon / Garçonete", "val": -80.0}, {"cc": "STAFF - Caixa (CASH)", "val": -150.0}, {"cc": "DESPESAS DE CASH GAME", "val": -80.0}], "10": [{"cc": "DESPESAS DE CASH GAME", "val": -600.0}, {"cc": "Segurança e Limpeza", "val": -1200.0}, {"cc": "DESPESAS DE CASH GAME", "val": -125.0}, {"cc": "DESPESAS DE CASH GAME", "val": -389.0}, {"cc": "DESPESAS DE CASH GAME", "val": -137.75}, {"cc": "Segurança e Limpeza", "val": -10.0}, {"cc": "DESPESAS DE CASH GAME", "val": -45.0}, {"cc": "DESPESAS DE CASH GAME", "val": -780.0}, {"cc": "DESPESAS DE CASH GAME", "val": -27.98}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 190.0}, {"cc": "DESPESAS DE CASH GAME", "val": -35.75}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 1.73}, {"cc": "DESPESAS DE CASH GAME", "val": -100.0}, {"cc": "RECEITAS DE CASH GAME", "val": -120.0}], "11": [{"cc": "DESPESAS E ACERTOS POR FORA", "val": -6250.0}, {"cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -70.0}, {"cc": "DESPESAS DE CASH GAME", "val": -434.84}, {"cc": "DESPESAS DE CASH GAME", "val": -18.0}, {"cc": "DESPESAS DE CASH GAME", "val": -33.65}, {"cc": "DESPESAS DE CASH GAME", "val": -432.96}, {"cc": "DESPESAS DE CASH GAME", "val": -278.64}, {"cc": "DESPESAS DE CASH GAME", "val": -552.33}, {"cc": "RECEITAS OPERACIONAIS", "val": -100.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 100.0}, {"cc": "DESPESAS DE CASH GAME", "val": -60.29}, {"cc": "DESPESAS DE CASH GAME", "val": -263.52}, {"cc": "DESPESAS DE CASH GAME", "val": -150.0}, {"cc": "STAFF - Cozinheiro", "val": -160.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 40.0}, {"cc": "DESPESAS DE CASH GAME", "val": -1420.0}, {"cc": "STAFF - Dealers (CASH)", "val": -160.0}, {"cc": "STAFF - Garcon / Garçonete", "val": -80.0}, {"cc": "RECEITAS OPERACIONAIS", "val": -150.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 200.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 10.0}, {"cc": "RECEITAS DE CASH GAME", "val": -80.0}], "12": [{"cc": "DESPESAS DE CASH GAME", "val": -538.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 10.0}, {"cc": "RECEITAS OPERACIONAIS", "val": -312.66}, {"cc": "DESPESAS DE CASH GAME", "val": -74.52}, {"cc": "DESPESAS DE CASH GAME", "val": -454.86}, {"cc": "Segurança e Limpeza", "val": -10.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 200.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 0.66}, {"cc": "DESPESAS DE CASH GAME", "val": -700.0}, {"cc": "DESPESAS DE CASH GAME", "val": -80.0}], "13": [{"cc": "DESPESAS DE CASH GAME", "val": -1500.0}, {"cc": "DESPESAS DE CASH GAME", "val": -353.0}, {"cc": "DESPESAS DE CASH GAME", "val": -500.0}, {"cc": "DESPESAS DE CASH GAME", "val": -367.85}, {"cc": "DESPESAS DE CASH GAME", "val": -155.57}, {"cc": "RECEITAS OPERACIONAIS", "val": -321.58}, {"cc": "DESPESAS DE CASH GAME", "val": -18.32}, {"cc": "DESPESAS DE CASH GAME", "val": -150.0}, {"cc": "DESPESAS DE CASH GAME", "val": -170.0}, {"cc": "RECEITAS OPERACIONAIS", "val": -1185.0}, {"cc": "RECEITAS OPERACIONAIS", "val": -400.0}, {"cc": "DESPESAS DE CASH GAME", "val": -250.0}, {"cc": "DESPESAS DE CASH GAME", "val": -240.0}, {"cc": "DESPESAS DE CASH GAME", "val": -225.0}, {"cc": "DESPESAS DE CASH GAME", "val": -120.0}, {"cc": "RECEITAS DE CASH GAME", "val": 714.0}, {"cc": "STACKING", "val": 2400.0}, {"cc": "DESPESAS DE TORNEIO", "val": -500.0}, {"cc": "DESPESAS DE CASH GAME", "val": -1080.0}, {"cc": "DESPESAS DE CASH GAME", "val": -286.96}, {"cc": "DESPESAS DE CASH GAME", "val": -429.2}, {"cc": "RECEITAS OPERACIONAIS", "val": -488.1}, {"cc": "DESPESAS DE CASH GAME", "val": -50.0}], "14": [{"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 470.05}, {"cc": "DESPESAS DE CASH GAME", "val": -231.0}, {"cc": "DESPESAS DE CASH GAME", "val": -50.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 25.0}, {"cc": "DESPESAS DE CASH GAME", "val": -10.0}, {"cc": "DESPESAS DE CASH GAME", "val": 50.0}, {"cc": "STACKING", "val": -1000.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 502.0}, {"cc": "DESPESAS DE CASH GAME", "val": -930.0}, {"cc": "RECEITAS DE CASH GAME", "val": 144.0}], "15": [{"cc": "DESPESAS DE CASH GAME", "val": -63.0}, {"cc": "DESPESAS DE CASH GAME", "val": -100.0}, {"cc": "DESPESAS DE CASH GAME", "val": -850.0}, {"cc": "DESPESAS DE CASH GAME", "val": -369.19}, {"cc": "DESPESAS DE CASH GAME", "val": -107.91}, {"cc": "DESPESAS DE CASH GAME", "val": -400.31}, {"cc": "DESPESAS DE CASH GAME", "val": -5.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 5.0}, {"cc": "DESPESAS DE CASH GAME", "val": -125.0}, {"cc": "DESPESAS DE CASH GAME", "val": -700.0}, {"cc": "DESPESAS DE CASH GAME", "val": -115.0}, {"cc": "RECEITAS DE CASH GAME", "val": 100.0}, {"cc": "DESPESAS DE CASH GAME", "val": -100.0}], "16": [{"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 300.0}, {"cc": "DESPESAS DE CASH GAME", "val": -108.0}, {"cc": "DESPESAS DE CASH GAME", "val": -200.0}, {"cc": "DESPESAS DE CASH GAME", "val": -132.0}, {"cc": "DESPESAS DE CASH GAME", "val": -700.0}, {"cc": "Segurança e Limpeza", "val": -1440.0}, {"cc": "DESPESAS DE CASH GAME", "val": -423.85}, {"cc": "DESPESAS DE CASH GAME", "val": 196.98}, {"cc": "DESPESAS DE CASH GAME", "val": -1000.0}, {"cc": "DESPESAS DE CASH GAME", "val": -5.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 2.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": -1670.0}, {"cc": "STACKING", "val": -992.5}, {"cc": "DESPESAS DE CASH GAME", "val": -195.0}, {"cc": "DESPESAS DE CASH GAME", "val": -100.0}], "17": [{"cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -754.27}, {"cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -502.55}, {"cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -91.42}, {"cc": "DESPESAS DE CASH GAME", "val": -50.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 100.0}, {"cc": "RECEITAS OPERACIONAIS", "val": -80.0}, {"cc": "RECEITAS OPERACIONAIS", "val": -47.2}, {"cc": "RECEITAS OPERACIONAIS", "val": -50.0}, {"cc": "RECEITAS OPERACIONAIS", "val": -50.0}, {"cc": "RECEITAS OPERACIONAIS", "val": -50.0}, {"cc": "STAFF - Limpeza", "val": -150.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 200.0}, {"cc": "STAFF - Cozinheiro", "val": -160.0}, {"cc": "STAFF - Dealers (CASH)", "val": -240.0}, {"cc": "RECEITAS OPERACIONAIS", "val": -40.0}, {"cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA", "val": -627.0}, {"cc": "RECEITAS OPERACIONAIS", "val": -70.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 20.0}, {"cc": "STAFF - Garcon / Garçonete", "val": -160.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 50.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 35.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 50.0}, {"cc": "STAFF - Caixa (CASH)", "val": -150.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 15.0}], "18": [{"cc": "DESPESAS DE CASH GAME", "val": -15.0}, {"cc": "Fundo de Caixa / Aportes / Sangrias", "val": 22.0}, {"cc": "STAFF - Limpeza", "val": -150.0}, {"cc": "RECEITAS OPERACIONAIS", "val": -500.0}, {"cc": "RECEITAS OPERACIONAIS", "val": -25.0}, {"cc": "RECEITAS OPERACIONAIS", "val": -156.68}, {"cc": "RECEITAS OPERACIONAIS", "val": -52.72}, {"cc": "STAFF - Cozinheiro", "val": -160.0}, {"cc": "STAFF - Dealers (CASH)", "val": -160.0}, {"cc": "RECEITAS OPERACIONAIS", "val": -696.0}, {"cc": "STAFF - Garcon / Garçonete", "val": -160.0}, {"cc": "STAFF - Caixa (CASH)", "val": -225.0}, {"cc": "RECEITAS OPERACIONAIS", "val": -40.0}, {"cc": "DESPESAS DE CASH GAME", "val": -350.0}]};
+const TOTALS = {"rake": 192101, "jp25": 11678, "jp_saida": -27867, "jp_resultado": -16189, "receitas": 4734, "despesas": -84768.05, "liquido": 94684.36, "ap_cab": -22334.14, "ap_igor": 7283.34, "ap_natan": -5976.86, "res_cab": -11305, "res_igor": -11367, "res_natan": -32023};
+const JP_SALDO = -15325.0;
+const TORNEIO = {"cab": -700.0, "igor": -450.0, "natan": -780.0};
+
+const brl = v => {
+  const neg = v < 0;
+  const s = 'R$ ' + Math.abs(v).toFixed(2).replace('.',',').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  return neg ? '-' + s : s;
+};
+const cls = v => v > 0 ? 'pos' : v < 0 ? 'neg' : 'neu';
+
+function showTab(t) {
+  document.querySelectorAll('.tab').forEach((el,i) => {
+    const tabs = ['geral','socio','aportes','despesas','fechamentos'];
+    el.classList.toggle('active', tabs[i] === t);
+  });
+  document.querySelectorAll('.panel').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-'+t).classList.add('active');
+}
+
+// Expense categorizer
+function catDesp(cc) {
+  const u = cc.toUpperCase();
+  if (u.includes('STAFF') || u.includes('DEALER') || u.includes('GARCON') || u.includes('GARÇON') || u.includes('CAIXA') || u.includes('COZIN') || u.includes('LIMPEZA') || u.includes('CHURRASQ')) return 'Staff';
+  if (u.includes('BAR') || u.includes('CMV') || u.includes('COZINHA') || u.includes('RESTAURANTE')) return 'Bar/Cozinha';
+  if (u.includes('ALUGUEL')) return 'Aluguel';
+  if (u.includes('SEGURANÇA') || u.includes('SEGURANCA')) return 'Segurança';
+  if (u.includes('ACERTO') || u.includes('DÍVIDA') || u.includes('DIVIDA') || u.includes('ACERTOS')) return 'Acertos/Dívidas';
+  if (u.includes('BONUS') || u.includes('CORTESIA') || u.includes('PROMOÇ')) return 'Cortesias';
+  if (u.includes('TORNEIO')) return 'Torneio';
+  return 'Cash Game/Op.';
+}
+
+function buildDetHtml(f) {
+  const fid = String(f.id);
+  const aps = ABF[fid] || [];
+  const desps = DBF[fid] || [];
+
+  // Mesa resultado section
+  let mesaHtml = `<div class="det-section">
+    <div class="det-section-title">Resultado Mesa</div>
+    <div class="det-row"><span class="det-label rake-c">RAKE Total</span><span class="det-val rake-c">${brl(f.rake)}</span></div>
+    <div class="det-row"><span class="det-label jp-c">JP 25%</span><span class="det-val jp-c">${brl(f.jp25)}</span></div>`;
+  if (f.jp_saida) mesaHtml += `<div class="det-row"><span class="det-label neg">JP Saída</span><span class="det-val ${cls(f.jp_saida)}">${brl(f.jp_saida)}</span></div>`;
+  if (f.rec) mesaHtml += `<div class="det-row"><span class="det-label">Receitas</span><span class="det-val pos">${brl(f.rec)}</span></div>`;
+  mesaHtml += `<div class="det-row desp" style="border-top:1px solid var(--border);margin-top:4px;padding-top:4px"><span class="det-label">Despesas</span><span class="det-val neg">${brl(f.desp)}</span></div>
+    <div class="det-row desp"><span class="det-label" style="font-weight:600">Líquido</span><span class="det-val ${cls(f.liq)}" style="font-weight:600">${brl(f.liq)}</span></div>
+    <div class="det-row" style="margin-top:6px;padding-top:4px;border-top:1px solid var(--border)"><span class="det-label">Rake/3 (base)</span><span class="det-val">${brl(f.rake_1_3)}</span></div>
+    <div class="det-row"><span class="det-label cab-c">Cabelim Resultado</span><span class="det-val ${cls(f.res_cab)}">${brl(f.res_cab)}</span></div>
+    <div class="det-row"><span class="det-label igor-c">Igor Resultado</span><span class="det-val ${cls(f.res_igor)}">${brl(f.res_igor)}</span></div>
+    <div class="det-row"><span class="det-label natan-c">Natan Resultado</span><span class="det-val ${cls(f.res_natan)}">${brl(f.res_natan)}</span></div>
+  </div>`;
+
+  // Aportes section
+  let apHtml = `<div class="det-section">
+    <div class="det-section-title">Aportes Detalhados</div>`;
+  if (aps.length === 0) {
+    apHtml += `<div class="det-row"><span class="det-label" style="color:var(--muted)">Nenhum aporte registrado</span></div>`;
+  } else {
+    const colors = {Cabelim:'var(--cab)',Igor:'var(--igor)',Natan:'var(--natan)',Sociedade:'#94a3b8'};
+    aps.forEach(a => {
+      const color = colors[a.socio] || '#94a3b8';
+      apHtml += `<div class="det-row"><span class="det-label"><span class="socio-dot" style="background:${color}"></span>${a.desc}</span><span class="det-val ${cls(a.val)}">${brl(a.val)}</span></div>`;
+    });
+  }
+  apHtml += `</div>`;
+
+  // Despesas section
+  let despHtml = `<div class="det-section full-span desp">
+    <div class="det-section-title">Despesas por Categoria</div>`;
+  if (desps.length === 0) {
+    despHtml += `<div class="det-row"><span class="det-label">Nenhuma despesa registrada</span></div>`;
+  } else {
+    const cats = {};
+    desps.forEach(d => {
+      const c = catDesp(d.cc);
+      if (!cats[c]) cats[c] = 0;
+      cats[c] += d.val;
+    });
+    despHtml += `<div style="margin-bottom:8px">`;
+    Object.entries(cats).forEach(([c, v]) => {
+      despHtml += `<span class="cat-chip">${c}: ${brl(v)}</span>`;
+    });
+    despHtml += `</div>`;
+    desps.forEach(d => {
+      despHtml += `<div class="det-row"><span class="det-label" title="${d.cc}">${d.desc}</span><span class="det-val neg">${brl(d.val)}</span></div>`;
+    });
+  }
+  despHtml += `</div>`;
+
+  return `<div class="detail-inner">${mesaHtml}${apHtml}${despHtml}</div>`;
+}
+
+function toggleDet(fid, btn) {
+  const row = document.getElementById('det-'+fid);
+  if (!row) return;
+  const open = row.classList.toggle('open');
+  btn.textContent = open ? '▼' : '▶';
+}
+
+// Build Geral tab
+(function(){
+  const T = TOTALS;
+  const jp_res = T.jp25 + T.jp_saida;
+  let html = `<div class="kpi-row">
+    <div class="kpi"><label>RAKE Total</label><div class="val rake-c mono">${brl(T.rake)}</div></div>
+    <div class="kpi"><label>JP 25%</label><div class="val jp-c mono">${brl(T.jp25)}</div></div>
+    <div class="kpi"><label>JP Resultado</label><div class="val ${cls(jp_res)} mono">${brl(jp_res)}</div></div>
+    <div class="kpi"><label>Receitas</label><div class="val pos mono">${brl(T.receitas)}</div></div>
+    <div class="kpi desp"><label>Despesas</label><div class="val neg mono">${brl(T.despesas)}</div></div>
+    <div class="kpi desp"><label>Líquido</label><div class="val ${cls(T.liquido)} mono">${brl(T.liquido)}</div></div>
+  </div>`;
+
+  html += `<div class="section-title">Resultado por Sócio</div>
+  <div class="kpi-row">
+    <div class="kpi"><label style="color:var(--cab)">Cabelim – Ap.</label><div class="val ${cls(T.ap_cab)} mono">${brl(T.ap_cab)}</div></div>
+    <div class="kpi"><label style="color:var(--cab)">Cabelim – Res.</label><div class="val ${cls(T.res_cab)} mono">${brl(T.res_cab)}</div></div>
+    <div class="kpi"><label style="color:var(--igor)">Igor – Ap.</label><div class="val ${cls(T.ap_igor)} mono">${brl(T.ap_igor)}</div></div>
+    <div class="kpi"><label style="color:var(--igor)">Igor – Res.</label><div class="val ${cls(T.res_igor)} mono">${brl(T.res_igor)}</div></div>
+    <div class="kpi"><label style="color:var(--natan)">Natan – Ap.</label><div class="val ${cls(T.ap_natan)} mono">${brl(T.ap_natan)}</div></div>
+    <div class="kpi"><label style="color:var(--natan)">Natan – Res.</label><div class="val ${cls(T.res_natan)} mono">${brl(T.res_natan)}</div></div>
+  </div>`;
+
+  html += `<div class="section-title">Jackpot & Torneio</div>
+  <div class="kpi-row">
+    <div class="kpi"><label>JP Saldo</label><div class="val ${cls(JP_SALDO)} mono">${brl(JP_SALDO)}</div></div>
+    <div class="kpi"><label>Torneio – Cabelim</label><div class="val ${cls(TORNEIO.cab)} mono">${brl(TORNEIO.cab)}</div></div>
+    <div class="kpi"><label>Torneio – Igor</label><div class="val ${cls(TORNEIO.igor)} mono">${brl(TORNEIO.igor)}</div></div>
+    <div class="kpi"><label>Torneio – Natan</label><div class="val ${cls(TORNEIO.natan)} mono">${brl(TORNEIO.natan)}</div></div>
+  </div>`;
+
+  document.getElementById('tab-geral').innerHTML = html;
+})();
+
+// Build Por Sócio tab
+function buildSocio(filter) {
+  let rows = '';
+  FECHAMENTOS.forEach(f => {
+    const fid = String(f.id);
+    let atCab = f.atu_cab, atIgor = f.atu_igor, atNatan = f.atu_natan;
+    let apCab = f.ap_cab, apIgor = f.ap_igor, apNatan = f.ap_natan;
+    let resCab = f.res_cab, resIgor = f.res_igor, resNatan = f.res_natan;
+    let show = filter === 'todos' || filter === 'cab' && true || filter === 'igor' && true || filter === 'natan' && true;
+    show = true;
+    let row = `<tr>
+      <td><button class="expand-btn" onclick="toggleDet('s${fid}',this)">▶</button></td>
+      <td>${f.ini}${f.fim && f.fim !== f.ini ? ' – ' + f.fim : ''}${f.link ? ` <a href="${f.link}" target="_blank" class="link-icon">↗</a>` : ''}</td>
+      <td class="${cls(f.rake)} mono">${brl(f.rake)}</td>`;
+    if (filter === 'todos' || filter === 'cab') {
+      row += `<td class="${cls(apCab)} mono">${brl(apCab)}</td><td class="${cls(resCab)} mono">${brl(resCab)}</td><td class="${cls(atCab)} mono">${brl(atCab)}</td>`;
+    }
+    if (filter === 'todos' || filter === 'igor') {
+      row += `<td class="${cls(apIgor)} mono">${brl(apIgor)}</td><td class="${cls(resIgor)} mono">${brl(resIgor)}</td><td class="${cls(atIgor)} mono">${brl(atIgor)}</td>`;
+    }
+    if (filter === 'todos' || filter === 'natan') {
+      row += `<td class="${cls(apNatan)} mono">${brl(apNatan)}</td><td class="${cls(resNatan)} mono">${brl(resNatan)}</td><td class="${cls(atNatan)} mono">${brl(atNatan)}</td>`;
+    }
+    row += `</tr>`;
+    let detCols = 4;
+    if (filter === 'todos') detCols = 10;
+    else if (['cab','igor','natan'].includes(filter)) detCols = 5;
+    row += `<tr class="detail-row" id="det-s${fid}"><td colspan="${detCols}" class="detail-cell">${buildDetHtml(f)}</td></tr>`;
+    rows += row;
+  });
+
+  let thead = '<th style="width:32px"></th><th style="text-align:left">Fechamento</th><th>RAKE</th>';
+  if (filter === 'todos' || filter === 'cab') thead += '<th class="cab-c">Ap. Cab</th><th class="cab-c">Res. Cab</th><th class="cab-c">Atu. Cab</th>';
+  if (filter === 'todos' || filter === 'igor') thead += '<th class="igor-c">Ap. Igor</th><th class="igor-c">Res. Igor</th><th class="igor-c">Atu. Igor</th>';
+  if (filter === 'todos' || filter === 'natan') thead += '<th class="natan-c">Ap. Natan</th><th class="natan-c">Res. Natan</th><th class="natan-c">Atu. Natan</th>';
+
+  const T = TOTALS;
+  let tfoot = '<tfoot style="border-top:2px solid var(--border)"><tr><td></td><td style="font-weight:600;color:var(--muted)">TOTAL</td>';
+  tfoot += `<td class="rake-c mono">${brl(T.rake)}</td>`;
+  if (filter === 'todos' || filter === 'cab') tfoot += `<td class="${cls(T.ap_cab)} mono">${brl(T.ap_cab)}</td><td class="${cls(T.res_cab)} mono">${brl(T.res_cab)}</td><td></td>`;
+  if (filter === 'todos' || filter === 'igor') tfoot += `<td class="${cls(T.ap_igor)} mono">${brl(T.ap_igor)}</td><td class="${cls(T.res_igor)} mono">${brl(T.res_igor)}</td><td></td>`;
+  if (filter === 'todos' || filter === 'natan') tfoot += `<td class="${cls(T.ap_natan)} mono">${brl(T.ap_natan)}</td><td class="${cls(T.res_natan)} mono">${brl(T.res_natan)}</td><td></td>`;
+  tfoot += '</tr></tfoot>';
+
+  document.getElementById('tab-socio').innerHTML = `
+    <div class="filter-row">
+      <button class="filter-btn ${filter==='todos'?'active':''}" onclick="buildSocio('todos')">Todos</button>
+      <button class="filter-btn ${filter==='cab'?'active':''}" onclick="buildSocio('cab')">Cabelim</button>
+      <button class="filter-btn ${filter==='igor'?'active':''}" onclick="buildSocio('igor')">Igor</button>
+      <button class="filter-btn ${filter==='natan'?'active':''}" onclick="buildSocio('natan')">Natan</button>
+    </div>
+    <table><thead><tr>${thead}</tr></thead><tbody>${rows}</tbody>${tfoot}</table>`;
+}
+buildSocio('todos');
+
+// Build Aportes tab
+function buildAp(filter) {
+  const map = {cab:APORTES_CAB, igor:APORTES_IGOR, natan:APORTES_NATAN, soc:APORTES_SOC};
+  let all = filter === 'todos'
+    ? [...APORTES_CAB.map(a=>({...a,socio:'Cabelim'})),
+       ...APORTES_IGOR.map(a=>({...a,socio:'Igor'})),
+       ...APORTES_NATAN.map(a=>({...a,socio:'Natan'})),
+       ...APORTES_SOC.map(a=>({...a,socio:'Sociedade'}))]
+    : filter === 'cab' ? APORTES_CAB.map(a=>({...a,socio:'Cabelim'}))
+    : filter === 'igor' ? APORTES_IGOR.map(a=>({...a,socio:'Igor'}))
+    : filter === 'natan' ? APORTES_NATAN.map(a=>({...a,socio:'Natan'}))
+    : APORTES_SOC.map(a=>({...a,socio:'Sociedade'}));
+
+  const colors = {Cabelim:'var(--cab)',Igor:'var(--igor)',Natan:'var(--natan)',Sociedade:'#94a3b8'};
+  const fmap = {};
+  FECHAMENTOS.forEach(f => fmap[f.id] = f.ini + (f.fim && f.fim !== f.ini ? ' – ' + f.fim : ''));
+  let rows = all.map(a => `<tr>
+    <td>${fmap[a.f]||a.f}</td>
+    <td>${a.data||''}</td>
+    <td><span class="socio-dot" style="background:${colors[a.socio]||'#999'}"></span>${a.socio}</td>
+    <td>${a.desc}</td>
+    <td class="${cls(a.val)} mono">${brl(a.val)}</td>
+  </tr>`).join('');
+
+  const total = all.reduce((s,a)=>s+a.val, 0);
+  document.getElementById('tab-aportes').innerHTML = `
+    <div class="filter-row">
+      <button class="filter-btn ${filter==='todos'?'active':''}" onclick="buildAp('todos')">Todos</button>
+      <button class="filter-btn ${filter==='cab'?'active':''}" onclick="buildAp('cab')">Cabelim</button>
+      <button class="filter-btn ${filter==='igor'?'active':''}" onclick="buildAp('igor')">Igor</button>
+      <button class="filter-btn ${filter==='natan'?'active':''}" onclick="buildAp('natan')">Natan</button>
+      <button class="filter-btn ${filter==='soc'?'active':''}" onclick="buildAp('soc')">Sociedade</button>
+    </div>
+    <table><thead><tr><th style="text-align:left">Fechamento</th><th style="text-align:left">Data</th><th style="text-align:left">Sócio</th><th style="text-align:left">Descrição</th><th>Valor</th></tr></thead>
+    <tbody>${rows}</tbody>
+    <tfoot><tr><td colspan="4" style="font-weight:600;color:var(--muted)">TOTAL</td><td class="${cls(total)} mono">${brl(total)}</td></tr></tfoot>
+    </table>`;
+}
+buildAp('todos');
+
+// Build Despesas tab
+function buildDesp(filter) {
+  const all = filter === 'todos' ? DESPESAS : DESPESAS.filter(d => catDesp(d.cc).toLowerCase().includes(filter));
+  const fmap = {};
+  FECHAMENTOS.forEach(f => fmap[f.id] = f.ini + (f.fim && f.fim !== f.ini ? ' – ' + f.fim : ''));
+  let rows = all.map(d => `<tr>
+    <td>${fmap[d.f]||d.f}</td>
+    <td>${d.data||''}</td>
+    <td><span class="cat-chip">${catDesp(d.cc)}</span></td>
+    <td>${d.desc}</td>
+    <td class="neg mono">${brl(d.val)}</td>
+  </tr>`).join('');
+
+  const total = all.reduce((s,d)=>s+d.val,0);
+  const cats = ['todos','Staff','Bar/Cozinha','Aluguel','Segurança','Acertos/Dívidas','Cortesias','Torneio','Cash Game/Op.'];
+  const btns = cats.map(c => `<button class="filter-btn ${filter===(c==='todos'?'todos':c.toLowerCase().slice(0,5))?'active':''}" onclick="buildDesp('${c==='todos'?'todos':c.toLowerCase().slice(0,5)}')">${c}</button>`).join('');
+
+  document.getElementById('tab-despesas').innerHTML = `
+    <div class="filter-row">${btns}</div>
+    <table><thead><tr><th style="text-align:left">Fechamento</th><th style="text-align:left">Data</th><th style="text-align:left">Categoria</th><th style="text-align:left">Descrição</th><th>Valor</th></tr></thead>
+    <tbody>${rows}</tbody>
+    <tfoot><tr><td colspan="4" style="font-weight:600;color:var(--muted)">TOTAL</td><td class="neg mono">${brl(total)}</td></tr></tfoot>
+    </table>`;
+}
+buildDesp('todos');
+
+// Build Fechamentos tab
+(function(){
+  let rows = '';
+  FECHAMENTOS.forEach(f => {
+    const fid = String(f.id);
+    rows += `<tr>
+      <td><button class="expand-btn" onclick="toggleDet('f${fid}',this)">▶</button></td>
+      <td>${f.ini}${f.fim && f.fim !== f.ini ? ' – ' + f.fim : ''}${f.link?` <a href="${f.link}" target="_blank" class="link-icon">↗</a>`:''}</td>
+      <td class="rake-c mono">${brl(f.rake)}</td>
+      <td class="jp-c mono">${brl(f.jp25)}</td>
+      <td class="${cls(f.jp_saida)} mono">${brl(f.jp_saida)}</td>
+      <td class="pos mono">${brl(f.receitas)}</td>
+      <td class="neg mono desp">${brl(f.despesas)}</td>
+      <td class="${cls(f.liquido)} mono desp">${brl(f.liquido)}</td>
+    </tr>
+    <tr class="detail-row" id="det-f${fid}"><td colspan="8" class="detail-cell">${buildDetHtml(f)}</td></tr>`;
+  });
+  const T = TOTALS;
+  document.getElementById('tab-fechamentos').innerHTML = `<table>
+    <thead><tr><th style="width:32px"></th><th style="text-align:left">Período</th><th>RAKE</th><th class="jp-c">JP 25%</th><th>JP Saída</th><th>Receitas</th><th class="desp">Despesas</th><th class="desp">Líquido</th></tr></thead>
+    <tbody>${rows}</tbody>
+    <tfoot><tr><td></td><td style="font-weight:600;color:var(--muted)">TOTAL</td>
+      <td class="rake-c mono">${brl(T.rake)}</td>
+      <td class="jp-c mono">${brl(T.jp25)}</td>
+      <td class="${cls(T.jp_saida)} mono">${brl(T.jp_saida)}</td>
+      <td class="pos mono">${brl(T.receitas)}</td>
+      <td class="neg mono desp">${brl(T.despesas)}</td>
+      <td class="${cls(T.liquido)} mono desp">${brl(T.liquido)}</td>
+    </tr></tfoot>
+  </table>`;
+})();
+function setModo(sem){
+  document.body.classList.toggle("sem-desp", sem);
+  document.getElementById("btn-sem").classList.toggle("active", sem);
+  document.getElementById("btn-com").classList.toggle("active", !sem);
+  if (sem && document.getElementById("tab-despesas").classList.contains("active")) showTab("geral");
+}
+setModo(false);
+</script>
+</body>
+</html>
+</body></html>

@@ -1,0 +1,218 @@
+[
+  {
+    "f": "1",
+    "data": "9-set.",
+    "orig": "SALDO",
+    "dest": "VALE",
+    "desc": "PG VALE - SERJAO",
+    "val": -5000
+  },
+  {
+    "f": "1",
+    "data": "9-set.",
+    "orig": "CABELIM",
+    "dest": "THALISSON",
+    "desc": "PG ACERTO THALISSON",
+    "val": null
+  },
+  {
+    "f": "1",
+    "data": "9-set.",
+    "orig": "CABELIM",
+    "dest": "DESPESA",
+    "desc": "PG DESPESA PORTAO",
+    "val": 80
+  },
+  {
+    "f": "1",
+    "data": "9-set.",
+    "orig": "RAKE",
+    "dest": "CLUBE",
+    "desc": "PG VALE - FERNANDES",
+    "val": -1000
+  },
+  {
+    "f": "2",
+    "data": "15-set.",
+    "orig": "CABELIM",
+    "dest": "CLUBE",
+    "desc": "APORTE - OVER 50K",
+    "val": 3409
+  },
+  {
+    "f": "2",
+    "data": "15-set.",
+    "orig": "FELIPE MARDEY",
+    "dest": "CABELIM - APORTE",
+    "desc": "TRANSFERENCIA SALDO",
+    "val": 300
+  },
+  {
+    "f": "3",
+    "data": "22-set.",
+    "orig": "CABELIM",
+    "dest": "VALE",
+    "desc": "PG VALE SERJÃO",
+    "val": -3000
+  },
+  {
+    "f": "8",
+    "data": "28-set.",
+    "orig": "CABELIM",
+    "dest": "VALE",
+    "desc": "PG VALE SERJÃO",
+    "val": -5000
+  },
+  {
+    "f": "8",
+    "data": "28-set.",
+    "orig": "CABELIM",
+    "dest": "VALE",
+    "desc": "PG VALE SERJÃO",
+    "val": -5880
+  },
+  {
+    "f": "8",
+    "data": "28-set.",
+    "orig": "CABELIM",
+    "dest": "VALE",
+    "desc": "PG VALE TETEU",
+    "val": -5000
+  },
+  {
+    "f": "8",
+    "data": "28-set.",
+    "orig": "CABELIM",
+    "dest": "SALDO",
+    "desc": "PG SALDO PEDRO IGOR",
+    "val": 2740
+  },
+  {
+    "f": "8",
+    "data": "28-set.",
+    "orig": "DESPESA",
+    "dest": "VALE",
+    "desc": "PG VALE GUGU",
+    "val": -3083.33
+  },
+  {
+    "f": "9",
+    "data": "29-set.",
+    "orig": "MARDEY",
+    "dest": "CABELIM",
+    "desc": "TRANSFERENCIA SALDO - CX TORNEIO",
+    "val": 100
+  },
+  {
+    "f": "10",
+    "data": "30-set.",
+    "orig": "CABELIM",
+    "dest": "DESPESAS",
+    "desc": "COMPRAS",
+    "val": 400
+  },
+  {
+    "f": "10",
+    "data": "30-set.",
+    "orig": "CABELIM",
+    "dest": "DESPESAS",
+    "desc": "COMPRAS",
+    "val": 100
+  },
+  {
+    "f": "10",
+    "data": "30-set.",
+    "orig": "CABELIM",
+    "dest": "DESPESAS",
+    "desc": "CERVEJAS",
+    "val": 263.52
+  },
+  {
+    "f": "11",
+    "data": "1-out.",
+    "orig": "MARDEY",
+    "dest": "CABELIM - APORTE",
+    "desc": "TRANSFERENCIA SALDO",
+    "val": 100
+  },
+  {
+    "f": "11",
+    "data": "1-out.",
+    "orig": "LEONARDO BRUNO",
+    "dest": "CABELIM - APORTE",
+    "desc": "TRANSFERENCIA SALDO",
+    "val": 100
+  },
+  {
+    "f": "12",
+    "data": "2-out.",
+    "orig": "CABELIM",
+    "dest": "VIVI TORNEIO",
+    "desc": "TRANSFERENCIA DE SALDO",
+    "val": -80
+  },
+  {
+    "f": "14",
+    "data": "5-out.",
+    "orig": "LEONARDO BRUNO",
+    "dest": "CABELIM - APORTE",
+    "desc": "TRANSFERENCIA SALDO",
+    "val": 100
+  },
+  {
+    "f": "14",
+    "data": "5-out.",
+    "orig": "CABELIM",
+    "dest": "PV",
+    "desc": "TRANSFERENCIA DE SALDO - CREDITO",
+    "val": -500
+  },
+  {
+    "f": "14",
+    "data": "5-out.",
+    "orig": "MARDEY",
+    "dest": "CABELIM",
+    "desc": "TRANSFERENCIA DE SALDO",
+    "val": 100
+  },
+  {
+    "f": "16",
+    "data": "7-out.",
+    "orig": "RAY",
+    "dest": "CABELIM",
+    "desc": "TRANSFERENCIA SALDO",
+    "val": 150
+  },
+  {
+    "f": "17",
+    "data": "8-out.",
+    "orig": "RAY",
+    "dest": "CABELIM",
+    "desc": "TRANSFERENCIA SALDO",
+    "val": 150
+  },
+  {
+    "f": "17",
+    "data": "8-out.",
+    "orig": "LEONARDO BRUNO",
+    "dest": "CABELIM",
+    "desc": "TRANSFERENCIA DE SALDO",
+    "val": 300
+  },
+  {
+    "f": "17",
+    "data": "8-out.",
+    "orig": "MARDEY",
+    "dest": "CABELIM",
+    "desc": "TRANSFERENCIA DE SALDO",
+    "val": 100
+  },
+  {
+    "f": "17",
+    "data": "8-out.",
+    "orig": "CABELIM",
+    "dest": "MARCUS AURELIO - ARU",
+    "desc": "TRANSFERENCIA DE SALDO",
+    "val": -50
+  }
+]
