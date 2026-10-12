@@ -147,25 +147,47 @@ function buildDetHtml(f) {
   const fid = String(f.id);
   const aps = ABF[fid] || [];
   const desps = DBF[fid] || [];
+  const b = baseRake(f);
+  const linha = (label, val, extra = '', titulo = '') =>
+    `<div class="det-row"${titulo ? ` title="${titulo}"` : ''}><span class="det-label ${extra}">${label}</span><span class="det-val ${cls(val)}">${brl(val)}</span></div>`;
 
-  // Mesa resultado section
-  let mesaHtml = `<div class="det-section">
-    <div class="det-section-title">Resultado Mesa</div>
-    <div class="det-row"><span class="det-label rake-c">RAKE Total</span><span class="det-val rake-c">${brl(f.rake)}</span></div>
-    <div class="det-row"><span class="det-label jp-c">JP 25%</span><span class="det-val jp-c">${brl(f.jp25)}</span></div>`;
-  if (f.jp_saida) mesaHtml += `<div class="det-row"><span class="det-label neg">JP Saída</span><span class="det-val ${cls(f.jp_saida)}">${brl(f.jp_saida)}</span></div>`;
-  if (f.receitas) mesaHtml += `<div class="det-row"><span class="det-label">Receitas</span><span class="det-val pos">${brl(f.receitas)}</span></div>`;
-  mesaHtml += `<div class="det-row desp" style="border-top:1px solid var(--border);margin-top:4px;padding-top:4px"><span class="det-label">Despesas</span><span class="det-val neg">${brl(f.despesas)}</span></div>
-    <div class="det-row desp"><span class="det-label" style="font-weight:600">Líquido</span><span class="det-val ${cls(f.liquido)}" style="font-weight:600">${brl(f.liquido)}</span></div>
-    <div class="det-row" style="margin-top:6px;padding-top:4px;border-top:1px solid var(--border)"><span class="det-label">Rake/3 (base)</span><span class="det-val">${brl(baseRake(f) / 3)}</span></div>
-    <div class="det-row"><span class="det-label cab-c">Cabelim Resultado</span><span class="det-val ${cls(f.res_cab)}">${brl(f.res_cab)}</span></div>
-    <div class="det-row"><span class="det-label igor-c">Igor Resultado</span><span class="det-val ${cls(f.res_igor)}">${brl(f.res_igor)}</span></div>
-    <div class="det-row"><span class="det-label natan-c">Natan Resultado</span><span class="det-val ${cls(f.res_natan)}">${brl(f.res_natan)}</span></div>
+  // 1) Rake e jackpot (bruto, antes de despesas)
+  const brutoHtml = `<div class="det-section">
+    <div class="det-section-title">1. Rake e jackpot (bruto da mesa)</div>
+    ${linha('RAKE (bruto)', f.rake, 'rake-c', 'Soma do rake da mesa antes de qualquer desconto')}
+    ${linha('JP 25%', f.jp25, 'jp-c', 'Parte do rake destinada ao jackpot')}
+    ${linha('JP saída (pagamentos do JP)', f.jp_saida, '', 'Valores pagos do jackpot neste fechamento')}
+    <div class="det-row" style="border-top:1px solid var(--border);margin-top:4px;padding-top:4px"><span class="det-label">JP resultado (resumo) = JP 25% + JP saída</span><span class="det-val ${cls(f.jp_resultado)}">${brl(f.jp_resultado)}</span></div>
   </div>`;
 
-  // Aportes section
+  // 2) Receitas e despesas (somem no modo sem despesas)
+  const despHtmlResumo = `<div class="det-section desp">
+    <div class="det-section-title">2. Receitas e despesas</div>
+    <div class="det-row"><span class="det-label">Receitas</span><span class="det-val ${cls(f.receitas)}">${brl(f.receitas)}</span></div>
+    <div class="det-row"><span class="det-label">Despesas</span><span class="det-val ${cls(f.despesas)}">${brl(f.despesas)}</span></div>
+  </div>`;
+
+  // 3) Resultado da mesa e base do RAKE 1/3
+  const modo = baseLabel();
+  const mesaHtml = `<div class="det-section">
+    <div class="det-section-title">3. Resultado da mesa</div>
+    ${linha('RAKE LÍQUIDO (resultado da mesa)', f.liquido, 'neu', 'RAKE + JP resultado + receitas + despesas')}
+    <div class="det-row" style="font-size:.75rem;color:var(--muted)"><span class="det-label">= RAKE + JP resultado + receitas + despesas</span></div>
+    <div class="det-row" style="border-top:1px solid var(--border);margin-top:4px;padding-top:4px"><span class="det-label">Base do RAKE 1/3 neste modo (${modo})</span><span class="det-val ${cls(b)}">${brl(b)}</span></div>
+    <div class="det-row"><span class="det-label">RAKE 1/3 por sócio</span><span class="det-val ${cls(b)}">${brl(b / 3)}</span></div>
+  </div>`;
+
+  // 4) Resultado de cada sócio (separado da mesa)
+  const socioHtml = `<div class="det-section">
+    <div class="det-section-title">4. Resultado de cada sócio</div>
+    ${linha('Cabelim', f.res_cab, 'cab-c')}
+    ${linha('Igor', f.res_igor, 'igor-c')}
+    ${linha('Natan', f.res_natan, 'natan-c')}
+  </div>`;
+
+  // Aportes detalhados (somem no modo sem aportes)
   let apHtml = `<div class="det-section ap">
-    <div class="det-section-title">Aportes Detalhados</div>`;
+    <div class="det-section-title">Aportes detalhados</div>`;
   if (aps.length === 0) {
     apHtml += `<div class="det-row"><span class="det-label" style="color:var(--muted)">Nenhum aporte registrado</span></div>`;
   } else {
@@ -177,17 +199,16 @@ function buildDetHtml(f) {
   }
   apHtml += `</div>`;
 
-  // Despesas section
+  // Despesas por categoria (somem no modo sem despesas)
   let despHtml = `<div class="det-section full-span desp">
-    <div class="det-section-title">Despesas por Categoria</div>`;
+    <div class="det-section-title">Despesas por categoria</div>`;
   if (desps.length === 0) {
     despHtml += `<div class="det-row"><span class="det-label">Nenhuma despesa registrada</span></div>`;
   } else {
     const cats = {};
     desps.forEach(d => {
       const c = catDesp(d.cc);
-      if (!cats[c]) cats[c] = 0;
-      cats[c] += d.val;
+      cats[c] = (cats[c] || 0) + d.val;
     });
     despHtml += `<div style="margin-bottom:8px">`;
     Object.entries(cats).forEach(([c, v]) => {
@@ -195,12 +216,12 @@ function buildDetHtml(f) {
     });
     despHtml += `</div>`;
     desps.forEach(d => {
-      despHtml += `<div class="det-row"><span class="det-label" title="${d.cc}">${d.desc}</span><span class="det-val neg">${brl(d.val)}</span></div>`;
+      despHtml += `<div class="det-row"><span class="det-label" title="${d.cc}">${d.desc}</span><span class="det-val ${cls(d.val)}">${brl(d.val)}</span></div>`;
     });
   }
   despHtml += `</div>`;
 
-  return `<div class="detail-inner">${mesaHtml}${apHtml}${despHtml}</div>`;
+  return `<div class="detail-inner">${brutoHtml}${despHtmlResumo}${mesaHtml}${socioHtml}${apHtml}${despHtml}</div>`;
 }
 
 function toggleDet(fid, btn) {
