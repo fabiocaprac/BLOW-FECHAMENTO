@@ -151,41 +151,46 @@ function buildDetHtml(f) {
   const linha = (label, val, extra = '', titulo = '') =>
     `<div class="det-row"${titulo ? ` title="${titulo}"` : ''}><span class="det-label ${extra}">${label}</span><span class="det-val ${cls(val)}">${brl(val)}</span></div>`;
 
-  // 1) Rake e jackpot (bruto, antes de despesas)
+  // 1) Mesa: bruto e jackpot
   const brutoHtml = `<div class="det-section">
-    <div class="det-section-title">1. Rake e jackpot (bruto da mesa)</div>
-    ${linha('RAKE (bruto)', f.rake, 'rake-c', 'Soma do rake da mesa antes de qualquer desconto')}
+    <div class="det-section-title">1. Mesa: rake e jackpot (bruto)</div>
+    ${linha('RAKE (bruto)', f.rake, 'rake-c', 'Rake da mesa antes de qualquer desconto')}
     ${linha('JP 25%', f.jp25, 'jp-c', 'Parte do rake destinada ao jackpot')}
-    ${linha('JP saída (pagamentos do JP)', f.jp_saida, '', 'Valores pagos do jackpot neste fechamento')}
+    ${linha('JP saída (pagamentos do JP)', f.jp_saida, '', 'Pagamentos do jackpot neste fechamento')}
     <div class="det-row" style="border-top:1px solid var(--border);margin-top:4px;padding-top:4px"><span class="det-label">JP resultado (resumo) = JP 25% + JP saída</span><span class="det-val ${cls(f.jp_resultado)}">${brl(f.jp_resultado)}</span></div>
   </div>`;
 
-  // 2) Receitas e despesas (somem no modo sem despesas)
+  // 2) Receitas e despesas da mesa (somem no modo sem despesas)
   const despHtmlResumo = `<div class="det-section desp">
-    <div class="det-section-title">2. Receitas e despesas</div>
-    <div class="det-row"><span class="det-label">Receitas</span><span class="det-val ${cls(f.receitas)}">${brl(f.receitas)}</span></div>
-    <div class="det-row"><span class="det-label">Despesas</span><span class="det-val ${cls(f.despesas)}">${brl(f.despesas)}</span></div>
+    <div class="det-section-title">2. Mesa: receitas e despesas</div>
+    ${linha('Receitas', f.receitas, '', 'Receitas da mesa neste fechamento')}
+    ${linha('Despesas', f.despesas, '', 'Despesas da mesa neste fechamento')}
   </div>`;
 
-  // 3) Resultado da mesa e base do RAKE 1/3
-  const modo = baseLabel();
+  // 3) RESULTADO NA MESA (não inclui aportes nem divisão por sócio)
   const mesaHtml = `<div class="det-section">
-    <div class="det-section-title">3. Resultado da mesa</div>
-    ${linha('RAKE LÍQUIDO (resultado da mesa)', f.liquido, 'neu', 'RAKE + JP resultado + receitas + despesas')}
+    <div class="det-section-title">3. Resultado na mesa</div>
+    ${linha('RAKE LÍQUIDO (resultado na mesa)', f.liquido, 'neu', 'RAKE + JP resultado + receitas + despesas')}
     <div class="det-row" style="font-size:.75rem;color:var(--muted)"><span class="det-label">= RAKE + JP resultado + receitas + despesas</span></div>
-    <div class="det-row" style="border-top:1px solid var(--border);margin-top:4px;padding-top:4px"><span class="det-label">Base do RAKE 1/3 neste modo (${modo})</span><span class="det-val ${cls(b)}">${brl(b)}</span></div>
-    <div class="det-row"><span class="det-label">RAKE 1/3 por sócio</span><span class="det-val ${cls(b)}">${brl(b / 3)}</span></div>
+    <div class="det-row" style="border-top:1px solid var(--border);margin-top:4px;padding-top:4px"><span class="det-label">Base do RAKE 1/3 no modo atual (${baseLabel()})</span><span class="det-val ${cls(b)}">${brl(b)}</span></div>
   </div>`;
 
-  // 4) Resultado de cada sócio (separado da mesa)
+  // 4) RESULTADO DO SÓCIO (rake do sócio + aportes + ajustes = resultado da planilha)
+  const quebra = (k, nome, cor) => {
+    const q = quebraSocio(f, k);
+    return `<div class="det-row" style="margin-top:6px"><span class="det-label ${cor}"><b>${nome}: resultado do sócio</b></span><span class="det-val ${cls(q.res)}"><b>${brl(q.res)}</b></span></div>
+      <div class="det-row"><span class="det-label" style="padding-left:10px">· parte no rake (1/3 do líquido)</span><span class="det-val ${cls(q.parte)}">${brl(q.parte)}</span></div>
+      <div class="det-row"><span class="det-label" style="padding-left:10px">· aportes do sócio</span><span class="det-val ${cls(q.ap)}">${brl(q.ap)}</span></div>
+      <div class="det-row"><span class="det-label" style="padding-left:10px" title="Diferença entre o resultado da planilha e as partes acima">· ajustes (diferença da planilha)</span><span class="det-val ${cls(q.aj)}">${brl(q.aj)}</span></div>`;
+  };
   const socioHtml = `<div class="det-section">
-    <div class="det-section-title">4. Resultado de cada sócio</div>
-    ${linha('Cabelim', f.res_cab, 'cab-c')}
-    ${linha('Igor', f.res_igor, 'igor-c')}
-    ${linha('Natan', f.res_natan, 'natan-c')}
+    <div class="det-section-title">4. Resultado do sócio</div>
+    ${quebra('cab', 'Cabelim', 'cab-c')}
+    ${quebra('igor', 'Igor', 'igor-c')}
+    ${quebra('natan', 'Natan', 'natan-c')}
   </div>`;
 
-  // Aportes detalhados (somem no modo sem aportes)
+  // Aportes detalhados (somem no modo sem aportes). Linhas marcadas como fora do total aparecem com etiqueta.
   let apHtml = `<div class="det-section ap">
     <div class="det-section-title">Aportes detalhados</div>`;
   if (aps.length === 0) {
@@ -194,7 +199,8 @@ function buildDetHtml(f) {
     const colors = {Cabelim:'var(--cab)',Igor:'var(--igor)',Natan:'var(--natan)',Sociedade:'#94a3b8'};
     aps.forEach(a => {
       const color = colors[a.socio] || '#94a3b8';
-      apHtml += `<div class="det-row"><span class="det-label"><span class="socio-dot" style="background:${color}"></span>${a.desc}</span><span class="det-val ${cls(a.val)}">${brl(a.val)}</span></div>`;
+      const etiqueta = a.fora_total ? ' <span class="cat-chip">fora do total</span>' : '';
+      apHtml += `<div class="det-row"><span class="det-label"><span class="socio-dot" style="background:${color}"></span>${a.desc}${etiqueta}</span><span class="det-val ${cls(a.val)}">${brl(a.val)}</span></div>`;
     });
   }
   apHtml += `</div>`;
@@ -224,6 +230,7 @@ function buildDetHtml(f) {
   return `<div class="detail-inner">${brutoHtml}${despHtmlResumo}${mesaHtml}${socioHtml}${apHtml}${despHtml}</div>`;
 }
 
+
 function toggleDet(fid, btn) {
   const row = document.getElementById('det-'+fid);
   if (!row) return;
@@ -231,9 +238,13 @@ function toggleDet(fid, btn) {
   btn.textContent = open ? '▼' : '▶';
 }
 
-// ===== Base do RAKE 1/3 e visualizações (Geral, Por Sócio, Fechamentos) =====
+// ===== Resultado na mesa x Resultado do sócio =====
+// Resultado na mesa = rake líquido do fechamento (rake + JP resultado + receitas + despesas).
+// Resultado do sócio = valor da planilha por sócio, decomposto em: parte no rake (1/3 do líquido),
+// aportes do sócio e ajustes (diferença). Os ajustes absorvem o que a planilha soma além de rake e aportes.
 let FILTRO_SOCIO = 'todos';
 const NOME_SOCIO = { cab: 'Cabelim', igor: 'Igor', natan: 'Natan' };
+const SOCIO_KEY = { cab: 'Cabelim', igor: 'Igor', natan: 'Natan' };
 const RES_SOCIO = { cab: 'res_cab', igor: 'res_igor', natan: 'res_natan' };
 const COR_SOCIO = { cab: 'cab-c', igor: 'igor-c', natan: 'natan-c' };
 
@@ -242,9 +253,7 @@ function modoAtual() {
   if (document.body.classList.contains('sem-desp')) return 'sem';
   return 'com';
 }
-// semap (sem despesas e sem aportes): bruto = rake
-// sem (sem despesas, com aportes): líquido sem despesas = rake + JP resultado + receitas
-// com (com despesas e aportes): líquido = rake + JP resultado + receitas + despesas
+// base do RAKE 1/3 por modo (visualização). semap: bruto. sem: líquido sem despesas. com: líquido.
 function baseRake(f) {
   const m = modoAtual();
   if (m === 'semap') return f.rake;
@@ -260,33 +269,53 @@ function baseLabel() {
 function periodo(f) {
   return f.ini + (f.fim && f.fim !== f.ini ? ' – ' + f.fim : '');
 }
+// aportes do sócio no fechamento (sem o que está marcado como fora do total)
+function aporteSocio(f, k) {
+  return (ABF[String(f.id)] || [])
+    .filter(a => a.socio === SOCIO_KEY[k] && !a.fora_total)
+    .reduce((t, a) => t + a.val, 0);
+}
+// decomposição do resultado do sócio (sempre com líquido completo, para fechar com a planilha)
+function quebraSocio(f, k) {
+  const res = f[RES_SOCIO[k]];
+  const parte = f.liquido / 3;
+  const ap = aporteSocio(f, k);
+  return { res, parte, ap, aj: res - parte - ap };
+}
 
 // ===== Geral =====
 function buildGeral() {
   const T = TOTALS;
   const jp_res = T.jp25 + T.jp_saida;
   const base = FECHAMENTOS.reduce((s, f) => s + baseRake(f), 0);
-  let html = `<div class="kpi-row">
-    <div class="kpi"><label>RAKE Total</label><div class="val rake-c mono">${brl(T.rake)}</div></div>
-    <div class="kpi"><label>JP 25%</label><div class="val jp-c mono">${brl(T.jp25)}</div></div>
-    <div class="kpi"><label>JP Resultado</label><div class="val ${cls(jp_res)} mono">${brl(jp_res)}</div></div>
+  let html = `<div class="section-title">Resultado na mesa</div>
+  <div class="kpi-row">
+    <div class="kpi"><label>RAKE Total (bruto)</label><div class="val rake-c mono">${brl(T.rake)}</div></div>
+    <div class="kpi"><label>JP resultado</label><div class="val ${cls(jp_res)} mono">${brl(jp_res)}</div></div>
     <div class="kpi"><label>Receitas</label><div class="val pos mono">${brl(T.receitas)}</div></div>
     <div class="kpi desp"><label>Despesas</label><div class="val neg mono">${brl(T.despesas)}</div></div>
-    <div class="kpi desp"><label>Líquido</label><div class="val ${cls(T.liquido)} mono">${brl(T.liquido)}</div></div>
+    <div class="kpi"><label>Resultado na mesa (líquido)</label><div class="val ${cls(T.liquido)} mono">${brl(T.liquido)}</div></div>
   </div>`;
+
+  html += `<div class="section-title">Resultado do sócio (planilha) e composição</div>
+  <table><thead><tr><th style="text-align:left">Sócio</th><th>Resultado do sócio</th><th>Parte no rake (1/3 do líquido)</th><th>Aportes</th><th>Ajustes</th></tr></thead><tbody>`;
+  ['cab', 'igor', 'natan'].forEach(k => {
+    const r = FECHAMENTOS.reduce((t, f) => {
+      const q = quebraSocio(f, k);
+      return { res: t.res + q.res, parte: t.parte + q.parte, ap: t.ap + q.ap, aj: t.aj + q.aj };
+    }, { res: 0, parte: 0, ap: 0, aj: 0 });
+    html += `<tr><td class="${COR_SOCIO[k]}" style="text-align:left">${NOME_SOCIO[k]}</td>
+      <td class="${cls(r.res)} mono">${brl(r.res)}</td><td class="${cls(r.parte)} mono">${brl(r.parte)}</td>
+      <td class="${cls(r.ap)} mono">${brl(r.ap)}</td><td class="${cls(r.aj)} mono">${brl(r.aj)}</td></tr>`;
+  });
+  html += `</tbody></table>
+  <div class="det-row" style="margin-top:6px;font-size:.75rem;color:var(--muted)">Resultado do sócio = parte no rake + aportes + ajustes. Os ajustes são a diferença entre o resultado da planilha e as duas partes conhecidas.</div>`;
 
   html += `<div class="section-title">RAKE 1/3 por sócio (base: ${baseLabel()})</div>
   <div class="kpi-row">
-    <div class="kpi"><label style="color:var(--cab)">Cabelim – RAKE 1/3</label><div class="val neu mono">${brl(base / 3)}</div></div>
-    <div class="kpi"><label style="color:var(--igor)">Igor – RAKE 1/3</label><div class="val neu mono">${brl(base / 3)}</div></div>
-    <div class="kpi"><label style="color:var(--natan)">Natan – RAKE 1/3</label><div class="val neu mono">${brl(base / 3)}</div></div>
-  </div>`;
-
-  html += `<div class="section-title">Resultado por Sócio</div>
-  <div class="kpi-row">
-    <div class="kpi"><label style="color:var(--cab)">Cabelim</label><div class="val ${cls(T.res_cab)} mono">${brl(T.res_cab)}</div></div>
-    <div class="kpi"><label style="color:var(--igor)">Igor</label><div class="val ${cls(T.res_igor)} mono">${brl(T.res_igor)}</div></div>
-    <div class="kpi"><label style="color:var(--natan)">Natan</label><div class="val ${cls(T.res_natan)} mono">${brl(T.res_natan)}</div></div>
+    <div class="kpi"><label style="color:var(--cab)">Cabelim</label><div class="val neu mono">${brl(base / 3)}</div></div>
+    <div class="kpi"><label style="color:var(--igor)">Igor</label><div class="val neu mono">${brl(base / 3)}</div></div>
+    <div class="kpi"><label style="color:var(--natan)">Natan</label><div class="val neu mono">${brl(base / 3)}</div></div>
   </div>`;
 
   html += `<div class="section-title">Jackpot & Torneio</div>
@@ -300,7 +329,7 @@ function buildGeral() {
   document.getElementById('tab-geral').innerHTML = html;
 }
 
-// ===== Por Sócio: Fechamento | RAKE | RAKE 1/3 | Resultado sócio(s) =====
+// ===== Por Sócio: Fechamento | RAKE | Resultado na mesa | RAKE 1/3 | Resultado do sócio =====
 function buildSocio(filter) {
   FILTRO_SOCIO = filter;
   const show = filter === 'todos' ? ['cab', 'igor', 'natan'] : [filter];
@@ -310,25 +339,26 @@ function buildSocio(filter) {
     const b = baseRake(f);
     let row = `<tr>
       <td><button class="expand-btn" onclick="toggleDet('s${fid}',this)">▶</button></td>
-      <td>${periodo(f)}${f.link ? ` <a href="${f.link}" target="_blank" class="link-icon">↗</a>` : ''}</td>
+      <td>${periodo(f)}</td>
       <td class="${cls(f.rake)} mono">${brl(f.rake)}</td>
+      <td class="${cls(f.liquido)} mono">${brl(f.liquido)}</td>
       <td class="${cls(b)} mono">${brl(b / 3)}</td>`;
     show.forEach(k => {
       const v = f[RES_SOCIO[k]];
       row += `<td class="${cls(v)} mono">${brl(v)}</td>`;
     });
     row += `</tr>`;
-    row += `<tr class="detail-row" id="det-s${fid}"><td colspan="${4 + show.length}" class="detail-cell">${buildDetHtml(f)}</td></tr>`;
+    row += `<tr class="detail-row" id="det-s${fid}"><td colspan="${5 + show.length}" class="detail-cell">${buildDetHtml(f)}</td></tr>`;
     rows += row;
   });
 
-  let thead = '<th style="width:32px"></th><th style="text-align:left">Fechamento</th><th>RAKE</th><th>RAKE 1/3</th>';
-  show.forEach(k => { thead += `<th class="${COR_SOCIO[k]}">Resultado ${NOME_SOCIO[k]}</th>`; });
+  let thead = '<th style="width:32px"></th><th style="text-align:left">Fechamento</th><th>RAKE</th><th>Resultado na mesa</th><th>RAKE 1/3</th>';
+  show.forEach(k => { thead += `<th class="${COR_SOCIO[k]}">Resultado sócio ${NOME_SOCIO[k]}</th>`; });
 
   const T = TOTALS;
   const base = FECHAMENTOS.reduce((s, f) => s + baseRake(f), 0);
   let tfoot = '<tfoot style="border-top:2px solid var(--border)"><tr><td></td><td style="font-weight:600;color:var(--muted)">TOTAL</td>';
-  tfoot += `<td class="rake-c mono">${brl(T.rake)}</td><td class="mono">${brl(base / 3)}</td>`;
+  tfoot += `<td class="rake-c mono">${brl(T.rake)}</td><td class="${cls(T.liquido)} mono">${brl(T.liquido)}</td><td class="mono">${brl(base / 3)}</td>`;
   show.forEach(k => { tfoot += `<td class="${cls(T[RES_SOCIO[k]])} mono">${brl(T[RES_SOCIO[k]])}</td>`; });
   tfoot += '</tr></tfoot>';
 
@@ -415,7 +445,7 @@ function buildDesp(filter) {
 }
 buildDesp('todos');
 
-// ===== Fechamentos: Período | RAKE | RAKE 1/3 | JP | Receitas | Despesas | Líquido =====
+// ===== Fechamentos: Período | RAKE | RAKE 1/3 | JP | Receitas | Despesas | Resultado na mesa =====
 function buildFech() {
   let rows = '';
   FECHAMENTOS.forEach(f => {
@@ -423,21 +453,21 @@ function buildFech() {
     const b = baseRake(f);
     rows += `<tr>
       <td><button class="expand-btn" onclick="toggleDet('f${fid}',this)">▶</button></td>
-      <td>${periodo(f)}${f.link ? ` <a href="${f.link}" target="_blank" class="link-icon">↗</a>` : ''}</td>
+      <td>${periodo(f)}</td>
       <td class="rake-c mono">${brl(f.rake)}</td>
       <td class="${cls(b)} mono">${brl(b / 3)}</td>
       <td class="jp-c mono">${brl(f.jp25)}</td>
       <td class="${cls(f.jp_saida)} mono">${brl(f.jp_saida)}</td>
       <td class="pos mono">${brl(f.receitas)}</td>
       <td class="neg mono desp">${brl(f.despesas)}</td>
-      <td class="${cls(f.liquido)} mono desp">${brl(f.liquido)}</td>
+      <td class="${cls(f.liquido)} mono">${brl(f.liquido)}</td>
     </tr>
     <tr class="detail-row" id="det-f${fid}"><td colspan="9" class="detail-cell">${buildDetHtml(f)}</td></tr>`;
   });
   const T = TOTALS;
   const base = FECHAMENTOS.reduce((s, f) => s + baseRake(f), 0);
   document.getElementById('tab-fechamentos').innerHTML = `<table>
-    <thead><tr><th style="width:32px"></th><th style="text-align:left">Período</th><th>RAKE</th><th>RAKE 1/3</th><th class="jp-c">JP 25%</th><th>JP Saída</th><th>Receitas</th><th class="desp">Despesas</th><th class="desp">Líquido</th></tr></thead>
+    <thead><tr><th style="width:32px"></th><th style="text-align:left">Período</th><th>RAKE</th><th>RAKE 1/3</th><th class="jp-c">JP 25%</th><th>JP Saída</th><th>Receitas</th><th class="desp">Despesas</th><th>Resultado na mesa</th></tr></thead>
     <tbody>${rows}</tbody>
     <tfoot><tr><td></td><td style="font-weight:600;color:var(--muted)">TOTAL</td>
       <td class="rake-c mono">${brl(T.rake)}</td>
@@ -446,7 +476,7 @@ function buildFech() {
       <td class="${cls(T.jp_saida)} mono">${brl(T.jp_saida)}</td>
       <td class="pos mono">${brl(T.receitas)}</td>
       <td class="neg mono desp">${brl(T.despesas)}</td>
-      <td class="${cls(T.liquido)} mono desp">${brl(T.liquido)}</td>
+      <td class="${cls(T.liquido)} mono">${brl(T.liquido)}</td>
     </tr></tfoot>
   </table>`;
 }
