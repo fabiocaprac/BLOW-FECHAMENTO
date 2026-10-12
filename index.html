@@ -155,7 +155,7 @@ function buildDetHtml(f) {
   if (f.receitas) mesaHtml += `<div class="det-row"><span class="det-label">Receitas</span><span class="det-val pos">${brl(f.receitas)}</span></div>`;
   mesaHtml += `<div class="det-row desp" style="border-top:1px solid var(--border);margin-top:4px;padding-top:4px"><span class="det-label">Despesas</span><span class="det-val neg">${brl(f.despesas)}</span></div>
     <div class="det-row desp"><span class="det-label" style="font-weight:600">Líquido</span><span class="det-val ${cls(f.liquido)}" style="font-weight:600">${brl(f.liquido)}</span></div>
-    <div class="det-row" style="margin-top:6px;padding-top:4px;border-top:1px solid var(--border)"><span class="det-label">Rake/3 (base)</span><span class="det-val">${brl(f.rake / 3)}</span></div>
+    <div class="det-row" style="margin-top:6px;padding-top:4px;border-top:1px solid var(--border)"><span class="det-label">Rake/3 (base)</span><span class="det-val">${brl(baseRake(f) / 3)}</span></div>
     <div class="det-row"><span class="det-label cab-c">Cabelim Resultado</span><span class="det-val ${cls(f.res_cab)}">${brl(f.res_cab)}</span></div>
     <div class="det-row"><span class="det-label igor-c">Igor Resultado</span><span class="det-val ${cls(f.res_igor)}">${brl(f.res_igor)}</span></div>
     <div class="det-row"><span class="det-label natan-c">Natan Resultado</span><span class="det-val ${cls(f.res_natan)}">${brl(f.res_natan)}</span></div>
@@ -208,10 +208,41 @@ function toggleDet(fid, btn) {
   btn.textContent = open ? '▼' : '▶';
 }
 
-// Build Geral tab
-(function(){
+// ===== Base do RAKE 1/3 e visualizações (Geral, Por Sócio, Fechamentos) =====
+let FILTRO_SOCIO = 'todos';
+const NOME_SOCIO = { cab: 'Cabelim', igor: 'Igor', natan: 'Natan' };
+const RES_SOCIO = { cab: 'res_cab', igor: 'res_igor', natan: 'res_natan' };
+const COR_SOCIO = { cab: 'cab-c', igor: 'igor-c', natan: 'natan-c' };
+
+function modoAtual() {
+  if (document.body.classList.contains('sem-ap')) return 'semap';
+  if (document.body.classList.contains('sem-desp')) return 'sem';
+  return 'com';
+}
+// semap (sem despesas e sem aportes): bruto = rake
+// sem (sem despesas, com aportes): líquido sem despesas = rake + JP resultado + receitas
+// com (com despesas e aportes): líquido = rake + JP resultado + receitas + despesas
+function baseRake(f) {
+  const m = modoAtual();
+  if (m === 'semap') return f.rake;
+  if (m === 'sem') return f.rake + f.jp_resultado + f.receitas;
+  return f.liquido;
+}
+function baseLabel() {
+  const m = modoAtual();
+  if (m === 'semap') return 'bruto';
+  if (m === 'sem') return 'líquido sem despesas';
+  return 'líquido';
+}
+function periodo(f) {
+  return f.ini + (f.fim && f.fim !== f.ini ? ' – ' + f.fim : '');
+}
+
+// ===== Geral =====
+function buildGeral() {
   const T = TOTALS;
   const jp_res = T.jp25 + T.jp_saida;
+  const base = FECHAMENTOS.reduce((s, f) => s + baseRake(f), 0);
   let html = `<div class="kpi-row">
     <div class="kpi"><label>RAKE Total</label><div class="val rake-c mono">${brl(T.rake)}</div></div>
     <div class="kpi"><label>JP 25%</label><div class="val jp-c mono">${brl(T.jp25)}</div></div>
@@ -221,14 +252,18 @@ function toggleDet(fid, btn) {
     <div class="kpi desp"><label>Líquido</label><div class="val ${cls(T.liquido)} mono">${brl(T.liquido)}</div></div>
   </div>`;
 
+  html += `<div class="section-title">RAKE 1/3 por sócio (base: ${baseLabel()})</div>
+  <div class="kpi-row">
+    <div class="kpi"><label style="color:var(--cab)">Cabelim – RAKE 1/3</label><div class="val neu mono">${brl(base / 3)}</div></div>
+    <div class="kpi"><label style="color:var(--igor)">Igor – RAKE 1/3</label><div class="val neu mono">${brl(base / 3)}</div></div>
+    <div class="kpi"><label style="color:var(--natan)">Natan – RAKE 1/3</label><div class="val neu mono">${brl(base / 3)}</div></div>
+  </div>`;
+
   html += `<div class="section-title">Resultado por Sócio</div>
   <div class="kpi-row">
-    <div class="kpi ap"><label style="color:var(--cab)">Cabelim – Ap.</label><div class="val ${cls(T.ap_cab)} mono">${brl(T.ap_cab)}</div></div>
-    <div class="kpi"><label style="color:var(--cab)">Cabelim – Res.</label><div class="val ${cls(T.res_cab)} mono">${brl(T.res_cab)}</div></div>
-    <div class="kpi ap"><label style="color:var(--igor)">Igor – Ap.</label><div class="val ${cls(T.ap_igor)} mono">${brl(T.ap_igor)}</div></div>
-    <div class="kpi"><label style="color:var(--igor)">Igor – Res.</label><div class="val ${cls(T.res_igor)} mono">${brl(T.res_igor)}</div></div>
-    <div class="kpi ap"><label style="color:var(--natan)">Natan – Ap.</label><div class="val ${cls(T.ap_natan)} mono">${brl(T.ap_natan)}</div></div>
-    <div class="kpi"><label style="color:var(--natan)">Natan – Res.</label><div class="val ${cls(T.res_natan)} mono">${brl(T.res_natan)}</div></div>
+    <div class="kpi"><label style="color:var(--cab)">Cabelim</label><div class="val ${cls(T.res_cab)} mono">${brl(T.res_cab)}</div></div>
+    <div class="kpi"><label style="color:var(--igor)">Igor</label><div class="val ${cls(T.res_igor)} mono">${brl(T.res_igor)}</div></div>
+    <div class="kpi"><label style="color:var(--natan)">Natan</label><div class="val ${cls(T.res_natan)} mono">${brl(T.res_natan)}</div></div>
   </div>`;
 
   html += `<div class="section-title">Jackpot & Torneio</div>
@@ -240,50 +275,38 @@ function toggleDet(fid, btn) {
   </div>`;
 
   document.getElementById('tab-geral').innerHTML = html;
-})();
+}
 
-// Build Por Sócio tab
+// ===== Por Sócio: Fechamento | RAKE | RAKE 1/3 | Resultado sócio(s) =====
 function buildSocio(filter) {
+  FILTRO_SOCIO = filter;
+  const show = filter === 'todos' ? ['cab', 'igor', 'natan'] : [filter];
   let rows = '';
   FECHAMENTOS.forEach(f => {
     const fid = String(f.id);
-    let atCab = f.atu_cab, atIgor = f.atu_igor, atNatan = f.atu_natan;
-    let apCab = f.ap_cab, apIgor = f.ap_igor, apNatan = f.ap_natan;
-    let resCab = f.res_cab, resIgor = f.res_igor, resNatan = f.res_natan;
-    let show = filter === 'todos' || filter === 'cab' && true || filter === 'igor' && true || filter === 'natan' && true;
-    show = true;
+    const b = baseRake(f);
     let row = `<tr>
       <td><button class="expand-btn" onclick="toggleDet('s${fid}',this)">▶</button></td>
-      <td>${f.ini}${f.fim && f.fim !== f.ini ? ' – ' + f.fim : ''}${f.link ? ` <a href="${f.link}" target="_blank" class="link-icon">↗</a>` : ''}</td>
-      <td class="${cls(f.rake)} mono">${brl(f.rake)}</td>`;
-    if (filter === 'todos' || filter === 'cab') {
-      row += `<td class="ap ${cls(apCab)} mono">${brl(apCab)}</td><td class="${cls(resCab)} mono">${brl(resCab)}</td><td class="${cls(atCab)} mono">${brl(atCab)}</td>`;
-    }
-    if (filter === 'todos' || filter === 'igor') {
-      row += `<td class="ap ${cls(apIgor)} mono">${brl(apIgor)}</td><td class="${cls(resIgor)} mono">${brl(resIgor)}</td><td class="${cls(atIgor)} mono">${brl(atIgor)}</td>`;
-    }
-    if (filter === 'todos' || filter === 'natan') {
-      row += `<td class="ap ${cls(apNatan)} mono">${brl(apNatan)}</td><td class="${cls(resNatan)} mono">${brl(resNatan)}</td><td class="${cls(atNatan)} mono">${brl(atNatan)}</td>`;
-    }
+      <td>${periodo(f)}${f.link ? ` <a href="${f.link}" target="_blank" class="link-icon">↗</a>` : ''}</td>
+      <td class="${cls(f.rake)} mono">${brl(f.rake)}</td>
+      <td class="${cls(b)} mono">${brl(b / 3)}</td>`;
+    show.forEach(k => {
+      const v = f[RES_SOCIO[k]];
+      row += `<td class="${cls(v)} mono">${brl(v)}</td>`;
+    });
     row += `</tr>`;
-    let detCols = 4;
-    if (filter === 'todos') detCols = 10;
-    else if (['cab','igor','natan'].includes(filter)) detCols = 5;
-    row += `<tr class="detail-row" id="det-s${fid}"><td colspan="${detCols}" class="detail-cell">${buildDetHtml(f)}</td></tr>`;
+    row += `<tr class="detail-row" id="det-s${fid}"><td colspan="${4 + show.length}" class="detail-cell">${buildDetHtml(f)}</td></tr>`;
     rows += row;
   });
 
-  let thead = '<th style="width:32px"></th><th style="text-align:left">Fechamento</th><th>RAKE</th>';
-  if (filter === 'todos' || filter === 'cab') thead += '<th class="cab-c ap">Ap. Cab</th><th class="cab-c">Res. Cab</th><th class="cab-c">Atu. Cab</th>';
-  if (filter === 'todos' || filter === 'igor') thead += '<th class="igor-c ap">Ap. Igor</th><th class="igor-c">Res. Igor</th><th class="igor-c">Atu. Igor</th>';
-  if (filter === 'todos' || filter === 'natan') thead += '<th class="natan-c ap">Ap. Natan</th><th class="natan-c">Res. Natan</th><th class="natan-c">Atu. Natan</th>';
+  let thead = '<th style="width:32px"></th><th style="text-align:left">Fechamento</th><th>RAKE</th><th>RAKE 1/3</th>';
+  show.forEach(k => { thead += `<th class="${COR_SOCIO[k]}">Resultado ${NOME_SOCIO[k]}</th>`; });
 
   const T = TOTALS;
+  const base = FECHAMENTOS.reduce((s, f) => s + baseRake(f), 0);
   let tfoot = '<tfoot style="border-top:2px solid var(--border)"><tr><td></td><td style="font-weight:600;color:var(--muted)">TOTAL</td>';
-  tfoot += `<td class="rake-c mono">${brl(T.rake)}</td>`;
-  if (filter === 'todos' || filter === 'cab') tfoot += `<td class="ap ${cls(T.ap_cab)} mono">${brl(T.ap_cab)}</td><td class="${cls(T.res_cab)} mono">${brl(T.res_cab)}</td><td></td>`;
-  if (filter === 'todos' || filter === 'igor') tfoot += `<td class="ap ${cls(T.ap_igor)} mono">${brl(T.ap_igor)}</td><td class="${cls(T.res_igor)} mono">${brl(T.res_igor)}</td><td></td>`;
-  if (filter === 'todos' || filter === 'natan') tfoot += `<td class="ap ${cls(T.ap_natan)} mono">${brl(T.ap_natan)}</td><td class="${cls(T.res_natan)} mono">${brl(T.res_natan)}</td><td></td>`;
+  tfoot += `<td class="rake-c mono">${brl(T.rake)}</td><td class="mono">${brl(base / 3)}</td>`;
+  show.forEach(k => { tfoot += `<td class="${cls(T[RES_SOCIO[k]])} mono">${brl(T[RES_SOCIO[k]])}</td>`; });
   tfoot += '</tr></tfoot>';
 
   document.getElementById('tab-socio').innerHTML = `
@@ -295,7 +318,13 @@ function buildSocio(filter) {
     </div>
     <table><thead><tr>${thead}</tr></thead><tbody>${rows}</tbody>${tfoot}</table>`;
 }
-buildSocio('todos');
+
+function renderAll() {
+  buildGeral();
+  buildSocio(FILTRO_SOCIO);
+  buildFech();
+}
+
 
 // Build Aportes tab
 function buildAp(filter) {
@@ -363,29 +392,33 @@ function buildDesp(filter) {
 }
 buildDesp('todos');
 
-// Build Fechamentos tab
-(function(){
+// ===== Fechamentos: Período | RAKE | RAKE 1/3 | JP | Receitas | Despesas | Líquido =====
+function buildFech() {
   let rows = '';
   FECHAMENTOS.forEach(f => {
     const fid = String(f.id);
+    const b = baseRake(f);
     rows += `<tr>
       <td><button class="expand-btn" onclick="toggleDet('f${fid}',this)">▶</button></td>
-      <td>${f.ini}${f.fim && f.fim !== f.ini ? ' – ' + f.fim : ''}${f.link?` <a href="${f.link}" target="_blank" class="link-icon">↗</a>`:''}</td>
+      <td>${periodo(f)}${f.link ? ` <a href="${f.link}" target="_blank" class="link-icon">↗</a>` : ''}</td>
       <td class="rake-c mono">${brl(f.rake)}</td>
+      <td class="${cls(b)} mono">${brl(b / 3)}</td>
       <td class="jp-c mono">${brl(f.jp25)}</td>
       <td class="${cls(f.jp_saida)} mono">${brl(f.jp_saida)}</td>
       <td class="pos mono">${brl(f.receitas)}</td>
       <td class="neg mono desp">${brl(f.despesas)}</td>
       <td class="${cls(f.liquido)} mono desp">${brl(f.liquido)}</td>
     </tr>
-    <tr class="detail-row" id="det-f${fid}"><td colspan="8" class="detail-cell">${buildDetHtml(f)}</td></tr>`;
+    <tr class="detail-row" id="det-f${fid}"><td colspan="9" class="detail-cell">${buildDetHtml(f)}</td></tr>`;
   });
   const T = TOTALS;
+  const base = FECHAMENTOS.reduce((s, f) => s + baseRake(f), 0);
   document.getElementById('tab-fechamentos').innerHTML = `<table>
-    <thead><tr><th style="width:32px"></th><th style="text-align:left">Período</th><th>RAKE</th><th class="jp-c">JP 25%</th><th>JP Saída</th><th>Receitas</th><th class="desp">Despesas</th><th class="desp">Líquido</th></tr></thead>
+    <thead><tr><th style="width:32px"></th><th style="text-align:left">Período</th><th>RAKE</th><th>RAKE 1/3</th><th class="jp-c">JP 25%</th><th>JP Saída</th><th>Receitas</th><th class="desp">Despesas</th><th class="desp">Líquido</th></tr></thead>
     <tbody>${rows}</tbody>
     <tfoot><tr><td></td><td style="font-weight:600;color:var(--muted)">TOTAL</td>
       <td class="rake-c mono">${brl(T.rake)}</td>
+      <td class="mono">${brl(base / 3)}</td>
       <td class="jp-c mono">${brl(T.jp25)}</td>
       <td class="${cls(T.jp_saida)} mono">${brl(T.jp_saida)}</td>
       <td class="pos mono">${brl(T.receitas)}</td>
@@ -393,7 +426,8 @@ buildDesp('todos');
       <td class="${cls(T.liquido)} mono desp">${brl(T.liquido)}</td>
     </tr></tfoot>
   </table>`;
-})();
+}
+
 function setModo(m){
   document.body.classList.toggle("sem-desp", m !== 'com');
   document.body.classList.toggle("sem-ap", m === 'semap');
@@ -402,8 +436,9 @@ function setModo(m){
   document.getElementById("btn-semap").classList.toggle("active", m === 'semap');
   if (m !== 'com' && document.getElementById("tab-despesas").classList.contains("active")) showTab("geral");
   if (m === 'semap' && document.getElementById("tab-aportes").classList.contains("active")) showTab("geral");
+  renderAll();
 }
-setModo('com');
+setModo('com');setModo('com');
 </script>
 </body>
 </html>
