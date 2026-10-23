@@ -4,16 +4,8 @@
     "data": "9-set.",
     "orig": "SALDO",
     "dest": "VALE",
-    "desc": "PG VALE - SERJAO",
-    "val": -5000
-  },
-  {
-    "f": "1",
-    "data": "9-set.",
-    "orig": "CABELIM",
-    "dest": "THALISSON",
-    "desc": "PG ACERTO THALISSON",
-    "val": 0
+    "desc": "PG VALE SERJAO",
+    "val": -5000.0
   },
   {
     "f": "1",
@@ -21,7 +13,7 @@
     "orig": "CABELIM",
     "dest": "DESPESA",
     "desc": "PG DESPESA  PORTAO",
-    "val": 80
+    "val": 80.0
   },
   {
     "f": "1",
@@ -29,7 +21,7 @@
     "orig": "RAKE",
     "dest": "CLUBE",
     "desc": "PG VALE - FERNANDES",
-    "val": -1000
+    "val": -1000.0
   },
   {
     "f": "2",
@@ -45,7 +37,7 @@
     "orig": "CABELIM",
     "dest": "CLUBE",
     "desc": "APORTE - OVER 50K",
-    "val": 3409
+    "val": 3409.0
   },
   {
     "f": "2",
@@ -53,31 +45,31 @@
     "orig": "FELIPE MARDEY",
     "dest": "CABELIM - APORTE",
     "desc": "TRASNFERENCIA SALDO",
-    "val": 300
+    "val": 300.0
   },
   {
     "f": "3",
     "data": "22-set.",
     "orig": "CABELIM",
     "dest": "VALE",
-    "desc": "PG VALE SERJÃO",
-    "val": -3000
+    "desc": "PG VALE SERJAO",
+    "val": -3000.0
+  },
+  {
+    "f": "6",
+    "data": "25-set.",
+    "orig": "CABELIM",
+    "dest": "PG SALDO",
+    "desc": "PEDRO IGOR",
+    "val": 2740.0
   },
   {
     "f": "8",
     "data": "28-set.",
     "orig": "CABELIM",
     "dest": "VALE",
-    "desc": "PG VALE SERJÃO",
-    "val": -5000
-  },
-  {
-    "f": "8",
-    "data": "28-set.",
-    "orig": "CABELIM",
-    "dest": "VALE",
-    "desc": "PG VALE SERJÃO",
-    "val": -5880
+    "desc": "PG VALE SERJAO",
+    "val": -5880.0
   },
   {
     "f": "8",
@@ -85,15 +77,7 @@
     "orig": "CABELIM",
     "dest": "VALE",
     "desc": "PG VALE TETEU",
-    "val": -5000
-  },
-  {
-    "f": "8",
-    "data": "28-set.",
-    "orig": "CABELIM",
-    "dest": "SALDO",
-    "desc": "PG SALDO PEDRO IGOR",
-    "val": 2740
+    "val": -5000.0
   },
   {
     "f": "8",
@@ -109,7 +93,7 @@
     "orig": "MARDEY",
     "dest": "CABELIM",
     "desc": "TRASNFERENCIA SALDO - CX TORNEIO",
-    "val": 100
+    "val": 100.0
   },
   {
     "f": "10",
@@ -117,7 +101,7 @@
     "orig": "CABELIM",
     "dest": "DESPESAS",
     "desc": "COMPRAS",
-    "val": 400
+    "val": 400.0
   },
   {
     "f": "10",
@@ -125,7 +109,7 @@
     "orig": "CABELIM",
     "dest": "DESPESAS",
     "desc": "COMPRAS",
-    "val": 100
+    "val": 100.0
   },
   {
     "f": "10",
@@ -141,7 +125,7 @@
     "orig": "MARDEY",
     "dest": "CABELIM - APORTE",
     "desc": "TRASNFERENCIA SALDO",
-    "val": 100
+    "val": 100.0
   },
   {
     "f": "11",
@@ -149,7 +133,7 @@
     "orig": "LEONARDO BRUNO",
     "dest": "CABELIM - APORTE",
     "desc": "TRASNFERENCIA SALDO",
-    "val": 100
+    "val": 100.0
   },
   {
     "f": "12",
@@ -157,7 +141,15 @@
     "orig": "CABELIM",
     "dest": "VIVI TORNEIO",
     "desc": "TRANSFERENCIA DE SALDO",
-    "val": -80
+    "val": -80.0
+  },
+  {
+    "f": "13",
+    "data": "3-out.",
+    "orig": "CABELIM",
+    "dest": "VALE",
+    "desc": "PG VALE SERJÃO",
+    "val": -6120.0
   },
   {
     "f": "14",
@@ -165,7 +157,7 @@
     "orig": "LEONARDO BRUNO",
     "dest": "CABELIM - APORTE",
     "desc": "TRASNFERENCIA SALDO",
-    "val": 100
+    "val": 100.0
   },
   {
     "f": "14",
@@ -173,7 +165,7 @@
     "orig": "CABELIM",
     "dest": "PV",
     "desc": "TRANFERENCIA DE SALDO - CREDITO",
-    "val": -500
+    "val": -500.0
   },
   {
     "f": "14",
@@ -181,7 +173,7 @@
     "orig": "MARDEY",
     "dest": "CABELIM",
     "desc": "TRANFERENCIA DE SALDO",
-    "val": 100
+    "val": 100.0
   },
   {
     "f": "16",
@@ -189,7 +181,7 @@
     "orig": "RAY",
     "dest": "CABELIM",
     "desc": "TRASNFERENCIA SALDO",
-    "val": 150
+    "val": 150.0
   },
   {
     "f": "17",
@@ -197,7 +189,7 @@
     "orig": "RAY",
     "dest": "CABELIM",
     "desc": "TRASNFERENCIA SALDO",
-    "val": 150
+    "val": 150.0
   },
   {
     "f": "17",
@@ -205,7 +197,7 @@
     "orig": "LEONARDO BRUNO",
     "dest": "CABELIM",
     "desc": "TRANSFERENCIA DE SALDO",
-    "val": 300
+    "val": 300.0
   },
   {
     "f": "17",
@@ -213,7 +205,7 @@
     "orig": "MARDEY",
     "dest": "CABELIM",
     "desc": "TRANSFERENCIA DE SALDO",
-    "val": 100
+    "val": 100.0
   },
   {
     "f": "17",
@@ -221,6 +213,214 @@
     "orig": "CABELIM",
     "dest": "MARCUS AURELIO - ARU",
     "desc": "TRANSFERENCIA DE SALDO",
-    "val": -50
+    "val": -50.0
+  },
+  {
+    "f": "25",
+    "data": "18-out.",
+    "orig": "CABELIM",
+    "dest": "SERJAO",
+    "desc": "PG VALE SERJAO",
+    "val": -3000.0
+  },
+  {
+    "f": "25",
+    "data": "18-out.",
+    "orig": "CABELIM",
+    "dest": "TETEU",
+    "desc": "PG VALE TETEU - TS",
+    "val": -1000.0
+  },
+  {
+    "f": "25",
+    "data": "18-out.",
+    "orig": "CABELIM",
+    "dest": "TUBARAO",
+    "desc": "PG VALE TUBARAO - TS",
+    "val": -3300.0
+  },
+  {
+    "f": "25",
+    "data": "18-out.",
+    "orig": "CAVALO - RIAN",
+    "dest": "CABELIM",
+    "desc": "CAVALO - TS",
+    "val": 1000.0
+  },
+  {
+    "f": "25",
+    "data": "18-out.",
+    "orig": "CABELIM",
+    "dest": "DESPESA",
+    "desc": "PG DESPESA: COMPRAS OLAVO",
+    "val": 200.0
+  },
+  {
+    "f": "2",
+    "data": "15-set.",
+    "orig": "VITINHO MENOR",
+    "dest": "CABELIM",
+    "desc": "TS MESA CASH #504",
+    "val": 425.0
+  },
+  {
+    "f": "3",
+    "data": "22-set.",
+    "orig": "CABELIM",
+    "dest": "SAQUE",
+    "desc": "SAQUE EM DINHEIRO CASH #508",
+    "val": -4000.0
+  },
+  {
+    "f": "8",
+    "data": "28-set.",
+    "orig": "CABELIM",
+    "dest": "SAQUE",
+    "desc": "SAQUE EM DINHEIRO CASH #513",
+    "val": -300.0
+  },
+  {
+    "f": "9",
+    "data": "29-set.",
+    "orig": "CABELIM",
+    "dest": "DAVID MOTA",
+    "desc": "TS MESA CASH #514",
+    "val": -250.0
+  },
+  {
+    "f": "9",
+    "data": "29-set.",
+    "orig": "CABELIM",
+    "dest": "WANDERSON SAMPAIO",
+    "desc": "TS MESA CASH #514",
+    "val": -300.0
+  },
+  {
+    "f": "11",
+    "data": "1-out.",
+    "orig": "CABELIM",
+    "dest": "PATRIK DEALER",
+    "desc": "TS CAIXA TORNEIO 354 (CAVALO)",
+    "val": -125.0
+  },
+  {
+    "f": "11",
+    "data": "1-out.",
+    "orig": "CABELIM",
+    "dest": "VITOR FERNANDES KADORE",
+    "desc": "TS CAIXA TORNEIO 354 (CAVALO)",
+    "val": -125.0
+  },
+  {
+    "f": "11",
+    "data": "1-out.",
+    "orig": "CABELIM",
+    "dest": "WANDERSON SAMPAIO",
+    "desc": "TS CAIXA TORNEIO 354 (CAVALO)",
+    "val": -50.0
+  },
+  {
+    "f": "12",
+    "data": "2-out.",
+    "orig": "CABELIM",
+    "dest": "JOBERT",
+    "desc": "TS MESA CASH #517",
+    "val": -250.0
+  },
+  {
+    "f": "13",
+    "data": "4-out.",
+    "orig": "CABELIM",
+    "dest": "DESPESA",
+    "desc": "DESPESA PAGA PELO CABELIM - SAIDA DE CAIXA 04/10",
+    "val": 353.0
+  },
+  {
+    "f": "20",
+    "data": "12-out.",
+    "orig": "RAYAN DEALER",
+    "dest": "CABELIM",
+    "desc": "TS MESA CASH #525",
+    "val": 150.0
+  },
+  {
+    "f": "20",
+    "data": "12-out.",
+    "orig": "CABELIM",
+    "dest": "DANIEL KURIRIN",
+    "desc": "TS MESA CASH #525",
+    "val": -160.0
+  },
+  {
+    "f": "20",
+    "data": "12-out.",
+    "orig": "CABELIM",
+    "dest": "JULIO UCHOA",
+    "desc": "TS CAIXA TORNEIO 361",
+    "val": -50.0
+  },
+  {
+    "f": "20",
+    "data": "12-out.",
+    "orig": "LEONARDO BRUNO",
+    "dest": "CABELIM",
+    "desc": "TS CAIXA TORNEIO 361",
+    "val": 100.0
+  },
+  {
+    "f": "21",
+    "data": "13-out.",
+    "orig": "WANDERSONN DEALER",
+    "dest": "CABELIM",
+    "desc": "TS MESA CASH #526",
+    "val": 800.0
+  },
+  {
+    "f": "21",
+    "data": "13-out.",
+    "orig": "LEONARDO BRUNO",
+    "dest": "CABELIM",
+    "desc": "TS CAIXA TORNEIO 362",
+    "val": 100.0
+  },
+  {
+    "f": "21",
+    "data": "13-out.",
+    "orig": "RAY",
+    "dest": "CABELIM",
+    "desc": "DEVE RAY 3/3",
+    "val": 150.0
+  },
+  {
+    "f": "24",
+    "data": "16-out.",
+    "orig": "MATEUS TETEU",
+    "dest": "CABELIM",
+    "desc": "DIVIDA TETEU 200/3",
+    "val": 66.67
+  },
+  {
+    "f": "26",
+    "data": "19-out.",
+    "orig": "LEONARDO BRUNO",
+    "dest": "CABELIM",
+    "desc": "TS MESA CASH #531",
+    "val": 100.0
+  },
+  {
+    "f": "25",
+    "data": "19-out.",
+    "orig": "CABELIM",
+    "dest": "CAIXA",
+    "desc": "ENTRADA DE CAIXA CASH #530 (FORA DA COTA)",
+    "val": 200.0
+  },
+  {
+    "f": "28",
+    "data": "21-out.",
+    "orig": "LEONARDO BRUNO",
+    "dest": "CABELIM",
+    "desc": "TS MESA CASH #533",
+    "val": 500.0
   }
 ]

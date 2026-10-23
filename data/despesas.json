@@ -4,175 +4,175 @@
     "data": "14/09/2026",
     "cc": "DESPESA CASH",
     "desc": "50% FECHADURA / CONSERTO PORTÃO / MOLA",
-    "val": -300
+    "val": -300.0
   },
   {
     "f": "1",
     "data": "14/09/2026",
     "cc": "DESPESA CASH",
     "desc": "PORTAO : APORTE CABELIM",
-    "val": -80
+    "val": -80.0
   },
   {
     "f": "1",
     "data": "14/09/2026",
     "cc": "Bonus / Promoções / Cortesias",
     "desc": "CORTESIA MASSAGEM FEFE",
-    "val": -100
+    "val": -100.0
   },
   {
     "f": "1",
     "data": "11/09/2026",
     "cc": "CMV - BAR / COZINHA / ESTOQUE",
     "desc": "ENERGETICO",
-    "val": -258
+    "val": -258.0
   },
   {
     "f": "1",
     "data": "14/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "1x CAIXA; 1x GARÇOM; 1x COZINHEIRO; 1x LIMPEZA; 2x DEALER AJUDA DE CUSTO",
-    "val": -640
+    "val": -640.0
   },
   {
     "f": "1",
     "data": "14/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "DIARIA FABIO EXTRAS",
-    "val": -300
+    "val": -300.0
   },
   {
     "f": "1",
     "data": "12/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Documento: DIÁRIA CHEIA 11/09 2x GARÇOM; 1x SERV. LIMPEZA; 1x COZINHEIRO; 3x DEALERS; 1x CAIXA",
-    "val": -1220
+    "val": -1220.0
   },
   {
     "f": "1",
     "data": "14/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "PAGO P/ NATAN: CHURRASCO DOMINGO",
-    "val": -1013
+    "val": -1013.0
   },
   {
     "f": "1",
     "data": "14/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "COMPRAS COZINHA MERCADO",
-    "val": -1006
+    "val": -1006.0
   },
   {
     "f": "1",
     "data": "13/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "PAGO P/ NATAN: COMPRAS COZINHA (SUPER LAGOA)",
-    "val": -819
+    "val": -819.0
   },
   {
     "f": "1",
     "data": "13/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "PAGO P/ NATAN: ECHOP",
-    "val": -476
+    "val": -476.0
   },
   {
     "f": "1",
     "data": "13/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "PAGO P/ NATAN: ECHOP BEBIDAS",
-    "val": -468
+    "val": -468.0
   },
   {
     "f": "1",
     "data": "13/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "PAGO P/ NATAN: ZE DELIVERY",
-    "val": -454
+    "val": -454.0
   },
   {
     "f": "1",
     "data": "14/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "PAGO P/ NATAN:ECHOP",
-    "val": -350
+    "val": -350.0
   },
   {
     "f": "1",
     "data": "13/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "PAGO P/ NATAN: AGUAS",
-    "val": -280
+    "val": -280.0
   },
   {
     "f": "1",
     "data": "13/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "PAGO P/ NATAN: COMPRAS FRANGOLANDIA",
-    "val": -248
+    "val": -248.0
   },
   {
     "f": "1",
     "data": "13/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "PAGO P/ NATAN: PEIXES",
-    "val": -167
+    "val": -167.0
   },
   {
     "f": "1",
     "data": "14/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "PAGO P/ NATAN:FRANGOLANDIA 97",
-    "val": -97
+    "val": -97.0
   },
   {
     "f": "1",
     "data": "14/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "PAGO P/ NATAN:IFOOD",
-    "val": -80
+    "val": -80.0
   },
   {
     "f": "1",
     "data": "13/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "PAGO P/ NATAN: FRANGOLANDIA",
-    "val": -71
+    "val": -71.0
   },
   {
     "f": "1",
     "data": "14/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "PAGO P/ NATAN: DISNEY 70",
-    "val": -70
+    "val": -70.0
   },
   {
     "f": "1",
     "data": "14/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "PAGO P/ NATAN: GASOLINA 50",
-    "val": -50
+    "val": -50.0
   },
   {
     "f": "1",
     "data": "13/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "PAGO P/ NATAN: GASOLINA",
-    "val": -50
+    "val": -50.0
   },
   {
     "f": "1",
     "data": "14/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "DESPESA STAFF 4x DEALER; 1x GARÇONETE; 1x CAIXA; 1x LIMPEZA; 1x COZINHEIRO",
-    "val": -860
+    "val": -860.0
   },
   {
     "f": "1",
     "data": "13/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "BARALHOS",
-    "val": -696
+    "val": -696.0
   },
   {
     "f": "1",
@@ -200,231 +200,231 @@
     "data": "14/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "IMPULSIONAMENTO INSTAGRAM",
-    "val": -80
+    "val": -80.0
   },
   {
     "f": "1",
     "data": "14/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "PGTO NATAN: POSTO / GASOLINA",
-    "val": -50
+    "val": -50.0
   },
   {
     "f": "1",
     "data": "12/09/2026",
     "cc": "DESPESAS OPERACIONAIS",
     "desc": "PGTO NATAN: POSTO / GASOLINA",
-    "val": -195
+    "val": -195.0
   },
   {
     "f": "1",
     "data": "11/09/2026",
     "cc": "Farmácia",
     "desc": "FARMACIA",
-    "val": -57
+    "val": -57.0
   },
   {
     "f": "1",
     "data": "12/09/2026",
     "cc": "RECEITA",
     "desc": "APORTE BAR",
-    "val": 95
+    "val": 95.0
   },
   {
     "f": "1",
     "data": "14/09/2026",
     "cc": "RECEITAS OPERACIONAIS",
     "desc": "GASOLINA FABIO SR. EDSON",
-    "val": -100
+    "val": -100.0
   },
   {
     "f": "1",
     "data": "11/09/2026",
     "cc": "Segurança e Limpeza",
     "desc": "GARIS / RETIRADA LIXEIRAS",
-    "val": -40
+    "val": -40.0
   },
   {
     "f": "1",
     "data": "11/09/2026",
     "cc": "STAFF - Limpeza",
     "desc": "Documento: DIÁRIA 04/09 DIÁRIA JANEIDE 04/09",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "2",
     "data": "15/09/2026",
     "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA",
     "desc": "AGUA 20L E GELO",
-    "val": -63
+    "val": -63.0
   },
   {
     "f": "2",
     "data": "15/09/2026",
     "cc": "STAFF - Limpeza",
     "desc": "diaria janeide",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "2",
     "data": "15/09/2026",
     "cc": "STAFF - Cozinheiro",
     "desc": "diaria olavo",
-    "val": -160
+    "val": -160.0
   },
   {
     "f": "2",
     "data": "15/09/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "aporte do torneio",
-    "val": 120
+    "val": 120.0
   },
   {
     "f": "2",
     "data": "16/09/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "APORTE BAR",
-    "val": 20
+    "val": 20.0
   },
   {
     "f": "2",
     "data": "16/09/2026",
     "cc": "STAFF - Caixa (CASH)",
     "desc": "DIARIA THIAGO",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "2",
     "data": "16/09/2026",
     "cc": "STAFF - Dealers (CASH)",
     "desc": "DIIARIA CACHORRINHO, VITOR E RAYAN",
-    "val": -240
+    "val": -240.0
   },
   {
     "f": "2",
     "data": "16/09/2026",
     "cc": "STAFF - Garcon / Garçonete",
     "desc": "DIARIA VIVI",
-    "val": -80
+    "val": -80.0
   },
   {
     "f": "2",
     "data": "16/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "COMPRAS 58,94  ENTREGUEI R$100 NÃO VOLTOU TROCO / EDSON",
-    "val": -100
+    "val": -100.0
   },
   {
     "f": "2",
     "data": "16/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "STAFF; AJUDA CUSTO 2x DEALER; 1x CAIXA; 1x LIMPEZA 1x GARÇOM; 1x COZINHEIRO",
-    "val": -640
+    "val": -640.0
   },
   {
     "f": "2",
     "data": "16/09/2026",
     "cc": "Segurança e Limpeza",
     "desc": "RETIRADA LIXO / GARIS",
-    "val": -40
+    "val": -40.0
   },
   {
     "f": "2",
     "data": "16/09/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "BAR",
-    "val": 220
+    "val": 220.0
   },
   {
     "f": "2",
     "data": "17/09/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "SAIDA TORNEIO",
-    "val": -10
+    "val": -10.0
   },
   {
     "f": "2",
     "data": "17/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "EXTRA CAIXA",
-    "val": -75
+    "val": -75.0
   },
   {
     "f": "2",
     "data": "17/09/2026",
     "cc": "STAFF - Limpeza",
     "desc": "DIARIA JANEIDE",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "2",
     "data": "17/09/2026",
     "cc": "STAFF - Cozinheiro",
     "desc": "DIARIA OLAVO",
-    "val": -160
+    "val": -160.0
   },
   {
     "f": "2",
     "data": "17/09/2026",
     "cc": "STAFF - Caixa (CASH)",
     "desc": "DIARIA THIAGO",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "2",
     "data": "17/09/2026",
     "cc": "STAFF - Garcon / Garçonete",
     "desc": "DIARIA VIVI",
-    "val": -80
+    "val": -80.0
   },
   {
     "f": "2",
     "data": "17/09/2026",
     "cc": "STAFF - Dealers (CASH)",
     "desc": "DIARIA VITOR",
-    "val": -50
+    "val": -50.0
   },
   {
     "f": "2",
     "data": "17/09/2026",
     "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA",
     "desc": "FRANGOLANDIA / METADE ADICIONADO AO SALDO DO OLAVO",
-    "val": -148
+    "val": -148.0
   },
   {
     "f": "2",
     "data": "17/09/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "APORTE DO TORNEIO",
-    "val": 30
+    "val": 30.0
   },
   {
     "f": "2",
     "data": "18/09/2026",
     "cc": "STAFF - Caixa (CASH)",
     "desc": "DIARIA EXTRA",
-    "val": -75
+    "val": -75.0
   },
   {
     "f": "2",
     "data": "18/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "UBER FABIO 14 E 15",
-    "val": -80
+    "val": -80.0
   },
   {
     "f": "2",
     "data": "18/09/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "BAR",
-    "val": 10
+    "val": 10.0
   },
   {
     "f": "2",
     "data": "18/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Documento: DIÁRIA 18/09  1x GARÇOM; 1x COZINHEIRO; 1x LIMPEZA; 1x CAIXA",
-    "val": -540
+    "val": -540.0
   },
   {
     "f": "2",
@@ -438,70 +438,70 @@
     "data": "18/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "COPIAS CHAVES",
-    "val": -40
+    "val": -40.0
   },
   {
     "f": "3",
     "data": "22/09/2026",
     "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA",
     "desc": "COMPRAS MERCANTIL CREDITADO AO FABIO",
-    "val": -20
+    "val": -20.0
   },
   {
     "f": "3",
     "data": "22/09/2026",
     "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA",
     "desc": "CREDITADO NATAN",
-    "val": -310
+    "val": -310.0
   },
   {
     "f": "3",
     "data": "22/09/2026",
     "cc": "Serviço de Limpeza",
     "desc": "DIARIA JANEIDE",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "3",
     "data": "22/09/2026",
     "cc": "STAFF - Cozinheiro",
     "desc": "DIARIA OLAVO",
-    "val": -160
+    "val": -160.0
   },
   {
     "f": "3",
     "data": "22/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "SERVIÇO LAMPADAS E GESSO",
-    "val": -300
+    "val": -300.0
   },
   {
     "f": "3",
     "data": "23/09/2026",
     "cc": "STAFF - Garcon / Garçonete",
     "desc": "DIARIA VIVI",
-    "val": -80
+    "val": -80.0
   },
   {
     "f": "3",
     "data": "23/09/2026",
     "cc": "STAFF - Caixa (CASH)",
     "desc": "DIARIA THIAGO",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "3",
     "data": "23/09/2026",
     "cc": "STAFF - Dealers (CASH)",
     "desc": "DIARIA WANDERSON E ALISSON",
-    "val": -160
+    "val": -160.0
   },
   {
     "f": "3",
     "data": "23/09/2026",
     "cc": "STAFF - Dealers (CASH)",
     "desc": "DIARIA FABIO",
-    "val": -125
+    "val": -125.0
   },
   {
     "f": "4",
@@ -515,21 +515,21 @@
     "data": "23/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "SEGURANÇA - SEMANA 14/20",
-    "val": -1200
+    "val": -1200.0
   },
   {
     "f": "4",
     "data": "23/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "SERVIÇOS ELETRICO E GESSO",
-    "val": -300
+    "val": -300.0
   },
   {
     "f": "4",
     "data": "23/09/2026",
     "cc": "Aluguel, Água, Luz e Internet do Clube",
     "desc": "ALUGUEL - SETEMBRO",
-    "val": -9250
+    "val": -9250.0
   },
   {
     "f": "4",
@@ -564,7 +564,7 @@
     "data": "23/09/2026",
     "cc": "Segurança e Limpeza",
     "desc": "RETIRADA LIXO LIXEIRAS > GARIS",
-    "val": -40
+    "val": -40.0
   },
   {
     "f": "4",
@@ -578,112 +578,112 @@
     "data": "24/09/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "APORTE TORNEIO",
-    "val": 90
+    "val": 90.0
   },
   {
     "f": "4",
     "data": "24/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "1x CAIXA ; 2x DEALERS; 1x GARÇOM; 1x LIMPEZA",
-    "val": -895
+    "val": -895.0
   },
   {
     "f": "4",
     "data": "24/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "DIARIA FABIO",
-    "val": -100
+    "val": -100.0
   },
   {
     "f": "5",
     "data": "24/09/2026",
     "cc": "STAFF - Caixa (CASH)",
     "desc": "DIARIA THIAGO",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "5",
     "data": "24/09/2026",
     "cc": "STAFF - Limpeza",
     "desc": "DIARIA JANEIDE",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "5",
     "data": "24/09/2026",
     "cc": "STAFF - Cozinheiro",
     "desc": "DIARIA OLAVO",
-    "val": -160
+    "val": -160.0
   },
   {
     "f": "5",
     "data": "24/09/2026",
     "cc": "STAFF - Dealers (CASH)",
     "desc": "DIARIA WANDERSON E VITOR",
-    "val": -100
+    "val": -100.0
   },
   {
     "f": "5",
     "data": "24/09/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "APORTE TORNEIO",
-    "val": 100
+    "val": 100.0
   },
   {
     "f": "5",
     "data": "25/09/2026",
     "cc": "RECEITAS DE CASH GAME",
     "desc": "DIARIA TAYNA",
-    "val": -80
+    "val": -80.0
   },
   {
     "f": "5",
     "data": "25/09/2026",
     "cc": "RECEITAS OPERACIONAIS",
     "desc": "ACERTO RAPHA MAIA - ALUGUEL MESAS - SETEMBRO",
-    "val": -1500
+    "val": -1500.0
   },
   {
     "f": "6",
     "data": "25/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "4x GARRAFÃO 20L 4x PCT GELO PIX 85985124432 * ROGERIO VIEIRA",
-    "val": -63
+    "val": -63.0
   },
   {
     "f": "6",
     "data": "25/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "DIÁRIA 25/09 1x CAIXA; 1x COZINHEIRO; 1x LIMPEZA; 1x GARÇOM; 2x DEALER, FABIO",
-    "val": -780
+    "val": -780.0
   },
   {
     "f": "7",
     "data": "27/09/2026",
     "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA",
     "desc": "FRANGOLANDIA",
-    "val": -90
+    "val": -90.0
   },
   {
     "f": "7",
     "data": "27/09/2026",
     "cc": "STAFF - Limpeza",
     "desc": "DIARIA FATIMA",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "7",
     "data": "27/09/2026",
     "cc": "STAFF - Cozinheiro",
     "desc": "DIARIA OLAVO",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "7",
     "data": "28/09/2026",
     "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA",
     "desc": "COMPRAS",
-    "val": -520
+    "val": -520.0
   },
   {
     "f": "7",
@@ -697,56 +697,56 @@
     "data": "28/09/2026",
     "cc": "STAFF - Dealers (CASH)",
     "desc": "DIARIA VITOR E WANDERSON",
-    "val": -160
+    "val": -160.0
   },
   {
     "f": "7",
     "data": "28/09/2026",
     "cc": "STAFF - Churrasqueiro",
     "desc": "DIARIA DAVID",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "7",
     "data": "28/09/2026",
     "cc": "STAFF - Caixa (CASH)",
     "desc": "DIARIA CAIXA",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "7",
     "data": "28/09/2026",
     "cc": "STAFF - Dealers (CASH)",
     "desc": "DIARIA EXTRA VITOR E WANDERSON",
-    "val": -80
+    "val": -80.0
   },
   {
     "f": "7",
     "data": "28/09/2026",
     "cc": "STAFF - Caixa (CASH)",
     "desc": "DIARIA EXTRA THIAGO",
-    "val": -75
+    "val": -75.0
   },
   {
     "f": "7",
     "data": "28/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "DIARIA FABIO",
-    "val": -120
+    "val": -120.0
   },
   {
     "f": "8",
     "data": "28/09/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "APORTE CASH 27/09",
-    "val": 550
+    "val": 550.0
   },
   {
     "f": "8",
     "data": "28/09/2026",
     "cc": "Serviço de Limpeza",
     "desc": "LIMPEZA ESTACIONAMENTO / ROGERIO",
-    "val": -10
+    "val": -10.0
   },
   {
     "f": "8",
@@ -767,21 +767,21 @@
     "data": "28/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "COMPRAS DAVID (NÃO TROUXE NOTA)",
-    "val": -100
+    "val": -100.0
   },
   {
     "f": "8",
     "data": "28/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "DESPESA STAFF: 2x DEALER; 1x GARÇOM; 1x COZINHEIRO; 1x LIMPEZA; 1x CAIXA",
-    "val": -700
+    "val": -700.0
   },
   {
     "f": "8",
     "data": "28/09/2026",
     "cc": "DESPESAS DE TORNEIO",
     "desc": "TROFÉU TORNEIO",
-    "val": -1400
+    "val": -1400.0
   },
   {
     "f": "8",
@@ -802,28 +802,28 @@
     "data": "29/09/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "BAR 28/09",
-    "val": 5
+    "val": 5.0
   },
   {
     "f": "8",
     "data": "29/09/2026",
     "cc": "Segurança e Limpeza",
     "desc": "RETIRADA LIXO / GARIS",
-    "val": -20
+    "val": -20.0
   },
   {
     "f": "8",
     "data": "29/09/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "APORTE TORNEIO TREEGAMES 2K 28/09",
-    "val": 25
+    "val": 25.0
   },
   {
     "f": "9",
     "data": "29/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "UBER OLAVO",
-    "val": -28
+    "val": -28.0
   },
   {
     "f": "9",
@@ -851,21 +851,21 @@
     "data": "29/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "DIARIA CHURRASCO DAVID 13/09 + DIARIA GARÇOM 27/09",
-    "val": -230
+    "val": -230.0
   },
   {
     "f": "9",
     "data": "29/09/2026",
     "cc": "STAFF - Limpeza",
     "desc": "DIARIA JANEIDE",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "9",
     "data": "29/09/2026",
     "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA",
     "desc": "FRANGOLANDIA",
-    "val": -68
+    "val": -68.0
   },
   {
     "f": "9",
@@ -879,77 +879,77 @@
     "data": "29/09/2026",
     "cc": "STAFF - Cozinheiro",
     "desc": "DIARIA OLAVO",
-    "val": -160
+    "val": -160.0
   },
   {
     "f": "9",
     "data": "29/09/2026",
     "cc": "STAFF - Dealers (CASH)",
     "desc": "DIARIA CACHORRINHO E WANDERSON",
-    "val": -160
+    "val": -160.0
   },
   {
     "f": "9",
     "data": "30/09/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "APORTE DO TORNEIO",
-    "val": 80
+    "val": 80.0
   },
   {
     "f": "9",
     "data": "30/09/2026",
     "cc": "STAFF - Garcon / Garçonete",
     "desc": "DIARIA VIVI",
-    "val": -80
+    "val": -80.0
   },
   {
     "f": "9",
     "data": "30/09/2026",
     "cc": "STAFF - Caixa (CASH)",
     "desc": "DIARIA THIAGO",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "9",
     "data": "30/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "DIARIA FABIO",
-    "val": -80
+    "val": -80.0
   },
   {
     "f": "10",
     "data": "30/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "COMPRAS FEITAS POR OLAVO",
-    "val": -600
+    "val": -600.0
   },
   {
     "f": "10",
     "data": "30/09/2026",
     "cc": "Segurança e Limpeza",
     "desc": "SEGURANÇA",
-    "val": -1200
+    "val": -1200.0
   },
   {
     "f": "10",
     "data": "30/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "GÁS COZINHA",
-    "val": -125
+    "val": -125.0
   },
   {
     "f": "10",
     "data": "30/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "OUTROS / ECHOPE",
-    "val": -389
+    "val": -389.0
   },
   {
     "f": "10",
     "data": "30/09/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "NATAN - R$ 150",
-    "val": 0
+    "val": 0.0
   },
   {
     "f": "10",
@@ -963,21 +963,21 @@
     "data": "30/09/2026",
     "cc": "Segurança e Limpeza",
     "desc": "LIMPEZA ROGERIO",
-    "val": -10
+    "val": -10.0
   },
   {
     "f": "10",
     "data": "30/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "AGUA DE COCO",
-    "val": -45
+    "val": -45.0
   },
   {
     "f": "10",
     "data": "30/09/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "STAFF; 3x DEALERS ; 1x GARÇO; 1x LIMPEZA; 1x COZINHEIRO; 1x CAIXA",
-    "val": -780
+    "val": -780.0
   },
   {
     "f": "10",
@@ -991,7 +991,7 @@
     "data": "30/09/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "TORNEIO",
-    "val": 190
+    "val": 190.0
   },
   {
     "f": "10",
@@ -1012,28 +1012,28 @@
     "data": "01/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "DIARIA FABIO",
-    "val": -100
+    "val": -100.0
   },
   {
     "f": "10",
     "data": "01/10/2026",
     "cc": "RECEITAS DE CASH GAME",
     "desc": "SKY - PAULO REBOUÇAS",
-    "val": -120
+    "val": -120.0
   },
   {
     "f": "11",
     "data": "01/10/2026",
     "cc": "DESPESAS E ACERTOS POR FORA",
     "desc": "ACERTO - N.R",
-    "val": -6250
+    "val": -6250.0
   },
   {
     "f": "11",
     "data": "01/10/2026",
     "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA",
     "desc": "3 AGUAS 20L 4 GELOS",
-    "val": -70
+    "val": -70.0
   },
   {
     "f": "11",
@@ -1047,7 +1047,7 @@
     "data": "01/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "DUAS COPIAS CHAVE PORTA",
-    "val": -18
+    "val": -18.0
   },
   {
     "f": "11",
@@ -1061,7 +1061,7 @@
     "data": "01/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "APORTE CABELIM COMPRAS OLAVO - R$ 400",
-    "val": 0
+    "val": 0.0
   },
   {
     "f": "11",
@@ -1089,21 +1089,21 @@
     "data": "01/10/2026",
     "cc": "RECEITAS OPERACIONAIS",
     "desc": "COMPRAS FRANHGOLANDIA: QUEIJO E AZEITE",
-    "val": -100
+    "val": -100.0
   },
   {
     "f": "11",
     "data": "01/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "APORTE CABELIM: COMPRAS - R$ 100",
-    "val": 0
+    "val": 0.0
   },
   {
     "f": "11",
     "data": "01/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "APORTE DO TORNEIO",
-    "val": 100
+    "val": 100.0
   },
   {
     "f": "11",
@@ -1117,7 +1117,7 @@
     "data": "01/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "APORTE: CABELIM DESPESA CERVEJAS R$ 263,52",
-    "val": 0
+    "val": 0.0
   },
   {
     "f": "11",
@@ -1131,84 +1131,84 @@
     "data": "01/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "DIARIA JANEIDE",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "11",
     "data": "01/10/2026",
     "cc": "STAFF - Cozinheiro",
     "desc": "DIARIA OLAVO",
-    "val": -160
+    "val": -160.0
   },
   {
     "f": "11",
     "data": "01/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "APORTE DO TORNEIO",
-    "val": 40
+    "val": 40.0
   },
   {
     "f": "11",
     "data": "02/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "CAVALOS: THIAGO -R$ 1.000,00 CACHORRINHO - R$420,00",
-    "val": -1420
+    "val": -1420.0
   },
   {
     "f": "11",
     "data": "02/10/2026",
     "cc": "STAFF - Dealers (CASH)",
     "desc": "DIARIA VITOR E PATRIK",
-    "val": -160
+    "val": -160.0
   },
   {
     "f": "11",
     "data": "02/10/2026",
     "cc": "STAFF - Garcon / Garçonete",
     "desc": "DIARIA VIVI",
-    "val": -80
+    "val": -80.0
   },
   {
     "f": "11",
     "data": "02/10/2026",
     "cc": "RECEITAS OPERACIONAIS",
     "desc": "DIARIA CAIXA",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "11",
     "data": "02/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "APORTE TORNEIO",
-    "val": 200
+    "val": 200.0
   },
   {
     "f": "11",
     "data": "02/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "APORTE BAR",
-    "val": 10
+    "val": 10.0
   },
   {
     "f": "11",
     "data": "02/10/2026",
     "cc": "RECEITAS DE CASH GAME",
     "desc": "DIARIA FABIO",
-    "val": -80
+    "val": -80.0
   },
   {
     "f": "12",
     "data": "02/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "COMPRAS OLAVO",
-    "val": -538
+    "val": -538.0
   },
   {
     "f": "12",
     "data": "02/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "FUNDO DE CAIXA 01/10",
-    "val": 10
+    "val": 10.0
   },
   {
     "f": "12",
@@ -1236,14 +1236,14 @@
     "data": "03/10/2026",
     "cc": "Segurança e Limpeza",
     "desc": "LIMPEZA ESTACIONAMENTO / ROGERIO",
-    "val": -10
+    "val": -10.0
   },
   {
     "f": "12",
     "data": "03/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "BAR",
-    "val": 200
+    "val": 200.0
   },
   {
     "f": "12",
@@ -1257,35 +1257,35 @@
     "data": "03/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "STAFF 1x CAIXA; 2x DEALERS; 1x COZINHEIRO ; 1x LIMPEZA; 1xGARÇOM",
-    "val": -700
+    "val": -700.0
   },
   {
     "f": "12",
     "data": "03/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "DIARIA FABIO",
-    "val": -80
+    "val": -80.0
   },
   {
     "f": "13",
     "data": "04/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "ENERGIA",
-    "val": -1500
+    "val": -1500.0
   },
   {
     "f": "13",
     "data": "04/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "DESPESA PAGA P/ CABELIM: PRECISA DESCRIÇAO",
-    "val": -353
+    "val": -353.0
   },
   {
     "f": "13",
     "data": "04/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "ADESIVOS MATERIAL 7K",
-    "val": -500
+    "val": -500.0
   },
   {
     "f": "13",
@@ -1320,84 +1320,84 @@
     "data": "04/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "DIARIA FATIMA LIMPEZA",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "13",
     "data": "04/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "DIARIA OLAVO",
-    "val": -170
+    "val": -170.0
   },
   {
     "f": "13",
     "data": "04/10/2026",
     "cc": "RECEITAS OPERACIONAIS",
     "desc": "DESPESA CAVALO: WANDERSON CHINES",
-    "val": -1185
+    "val": -1185.0
   },
   {
     "f": "13",
     "data": "05/10/2026",
     "cc": "RECEITAS OPERACIONAIS",
     "desc": "VINHOS NERTAN",
-    "val": -400
+    "val": -400.0
   },
   {
     "f": "13",
     "data": "05/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "CORTESIA: FRANCISCO RICARDO",
-    "val": -250
+    "val": -250.0
   },
   {
     "f": "13",
     "data": "05/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "DIARIA DEALERS 1 1/2 X2",
-    "val": -240
+    "val": -240.0
   },
   {
     "f": "13",
     "data": "05/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "DIARIA: FABIO 1,5x",
-    "val": -225
+    "val": -225.0
   },
   {
     "f": "13",
     "data": "05/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "DIARIA: VIVIANE GARÇONETE",
-    "val": -120
+    "val": -120.0
   },
   {
     "f": "13",
     "data": "05/10/2026",
     "cc": "RECEITAS DE CASH GAME",
     "desc": "RECEITA: CAPAGEM 20% MASSAGISTAS",
-    "val": 714
+    "val": 714.0
   },
   {
     "f": "13",
     "data": "05/10/2026",
     "cc": "STACKING",
     "desc": "RESULTADO CAVALO: ALBERTO GUGU",
-    "val": 2400
+    "val": 2400.0
   },
   {
     "f": "13",
     "data": "05/10/2026",
     "cc": "DESPESAS DE TORNEIO",
     "desc": "Obs: TORNEIO LADIES 03-10 : SALGADINHOS TORNEIO LADIES",
-    "val": -500
+    "val": -500.0
   },
   {
     "f": "13",
     "data": "05/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: POKERWEB SET/OUT",
-    "val": -1080
+    "val": -1080.0
   },
   {
     "f": "13",
@@ -1425,7 +1425,7 @@
     "data": "05/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: 19/09 - UBER OLAVO",
-    "val": -50
+    "val": -50.0
   },
   {
     "f": "14",
@@ -1439,84 +1439,84 @@
     "data": "05/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: COMPRAS FRANGOLANDIA",
-    "val": -231
+    "val": -231.0
   },
   {
     "f": "14",
     "data": "06/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: QUEIJO E PRESUNTO",
-    "val": -50
+    "val": -50.0
   },
   {
     "f": "14",
     "data": "06/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "Obs: APORTE BAR",
-    "val": 25
+    "val": 25.0
   },
   {
     "f": "14",
     "data": "06/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: LIMPEZA ROGERIO",
-    "val": -10
+    "val": -10.0
   },
   {
     "f": "14",
     "data": "06/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: APORTE TORNEIO",
-    "val": 50
+    "val": 50.0
   },
   {
     "f": "14",
     "data": "06/10/2026",
     "cc": "STACKING",
     "desc": "Obs: WANERSON SAMPAIO",
-    "val": -1000
+    "val": -1000.0
   },
   {
     "f": "14",
     "data": "06/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "Obs: APORTE TORNEIO",
-    "val": 502
+    "val": 502.0
   },
   {
     "f": "14",
     "data": "06/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: DIARIA STAFF: GARÇOM, 2X DEALERS, 1X CAIXA, 1X COZINHA, 1X LIMPEZA",
-    "val": -930
+    "val": -930.0
   },
   {
     "f": "15",
     "data": "06/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: 3x GARRAFÃO AGUA / 3x PCT GELO PIX 85985124432 R$63 ROGERIO VIEIRA",
-    "val": -63
+    "val": -63.0
   },
   {
     "f": "14",
     "data": "06/10/2026",
     "cc": "RECEITAS DE CASH GAME",
     "desc": "Obs: CAPAGEM 20% MASSAGISTA",
-    "val": 144
+    "val": 144.0
   },
   {
     "f": "15",
     "data": "06/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: QUEIJOS E FRIOS",
-    "val": -100
+    "val": -100.0
   },
   {
     "f": "15",
     "data": "06/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: COMPRAS FEITA POR OLAVO + UBER R$850",
-    "val": -850
+    "val": -850.0
   },
   {
     "f": "15",
@@ -1544,91 +1544,91 @@
     "data": "07/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: LIMPEZA ESTACIONAMENTO",
-    "val": -5
+    "val": -5.0
   },
   {
     "f": "15",
     "data": "07/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "Obs: MOEDAS",
-    "val": 5
+    "val": 5.0
   },
   {
     "f": "15",
     "data": "07/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: CORTESIA",
-    "val": -125
+    "val": -125.0
   },
   {
     "f": "15",
     "data": "07/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: STAFF 2x DEALER; 1x CAIXA; 1x LIMPEZA; 1x COZINHEIRO; 1x GARÇOM",
-    "val": -700
+    "val": -700.0
   },
   {
     "f": "15",
     "data": "07/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: STAFF EXTRA",
-    "val": -115
+    "val": -115.0
   },
   {
     "f": "15",
     "data": "07/10/2026",
     "cc": "RECEITAS DE CASH GAME",
     "desc": "Obs: CAPAGEM 20% MASSAGISTA",
-    "val": 100
+    "val": 100.0
   },
   {
     "f": "15",
     "data": "07/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: DIARIA FABIO",
-    "val": -100
+    "val": -100.0
   },
   {
     "f": "16",
     "data": "07/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "Obs: FUNDO DE CAIXA",
-    "val": 300
+    "val": 300.0
   },
   {
     "f": "16",
     "data": "07/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: COMPRAS FEITA POR OLAVO > COZINHA",
-    "val": -108
+    "val": -108.0
   },
   {
     "f": "16",
     "data": "07/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: COMPRAS FEITA POR OLAVO > COZINHA",
-    "val": -200
+    "val": -200.0
   },
   {
     "f": "16",
     "data": "07/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: COMPRAS DAVID AGUA DE COCO + ACERTO ROGERIO SEMANAL",
-    "val": -132
+    "val": -132.0
   },
   {
     "f": "16",
     "data": "07/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: STAFF 1x CAIXA; 1x LIMPEZA; 1x COZINHEIRO; 1x GARÇOM; 2x DEALERS",
-    "val": -700
+    "val": -700.0
   },
   {
     "f": "16",
     "data": "07/10/2026",
     "cc": "Segurança e Limpeza",
     "desc": "Obs: SEGURANÇA",
-    "val": -1440
+    "val": -1440.0
   },
   {
     "f": "16",
@@ -1649,28 +1649,28 @@
     "data": "07/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: MIDIA",
-    "val": -1000
+    "val": -1000.0
   },
   {
     "f": "16",
     "data": "08/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Documento: BONUS\nObs: JULIO ROCHA",
-    "val": -5
+    "val": -5.0
   },
   {
     "f": "16",
     "data": "08/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "Obs: MOEDAS",
-    "val": 2
+    "val": 2.0
   },
   {
     "f": "16",
     "data": "08/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "Obs: SAIDA PARA PAGAMENTO ITM",
-    "val": -1670
+    "val": -1670.0
   },
   {
     "f": "16",
@@ -1684,14 +1684,14 @@
     "data": "08/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: STAFF EXTRA",
-    "val": -195
+    "val": -195.0
   },
   {
     "f": "16",
     "data": "08/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: CORTESIA MASSAGEM NATAN",
-    "val": -100
+    "val": -100.0
   },
   {
     "f": "17",
@@ -1719,21 +1719,21 @@
     "data": "08/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: CASH BACK LUCAS CRUZ",
-    "val": -50
+    "val": -50.0
   },
   {
     "f": "17",
     "data": "08/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "Obs: FUNDO DE CAIXA",
-    "val": 100
+    "val": 100.0
   },
   {
     "f": "17",
     "data": "08/10/2026",
     "cc": "RECEITAS OPERACIONAIS",
     "desc": "Obs: CASH BACK THALISSON E REGINA",
-    "val": -80
+    "val": -80.0
   },
   {
     "f": "17",
@@ -1747,154 +1747,154 @@
     "data": "08/10/2026",
     "cc": "RECEITAS OPERACIONAIS",
     "desc": "Obs: CASH BACK NUNUCA",
-    "val": -50
+    "val": -50.0
   },
   {
     "f": "17",
     "data": "08/10/2026",
     "cc": "RECEITAS OPERACIONAIS",
     "desc": "Obs: CASH BACK 07/10/26",
-    "val": -50
+    "val": -50.0
   },
   {
     "f": "17",
     "data": "08/10/2026",
     "cc": "RECEITAS OPERACIONAIS",
     "desc": "Obs: CARLOS ALBERTO",
-    "val": -50
+    "val": -50.0
   },
   {
     "f": "17",
     "data": "08/10/2026",
     "cc": "STAFF - Limpeza",
     "desc": "Obs: DIARIA FATIMA",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "17",
     "data": "08/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "Obs: APORTE DO TORNEIO",
-    "val": 200
+    "val": 200.0
   },
   {
     "f": "17",
     "data": "08/10/2026",
     "cc": "STAFF - Cozinheiro",
     "desc": "Obs: DIARIA OLAVO",
-    "val": -160
+    "val": -160.0
   },
   {
     "f": "17",
     "data": "08/10/2026",
     "cc": "STAFF - Dealers (CASH)",
     "desc": "Obs: DIARIA VITOR, CACHORRINHO E WANDERSON",
-    "val": -240
+    "val": -240.0
   },
   {
     "f": "17",
     "data": "08/10/2026",
     "cc": "RECEITAS OPERACIONAIS",
     "desc": "Obs: HENRIQUE RESENDE",
-    "val": -40
+    "val": -40.0
   },
   {
     "f": "17",
     "data": "09/10/2026",
     "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA",
     "desc": "Obs: MEGA ATACADÃO + TAXI",
-    "val": -627
+    "val": -627.0
   },
   {
     "f": "17",
     "data": "09/10/2026",
     "cc": "RECEITAS OPERACIONAIS",
     "desc": "Obs: PLACA NFC AVALIATIVA GOOGLE",
-    "val": -70
+    "val": -70.0
   },
   {
     "f": "17",
     "data": "09/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "Obs: APORTE DO TORNEIO",
-    "val": 20
+    "val": 20.0
   },
   {
     "f": "17",
     "data": "09/10/2026",
     "cc": "STAFF - Garcon / Garçonete",
     "desc": "Obs: 2X GARÇONETE",
-    "val": -160
+    "val": -160.0
   },
   {
     "f": "17",
     "data": "09/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "Obs: APORTE DO TORNEIO",
-    "val": 50
+    "val": 50.0
   },
   {
     "f": "17",
     "data": "09/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "Obs: APORTE BAR",
-    "val": 35
+    "val": 35.0
   },
   {
     "f": "17",
     "data": "09/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "Obs: APORTE TORNEIO",
-    "val": 50
+    "val": 50.0
   },
   {
     "f": "17",
     "data": "09/10/2026",
     "cc": "STAFF - Caixa (CASH)",
     "desc": "Obs: DIARIA THIAGO",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "17",
     "data": "09/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "Obs: APORTE TORNEIO",
-    "val": 15
+    "val": 15.0
   },
   {
     "f": "18",
     "data": "09/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: TORNEIRA",
-    "val": -15
+    "val": -15.0
   },
   {
     "f": "18",
     "data": "09/10/2026",
     "cc": "Fundo de Caixa / Aportes / Sangrias",
     "desc": "Obs: FUNDO E CAIXA DIA 08/10",
-    "val": 22
+    "val": 22.0
   },
   {
     "f": "18",
     "data": "09/10/2026",
     "cc": "STAFF - Limpeza",
     "desc": "Obs: DIARIA JANEIDE",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "18",
     "data": "09/10/2026",
     "cc": "RECEITAS OPERACIONAIS",
     "desc": "Obs: MESAS TORNEIOS",
-    "val": -500
+    "val": -500.0
   },
   {
     "f": "18",
     "data": "09/10/2026",
     "cc": "RECEITAS OPERACIONAIS",
     "desc": "Obs: COMERCIAL ALIMENTOS / R$9,00 ADICIONADO NO SALDO OLAVO",
-    "val": -25
+    "val": -25.0
   },
   {
     "f": "18",
@@ -1915,49 +1915,49 @@
     "data": "09/10/2026",
     "cc": "STAFF - Cozinheiro",
     "desc": "Obs: DIARIA OLAVO",
-    "val": -160
+    "val": -160.0
   },
   {
     "f": "18",
     "data": "09/10/2026",
     "cc": "STAFF - Dealers (CASH)",
     "desc": "Obs: DIARIA RAYAN E PATRIK",
-    "val": -160
+    "val": -160.0
   },
   {
     "f": "18",
     "data": "10/10/2026",
     "cc": "RECEITAS OPERACIONAIS",
     "desc": "Obs: BARALHOS MILTON",
-    "val": -696
+    "val": -696.0
   },
   {
     "f": "18",
     "data": "10/10/2026",
     "cc": "STAFF - Garcon / Garçonete",
     "desc": "Obs: DIARIA VIVI E MICHELLY",
-    "val": -160
+    "val": -160.0
   },
   {
     "f": "18",
     "data": "10/10/2026",
     "cc": "STAFF - Caixa (CASH)",
     "desc": "Obs: DIARIA THIAGO + EXTRA",
-    "val": -225
+    "val": -225.0
   },
   {
     "f": "18",
     "data": "10/10/2026",
     "cc": "RECEITAS OPERACIONAIS",
     "desc": "Obs: DIARIA EXTRA DEALERS",
-    "val": -40
+    "val": -40.0
   },
   {
     "f": "18",
     "data": "10/10/2026",
     "cc": "DESPESAS DE CASH GAME",
     "desc": "Obs: DESPESA CASHBACK 10%",
-    "val": -350
+    "val": -350.0
   },
   {
     "f": "19",
@@ -1978,21 +1978,21 @@
     "data": "11/10/2026",
     "cc": "STAFF - Dealers (CASH)",
     "desc": "Obs: DIARIA BRUNO E WANDERSON",
-    "val": -160
+    "val": -160.0
   },
   {
     "f": "19",
     "data": "11/10/2026",
     "cc": "STAFF - Cozinheiro",
     "desc": "Obs: DIARIA OLAVO",
-    "val": -160
+    "val": -160.0
   },
   {
     "f": "19",
     "data": "11/10/2026",
     "cc": "STAFF - Cozinheiro",
     "desc": "Obs: DIARIA FATIMA",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "19",
@@ -2013,41 +2013,496 @@
     "data": "11/10/2026",
     "cc": "STAFF - Churrasqueiro",
     "desc": "Obs: DIARIA DAVID",
-    "val": -150
+    "val": -150.0
   },
   {
     "f": "19",
     "data": "11/10/2026",
     "cc": "STAFF - Garcon / Garçonete",
     "desc": "Obs: DIARIA VIVI",
-    "val": -80
+    "val": -80.0
   },
   {
     "f": "19",
     "data": "11/10/2026",
     "cc": "STAFF - Cozinheiro",
     "desc": "Obs: DIARIA EXTRA OLAVO",
-    "val": -50
+    "val": -50.0
   },
   {
     "f": "19",
     "data": "11/10/2026",
     "cc": "RECEITAS OPERACIONAIS",
     "desc": "Obs: OLAVO LEVOU PRA FAZER COMPRAS",
-    "val": -200
+    "val": -200.0
   },
   {
     "f": "19",
     "data": "11/10/2026",
     "cc": "STAFF - Limpeza",
     "desc": "Obs: DIARIA EXTRA FATIMA",
-    "val": -40
+    "val": -40.0
   },
   {
     "f": "19",
     "data": "11/10/2026",
     "cc": "STAFF - Caixa (CASH)",
     "desc": "Obs: DIARIA CAIXA",
-    "val": -150
+    "val": -150.0
+  },
+  {
+    "f": "19",
+    "data": "12/10/2026",
+    "cc": "STACKING",
+    "desc": "Obs: ACERTO MACAULY > DESPESA > CAVALO > CLUBE/ SOCIOS",
+    "val": -1775.0
+  },
+  {
+    "f": "19",
+    "data": "12/10/2026",
+    "cc": "STACKING",
+    "desc": "Obs: ACERTO CAVALOS MARDEY E CACHORRIM",
+    "val": -705.0
+  },
+  {
+    "f": "19",
+    "data": "13/10/2026",
+    "cc": "RECEITAS OPERACIONAIS",
+    "desc": "Obs: CASHBACK 10%",
+    "val": -600.0
+  },
+  {
+    "f": "23",
+    "data": "16/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: DIARIA FABIO",
+    "val": -80.0
+  },
+  {
+    "f": "23",
+    "data": "16/10/2026",
+    "cc": "STAFF - Caixa (CASH)",
+    "desc": "Obs: DIARIA THIAGO",
+    "val": -150.0
+  },
+  {
+    "f": "23",
+    "data": "16/10/2026",
+    "cc": "STAFF - Garcon / Garçonete",
+    "desc": "Obs: DIARIA TAYNA",
+    "val": -80.0
+  },
+  {
+    "f": "23",
+    "data": "16/10/2026",
+    "cc": "STAFF - Dealers (CASH)",
+    "desc": "Obs: DIARIA PATRIK E RAYAN",
+    "val": -160.0
+  },
+  {
+    "f": "23",
+    "data": "15/10/2026",
+    "cc": "RECEITAS OPERACIONAIS",
+    "desc": "Obs: SUPER LAGOA",
+    "val": -272.2
+  },
+  {
+    "f": "23",
+    "data": "15/10/2026",
+    "cc": "RECEITAS OPERACIONAIS",
+    "desc": "Obs: TORNEIRAS + MAO DE OBRA",
+    "val": -79.0
+  },
+  {
+    "f": "23",
+    "data": "15/10/2026",
+    "cc": "STAFF - Cozinheiro",
+    "desc": "Obs: DIARIA OLAVO",
+    "val": -160.0
+  },
+  {
+    "f": "23",
+    "data": "15/10/2026",
+    "cc": "STAFF - Limpeza",
+    "desc": "Obs: DIARIA JANEIDE",
+    "val": -150.0
+  },
+  {
+    "f": "23",
+    "data": "15/10/2026",
+    "cc": "RECEITAS OPERACIONAIS",
+    "desc": "Obs: AGUÁS",
+    "val": -539.0
+  },
+  {
+    "f": "24",
+    "data": "16/10/2026",
+    "cc": "RECEITAS OPERACIONAIS",
+    "desc": "Obs: CORTESIA BAR > MARK.",
+    "val": -15.0
+  },
+  {
+    "f": "24",
+    "data": "16/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: 3x DEALER; 1x CAIXA; 1x COZINHEIRO; 1x GARÇOM;",
+    "val": -780.0
+  },
+  {
+    "f": "24",
+    "data": "16/10/2026",
+    "cc": "Fundo de Caixa / Aportes / Sangrias",
+    "desc": "Obs: TORNEIO LADIES 16/10",
+    "val": 800.0
+  },
+  {
+    "f": "24",
+    "data": "16/10/2026",
+    "cc": "RECEITAS OPERACIONAIS",
+    "desc": "Obs: GELO POSTO: FABIO",
+    "val": -41.79
+  },
+  {
+    "f": "24",
+    "data": "17/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: COMPRAS OLAVO",
+    "val": -622.0
+  },
+  {
+    "f": "24",
+    "data": "17/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: GÁS COZINHA",
+    "val": -130.0
+  },
+  {
+    "f": "24",
+    "data": "17/10/2026",
+    "cc": "Fundo de Caixa / Aportes / Sangrias",
+    "desc": "Obs: BAR",
+    "val": 5.0
+  },
+  {
+    "f": "24",
+    "data": "17/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: COMPRAS",
+    "val": -60.0
+  },
+  {
+    "f": "24",
+    "data": "17/10/2026",
+    "cc": "DESPESAS DE TORNEIO",
+    "desc": "Obs: COMPRAS TORNEIO",
+    "val": -210.0
+  },
+  {
+    "f": "24",
+    "data": "17/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: DELIVERY",
+    "val": -533.99
+  },
+  {
+    "f": "24",
+    "data": "17/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: LANCHE SR. MARCUS",
+    "val": -37.91
+  },
+  {
+    "f": "24",
+    "data": "17/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: LANCHE",
+    "val": -226.18
+  },
+  {
+    "f": "24",
+    "data": "17/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: EXTRA STAFF CAIXA; GARÇOM; 1x DEALER",
+    "val": -195.0
+  },
+  {
+    "f": "25",
+    "data": "18/10/2026",
+    "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA",
+    "desc": "Obs: MERCADO DAS CARNES",
+    "val": -734.76
+  },
+  {
+    "f": "25",
+    "data": "18/10/2026",
+    "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA",
+    "desc": "Obs: SUPER LAGOA",
+    "val": -119.47
+  },
+  {
+    "f": "25",
+    "data": "18/10/2026",
+    "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA",
+    "desc": "Obs: FRANGOLANDIA",
+    "val": -119.88
+  },
+  {
+    "f": "25",
+    "data": "18/10/2026",
+    "cc": "STAFF - Churrasqueiro",
+    "desc": "Obs: DIARIA DAVID",
+    "val": -150.0
+  },
+  {
+    "f": "25",
+    "data": "18/10/2026",
+    "cc": "STAFF - Limpeza",
+    "desc": "Obs: DIARIA FATIMA",
+    "val": -150.0
+  },
+  {
+    "f": "25",
+    "data": "18/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: MAIKE GALDINO",
+    "val": -25.0
+  },
+  {
+    "f": "25",
+    "data": "18/10/2026",
+    "cc": "STAFF - Limpeza",
+    "desc": "Obs: DIARIA EXTRA FATIMA",
+    "val": -40.0
+  },
+  {
+    "f": "25",
+    "data": "18/10/2026",
+    "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA",
+    "desc": "Obs: FRANGOLANDIA",
+    "val": -58.23
+  },
+  {
+    "f": "25",
+    "data": "18/10/2026",
+    "cc": "Fundo de Caixa / Aportes / Sangrias",
+    "desc": "Obs: CAVALO WANDERSON CHINES",
+    "val": -500.0
+  },
+  {
+    "f": "25",
+    "data": "18/10/2026",
+    "cc": "STAFF - Cozinheiro",
+    "desc": "Obs: DIARIA OLAVO",
+    "val": -160.0
+  },
+  {
+    "f": "25",
+    "data": "18/10/2026",
+    "cc": "STAFF - Dealers (TORNEIO)",
+    "desc": "Obs: DIARIA FABIO, WANDERSON E ANDRE",
+    "val": -240.0
+  },
+  {
+    "f": "25",
+    "data": "18/10/2026",
+    "cc": "STAFF - Garcon / Garçonete",
+    "desc": "Obs: DIARIA VIVI",
+    "val": -80.0
+  },
+  {
+    "f": "25",
+    "data": "18/10/2026",
+    "cc": "STAFF - Caixa (CASH)",
+    "desc": "Obs: DIARIA CAIXA",
+    "val": -150.0
+  },
+  {
+    "f": "25",
+    "data": "18/10/2026",
+    "cc": "Fundo de Caixa / Aportes / Sangrias",
+    "desc": "Obs: CAVALO CACHORRINHO",
+    "val": -1500.0
+  },
+  {
+    "f": "25",
+    "data": "18/10/2026",
+    "cc": "RECEITAS OPERACIONAIS",
+    "desc": "Obs: THALISSON MARTINS",
+    "val": -58.23
+  },
+  {
+    "f": "25",
+    "data": "19/10/2026",
+    "cc": "STAFF - Cozinheiro",
+    "desc": "Obs: DIARIA EXTRA OLAVO",
+    "val": -50.0
+  },
+  {
+    "f": "25",
+    "data": "19/10/2026",
+    "cc": "DESPESAS DE BAR / RESTAURANTE / COZINHA",
+    "desc": "Obs: LAGOA",
+    "val": -158.89
+  },
+  {
+    "f": "25",
+    "data": "19/10/2026",
+    "cc": "STAFF - Dealers (CASH)",
+    "desc": "Obs: DIARIA EXTRA FABIO, ANDRÉ E WANDERSON",
+    "val": -120.0
+  },
+  {
+    "f": "25",
+    "data": "19/10/2026",
+    "cc": "STAFF - Garcon / Garçonete",
+    "desc": "Obs: DIARIA EXTRA VIVI",
+    "val": -40.0
+  },
+  {
+    "f": "25",
+    "data": "19/10/2026",
+    "cc": "STAFF - Caixa (CASH)",
+    "desc": "Obs: DIARIA EXTRA THIAGO",
+    "val": -75.0
+  },
+  {
+    "f": "25",
+    "data": "19/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: APORTE CABELIM COMPRAS OLAVO",
+    "val": 200.0
+  },
+  {
+    "f": "26",
+    "data": "19/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: COMPRAS OLAVOS + UBER",
+    "val": -900.71
+  },
+  {
+    "f": "25",
+    "data": "19/10/2026",
+    "cc": "RECEITAS DE CASH GAME",
+    "desc": "Obs: CAPAGEM 20% -DIA 7 AO 16",
+    "val": 510.0
+  },
+  {
+    "f": "26",
+    "data": "19/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: GARRAFÃO E GELO",
+    "val": -56.0
+  },
+  {
+    "f": "26",
+    "data": "19/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: IFOOD",
+    "val": -175.68
+  },
+  {
+    "f": "26",
+    "data": "19/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: BEBIDAS / ZÉ DELIVERY",
+    "val": -251.28
+  },
+  {
+    "f": "26",
+    "data": "19/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: BEBIDAS / ZÉ DELIVERY",
+    "val": -394.26
+  },
+  {
+    "f": "26",
+    "data": "19/10/2026",
+    "cc": "DESPESAS DE TORNEIO",
+    "desc": "Obs: MESAS TORNEIO",
+    "val": -2000.0
+  },
+  {
+    "f": "26",
+    "data": "19/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: 3x DEALER; 1x CAIXA; 1x LIMPEZA; 1x GARÇOM",
+    "val": -810.0
+  },
+  {
+    "f": "26",
+    "data": "19/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: DESPESA 2K/10K THALISSON",
+    "val": -2000.0
+  },
+  {
+    "f": "26",
+    "data": "19/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: GARIS / RETIRADA LIXO LIXEIRAS",
+    "val": -50.0
+  },
+  {
+    "f": "26",
+    "data": "20/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: ROGERIO / LIMPEZA EXTERNA",
+    "val": -20.0
+  },
+  {
+    "f": "26",
+    "data": "20/10/2026",
+    "cc": "Fundo de Caixa / Aportes / Sangrias",
+    "desc": "Obs: APORTE TORNEIO",
+    "val": 240.0
+  },
+  {
+    "f": "26",
+    "data": "20/10/2026",
+    "cc": "STACKING",
+    "desc": "Obs: CAVALO: DAVID",
+    "val": -250.0
+  },
+  {
+    "f": "26",
+    "data": "20/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: ALUGUEL",
+    "val": -4750.0
+  },
+  {
+    "f": "26",
+    "data": "20/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: NERTAN",
+    "val": -3250.0
+  },
+  {
+    "f": "28",
+    "data": "20/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: BOLO OLAVO",
+    "val": -23.0
+  },
+  {
+    "f": "28",
+    "data": "20/10/2026",
+    "cc": "STACKING",
+    "desc": "Obs: CAVALO: FABIO",
+    "val": -925.0
+  },
+  {
+    "f": "28",
+    "data": "20/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: EDSON GOMES R$30 PIX 85985491544 CONSERTO TORNEIRA",
+    "val": -30.0
+  },
+  {
+    "f": "28",
+    "data": "20/10/2026",
+    "cc": "DESPESAS DE CASH GAME",
+    "desc": "Obs: MEL",
+    "val": -39.8
   }
 ]
